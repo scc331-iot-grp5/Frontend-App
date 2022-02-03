@@ -1,6 +1,6 @@
 #Internal package file, do not edit.
-#Thu Feb 03 13:00:17 GMT 2022
-0.base=/Users/cameronpugh/Downloads/app/java/shrine/app/build/intermediates/transforms/dexMerger/debug/0
+#Thu Feb 03 13:18:11 GMT 2022
+0.base=/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/transforms/dexMerger/debug/0
 0.path=classes.dex
 count=1
 0.baseType=DIRECTORY

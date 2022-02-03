@@ -2,7 +2,7 @@
     <string name="shr_app_name" translatable="false">IOTA</string>
     <string name="shr_hint_username">Username</string>
     <string name="shr_hint_password">Password</string>
-    <string name="shr_button_next">Next</string>
+    <string name="shr_button_next">Login</string>
     <string name="shr_button_cancel">Cancel</string>
     <string name="shr_error_password">Password must contain at least 8 characters.</string>
     <string name="shr_incorrect_password">Password or Username is incorrect.</string>
@@ -20,4 +20,6 @@
     <string name="shr_bottoms_label">Bottoms</string>
     <string name="shr_dresses_label">Dresses</string>
     <string name="shr_account_label">My Account</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
 </resources>

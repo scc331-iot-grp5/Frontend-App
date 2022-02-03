@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:2:1-11:12
@@ -41,33 +41,33 @@ MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/cameronpugh/.gradle/c
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0-alpha03.aar/15ef585469a27e728e55524ac2441fad/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/34ca27f0f4d002281d7f07db590c8003/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0-alpha03.aar/5c70d37f718c128739e9d633c80648bc/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
 	package
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:3:5-50
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:3:5-50
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 	android:versionName
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 	android:versionCode
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:1-24:12
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 	xmlns:android
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:6:22-76
 application
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:8:5-23:19
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:8:5-23:19
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:22:5-20
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:9:5-20
@@ -79,37 +79,37 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Us
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:22:18-86
 	android:supportsRtl
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:13:9-35
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:13:9-35
 	android:label
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:11:9-45
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:11:9-45
 	android:roundIcon
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:12:9-54
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:12:9-54
 	android:icon
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:10:9-43
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:10:9-43
 	android:allowBackup
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:9:9-35
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:9:9-35
 	android:theme
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:15:9-44
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:15:9-44
 	android:name
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:14:9-89
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:14:9-89
 activity#com.google.codelabs.mdc.java.shrine.MainActivity
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:16:9-22:20
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:16:9-22:20
 	android:name
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:16:19-47
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:16:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:17:13-21:29
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:17:13-21:29
 action#android.intent.action.MAIN
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:18:17-69
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:18:17-69
 	android:name
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:18:25-66
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:18:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:20:17-77
+ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:20:17-77
 	android:name
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml:20:27-74
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:20:27-74
 uses-sdk
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:20:5-44
@@ -184,13 +184,13 @@ MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/cameronpugh/.g
 MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/34ca27f0f4d002281d7f07db590c8003/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0-alpha03.aar/5c70d37f718c128739e9d633c80648bc/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0-alpha03.aar/5c70d37f718c128739e9d633c80648bc/AndroidManifest.xml:20:5-44
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		ADDED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
-		INJECTED from /Users/cameronpugh/Downloads/app/java/shrine/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml

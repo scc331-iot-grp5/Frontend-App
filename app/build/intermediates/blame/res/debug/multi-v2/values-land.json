@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/cameronpugh/Downloads/app/java/shrine/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
+            "outputFile": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-land/values-land.xml",
             "map": [
                 {
                     "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/res/values-land/values-land.xml",

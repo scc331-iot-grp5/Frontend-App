@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/cameronpugh/Downloads/app/java/shrine/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
+            "outputFile": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/res/values-ms/values-ms.xml",
