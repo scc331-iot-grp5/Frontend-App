@@ -1,0 +1,4 @@
+#Thu Feb 03 13:00:17 GMT 2022
+base.0=/Users/cameronpugh/Downloads/app/java/shrine/app/build/intermediates/transforms/dexMerger/debug/0
+renamed.0=classes.dex
+path.0=classes.dex
