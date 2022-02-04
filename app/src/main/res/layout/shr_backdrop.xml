@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merge xmlns:android="http://schemas.android.com/apk/res/android">
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.button.MaterialButton
-        style="@style/Widget.Shrine.Button.TextButton"
+        android:id="@+id/home"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/shr_account_label" />
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/ic_round_home_24"
+        android:text="@string/home" />
 
     <com.google.android.material.button.MaterialButton
-        style="@style/Widget.Shrine.Button.TextButton"
+        android:id="@+id/addDevice"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/settings" />
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/ic_baseline_add_circle_24"
+        android:text="@string/add_device" />
+
+    <com.google.android.material.button.MaterialButton
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/ic_baseline_analytics_24"
+        android:text="@string/analytics" />
 
     <View
         android:layout_width="56dp"
@@ -21,9 +39,12 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/logout"
-        style="@style/Widget.Shrine.Button.TextButton"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/ic_baseline_login_24"
         android:text="@string/logout" />
 
 </merge>

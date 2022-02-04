@@ -6,9 +6,12 @@ INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/Andr
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:17:1-22:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:2:1-20:12
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:2:1-11:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:2:1-19:12
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/848693b2112eec2281b7aeb69b06d896/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager2:viewpager2:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/viewpager2-1.0.0-alpha02.aar/72229a1276d73be6d0a01cd80a265e35/AndroidManifest.xml:17:1-22:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-core-0.2.1.aar/fe52e6181ea38e8b3956a45b8a3b3798/AndroidManifest.xml:2:1-13:12
 MERGED from [androidx.appcompat:appcompat:1.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0-alpha03.aar/a017ab27118f8863f634e1278c0a3c87/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0-alpha03.aar/3d58a8131e31d8b4a600cb637c438722/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/vectordrawable-animated-1.0.0.aar/36afa8394d9f121226a8c3355e3b18c9/AndroidManifest.xml:17:1-22:12
@@ -20,6 +23,7 @@ MERGED from [androidx.vectordrawable:vectordrawable:1.1.0-alpha01] /Users/camero
 MERGED from [androidx.media:media:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/media-1.0.0.aar/0a2645dce25afa84e48db0f7e0773cb4/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/d9587ef0ca1650ddd53ab4c13104ddc4/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/2e3667c189764c36489c339d71d26251/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/9c4731ece8c0503625b7c15ff24b9831/AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.fragment:fragment:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0-alpha05.aar/6bc80a535981183e0c5fcb5b57e394dc/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/65b7e41e93da867afe1793af6ea72cc5/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/slidingpanelayout-1.0.0.aar/12e1abbe56f12e12355d62bc4534b3ed/AndroidManifest.xml:17:1-22:12
@@ -33,14 +37,18 @@ MERGED from [androidx.loader:loader:1.0.0] /Users/cameronpugh/.gradle/caches/tra
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/localbroadcastmanager-1.0.0.aar/38064bfc3fa39913ff14a47022f98891/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/91dbc4811a95efd79857256c148ab143/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.activity:activity:1.0.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/activity-1.0.0-alpha05.aar/830b3d63dd96451d145fb7f510a2d5cd/AndroidManifest.xml:17:1-22:12
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.3.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-gestures-0.3.0.aar/765d8414ebec6997bfa5538d74dac2fc/AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0-alpha02.aar/aa5132890fdd8ae18373f655631da47e/AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-2.0.0.aar/113361ead886c83c79eb7268666ee5b8/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/da53bb87264e43f1a1f5ba615ab07419/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/288e0e7b0cd7a2641542f65d6e2a2aa3/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-service-2.0.0.aar/a0ebb07fab70523817b8ec945a931cfd/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0-alpha03.aar/15ef585469a27e728e55524ac2441fad/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/34ca27f0f4d002281d7f07db590c8003/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0-alpha03.aar/5c70d37f718c128739e9d633c80648bc/AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-timber-4.7.1.aar/37d40dedc5e52d69f305629782fad801/AndroidManifest.xml:2:1-9:12
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
@@ -60,10 +68,14 @@ INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/Andr
 		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:16:5-67
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:16:5-67
 	android:name
 		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:6:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:17:5-79
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:17:5-79
 	android:name
 		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:6:22-76
 application
@@ -72,10 +84,18 @@ MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronp
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:22:5-20
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:9:5-20
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:9:5-20
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:15:5-17:19
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:15:5-17:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/9c4731ece8c0503625b7c15ff24b9831/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/9c4731ece8c0503625b7c15ff24b9831/AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0-alpha02.aar/aa5132890fdd8ae18373f655631da47e/AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0-alpha02.aar/aa5132890fdd8ae18373f655631da47e/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:22:5-28:19
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-timber-4.7.1.aar/37d40dedc5e52d69f305629782fad801/AndroidManifest.xml:7:5-20
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-timber-4.7.1.aar/37d40dedc5e52d69f305629782fad801/AndroidManifest.xml:7:5-20
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:22:18-86
 	android:supportsRtl
@@ -114,12 +134,18 @@ MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronp
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:20:5-44
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:5:5-7:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:7:5-43
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:7:5-43
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:11:5-13:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:11:5-13:41
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/848693b2112eec2281b7aeb69b06d896/AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/cardview-1.0.0.aar/848693b2112eec2281b7aeb69b06d896/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/viewpager2-1.0.0-alpha02.aar/72229a1276d73be6d0a01cd80a265e35/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager2:viewpager2:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/viewpager2-1.0.0-alpha02.aar/72229a1276d73be6d0a01cd80a265e35/AndroidManifest.xml:20:5-44
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-core-0.2.1.aar/fe52e6181ea38e8b3956a45b8a3b3798/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-core-0.2.1.aar/fe52e6181ea38e8b3956a45b8a3b3798/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.appcompat:appcompat:1.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0-alpha03.aar/a017ab27118f8863f634e1278c0a3c87/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0-alpha03.aar/a017ab27118f8863f634e1278c0a3c87/AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat-resources:1.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-resources-1.1.0-alpha03.aar/3d58a8131e31d8b4a600cb637c438722/AndroidManifest.xml:20:5-44
@@ -142,6 +168,8 @@ MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/cameronpugh/.gra
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/cursoradapter-1.0.0.aar/d9587ef0ca1650ddd53ab4c13104ddc4/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/2e3667c189764c36489c339d71d26251/AndroidManifest.xml:20:5-44
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/drawerlayout-1.0.0.aar/2e3667c189764c36489c339d71d26251/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/9c4731ece8c0503625b7c15ff24b9831/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-extensions-2.0.0.aar/9c4731ece8c0503625b7c15ff24b9831/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0-alpha05.aar/6bc80a535981183e0c5fcb5b57e394dc/AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/fragment-1.1.0-alpha05.aar/6bc80a535981183e0c5fcb5b57e394dc/AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/viewpager-1.0.0.aar/65b7e41e93da867afe1793af6ea72cc5/AndroidManifest.xml:20:5-44
@@ -168,6 +196,8 @@ MERGED from [androidx.print:print:1.0.0] /Users/cameronpugh/.gradle/caches/trans
 MERGED from [androidx.print:print:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/print-1.0.0.aar/91dbc4811a95efd79857256c148ab143/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/activity-1.0.0-alpha05.aar/830b3d63dd96451d145fb7f510a2d5cd/AndroidManifest.xml:20:5-44
 MERGED from [androidx.activity:activity:1.0.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/activity-1.0.0-alpha05.aar/830b3d63dd96451d145fb7f510a2d5cd/AndroidManifest.xml:20:5-44
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.3.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-gestures-0.3.0.aar/765d8414ebec6997bfa5538d74dac2fc/AndroidManifest.xml:7:5-9:41
+MERGED from [com.mapbox.mapboxsdk:mapbox-android-gestures:0.3.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-gestures-0.3.0.aar/765d8414ebec6997bfa5538d74dac2fc/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.1.0-alpha05] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-1.1.0-alpha05.aar/ed97cddf08767f70736652769bf086f2/AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/versionedparcelable-1.1.0-alpha02.aar/aa5132890fdd8ae18373f655631da47e/AndroidManifest.xml:20:5-44
@@ -178,12 +208,18 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/cameronpug
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-livedata-core-2.0.0.aar/da53bb87264e43f1a1f5ba615ab07419/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/288e0e7b0cd7a2641542f65d6e2a2aa3/AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/core-runtime-2.0.0.aar/288e0e7b0cd7a2641542f65d6e2a2aa3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-service-2.0.0.aar/a0ebb07fab70523817b8ec945a931cfd/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-service-2.0.0.aar/a0ebb07fab70523817b8ec945a931cfd/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0-alpha03.aar/15ef585469a27e728e55524ac2441fad/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-runtime-2.1.0-alpha03.aar/15ef585469a27e728e55524ac2441fad/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/34ca27f0f4d002281d7f07db590c8003/AndroidManifest.xml:20:5-44
 MERGED from [androidx.savedstate:savedstate:1.0.0-alpha02] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/savedstate-1.0.0-alpha02.aar/34ca27f0f4d002281d7f07db590c8003/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0-alpha03.aar/5c70d37f718c128739e9d633c80648bc/AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0-alpha03] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-viewmodel-2.1.0-alpha03.aar/5c70d37f718c128739e9d633c80648bc/AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-timber-4.7.1.aar/37d40dedc5e52d69f305629782fad801/AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton.timber:timber:4.7.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-timber-4.7.1.aar/37d40dedc5e52d69f305629782fad801/AndroidManifest.xml:5:5-43
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 	android:targetSdkVersion
@@ -194,3 +230,37 @@ INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/Andr
 		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 		ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+uses-feature#0x00020000
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:9:5-11:35
+	android:glEsVersion
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:10:9-41
+	android:required
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:11:9-32
+uses-feature#android.hardware.wifi
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:12:5-14:36
+	android:required
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:14:9-33
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:13:9-45
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:18:5-76
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:18:22-73
+service#com.mapbox.android.telemetry.TelemetryService
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:16:9-81
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-telemetry-3.5.6.aar/b508d42c35eacd9f97816569a2a7f47a/AndroidManifest.xml:16:18-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-core-0.2.1.aar/fe52e6181ea38e8b3956a45b8a3b3798/AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from [com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-core-0.2.1.aar/fe52e6181ea38e8b3956a45b8a3b3798/AndroidManifest.xml:11:22-76
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/lifecycle-process-2.0.0.aar/9dec68cd38be700afe25dc2b0b30f8b3/AndroidManifest.xml:24:13-79

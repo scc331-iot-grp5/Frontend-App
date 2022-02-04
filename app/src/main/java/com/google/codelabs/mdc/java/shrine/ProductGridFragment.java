@@ -37,7 +37,7 @@ public class ProductGridFragment extends Fragment {
 
         // Set up the toolbar
         setUpToolbar(view);
-
+        /*
         // Set up the RecyclerView
         RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
         recyclerView.setHasFixedSize(true);
@@ -48,19 +48,33 @@ public class ProductGridFragment extends Fragment {
         int largePadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing);
         int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small);
         recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
-
+        */
         // Set cut corner background for API 23+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             view.findViewById(R.id.product_grid).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
         }
 
         MaterialButton nextButton = view.findViewById(R.id.logout);
+        MaterialButton home = view.findViewById(R.id.home);
+        MaterialButton addDevice = view.findViewById(R.id.addDevice);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false); // Navigate to the next Fragment
+            }
+        });
+        home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false); // Navigate to the next Fragment
+            }
+        });
+        addDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AddDevice(), false); // Navigate to the next Fragment
             }
         });
 

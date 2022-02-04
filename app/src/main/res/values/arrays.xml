@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="planets_array">
+        <item>Select an Object</item>
+        <item>Car</item>
+        <item>Person</item>
+        <item>Road Mark</item>
+    </string-array>
+</resources>

@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/option_1"
+        android:title="@string/car" />
+    <item android:id="@+id/option_2"
+        android:title="@string/people" />
+    <item android:id="@+id/option_3"
+        android:title="@string/road_mark" />
+</menu>

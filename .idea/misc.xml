@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/gradient_spinner.xml" value="0.18888888888888888" />
+        <entry key="app/src/main/res/drawable/ic_add_24dp.xml" value="0.2598958333333333" />
+        <entry key="app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.2598958333333333" />
+        <entry key="app/src/main/res/drawable/ic_round_home_24.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/shr_branded_menu.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/shr_close_menu.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/shr_filter.xml" value="0.2598958333333333" />
@@ -10,7 +14,10 @@
         <entry key="app/src/main/res/drawable/shr_menu.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/shr_product_grid_background_shape.xml" value="0.2598958333333333" />
         <entry key="app/src/main/res/drawable/shr_search.xml" value="0.2598958333333333" />
-        <entry key="app/src/main/res/layout-v21/shr_product_grid_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.18888888888888888" />
+        <entry key="app/src/main/res/layout-v21/add_device.xml" value="0.22" />
+        <entry key="app/src/main/res/layout-v21/shr_product_grid_fragment.xml" value="0.11" />
+        <entry key="app/src/main/res/layout/add_device.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_backdrop.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_login_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/shr_product_card.xml" value="0.24375" />
@@ -18,6 +25,7 @@
         <entry key="app/src/main/res/layout/shr_staggered_product_card_first.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_staggered_product_card_second.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_staggered_product_card_third.xml" value="0.24375" />
+        <entry key="app/src/main/res/menu/objects.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/menu/shr_toolbar_menu.xml" value="0.24375" />
       </map>
     </option>
