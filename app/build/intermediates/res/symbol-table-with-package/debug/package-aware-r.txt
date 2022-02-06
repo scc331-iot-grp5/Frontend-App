@@ -1334,6 +1334,7 @@ drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_directions_car_24
 drawable ic_baseline_login_24
+drawable ic_blje_background
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
 drawable ic_launcher_background
@@ -1344,6 +1345,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_orange_background
 drawable ic_outline_map_24
 drawable ic_round_devices_other_24
 drawable ic_round_home_24
@@ -1826,8 +1828,16 @@ layout test_toolbar_elevation
 layout test_toolbar_surface
 menu objects
 menu shr_toolbar_menu
+mipmap ic_blje
+mipmap ic_blje_foreground
+mipmap ic_blje_round
+mipmap ic_blue
+mipmap ic_green
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap ic_orange
+mipmap ic_orange_foreground
+mipmap ic_orange_round
 plurals mtrl_badge_content_description
 raw products
 string abc_action_bar_home_description
