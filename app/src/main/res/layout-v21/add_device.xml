@@ -135,7 +135,7 @@
                 mapbox:mapbox_cameraTargetLat="54.00974373834193"
                 mapbox:mapbox_cameraTargetLng="-2.786445233398231"
                 mapbox:mapbox_renderTextureMode="true"
-                mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"
+                mapbox:mapbox_styleUrl="mapbox://styles/cameronpugh282/ckzbb4w7y003v15mu26o1x0ag"
                 mapbox:mapbox_cameraZoom="15" />
 
             <View

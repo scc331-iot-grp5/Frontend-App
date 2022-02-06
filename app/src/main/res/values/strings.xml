@@ -43,4 +43,5 @@
     <string name="base_configuration">Base Configuration</string>
     <string name="select_a_location">Select a Location</string>
     <string name="optional_configuration">Optional Configuration</string>
+    <string name="map">Map</string>
 </resources>

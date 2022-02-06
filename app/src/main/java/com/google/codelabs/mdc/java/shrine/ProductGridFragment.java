@@ -57,6 +57,7 @@ public class ProductGridFragment extends Fragment {
         MaterialButton nextButton = view.findViewById(R.id.logout);
         MaterialButton home = view.findViewById(R.id.home);
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
+        MaterialButton map = view.findViewById(R.id.map);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -75,6 +76,12 @@ public class ProductGridFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new AddDevice(), false); // Navigate to the next Fragment
+            }
+        });
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
             }
         });
 

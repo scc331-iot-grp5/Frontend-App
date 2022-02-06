@@ -1344,6 +1344,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_outline_map_24
 drawable ic_round_devices_other_24
 drawable ic_round_home_24
 drawable mapbox_compass_icon
@@ -1547,7 +1548,9 @@ id listMode
 id list_item
 id logoView
 id logout
+id map
 id mapView
+id mapView2
 id markerViewContainer
 id masked
 id media_actions
@@ -1767,6 +1770,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout display_map
 layout mapbox_attribution_list_item
 layout mapbox_infowindow_content
 layout mapbox_mapview_internal
@@ -1879,6 +1883,7 @@ string label
 string logout
 string m_length
 string m_letters
+string map
 string mapbox_attributionErrorNoBrowser
 string mapbox_attributionTelemetryMessage
 string mapbox_attributionTelemetryNegative
