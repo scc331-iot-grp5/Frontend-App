@@ -105,7 +105,7 @@ public class LoginFragment extends Fragment {
                     }
                 });
 
-        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest);
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
     }
 
     public Context getApplicationContext() {

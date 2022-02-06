@@ -10,6 +10,15 @@
     <string name="shr_search_title">Search</string>
     <string name="shr_product_title">Title</string>
     <string name="shr_product_description">Secondary text</string>
+    <string name="m_length">MicrobitID must be 4 digits</string>
+    <string name="s_length">Speed Limit must be at least 1 digits</string>
+    <string name="m_letters">Must only contain numbers</string>
+    <string name="o_error">Please select an Object type</string>
+
+    <string name="d_tittle">Confirm</string>
+    <string name="d_extra">Are you sure you want to add this device?</string>
+    <string name="d_add">Add</string>
+    <string name="d_cancel">Cancel</string>
 
     <!-- Shrine backdrop menu labels -->
     <string name="shr_featured_label">Featured</string>
@@ -30,4 +39,8 @@
     <string name="car">Car</string>
     <string name="people">People</string>
     <string name="road_mark">Road Mark</string>
+    <string name="speed_limit">Speed Limit</string>
+    <string name="base_configuration">Base Configuration</string>
+    <string name="select_a_location">Select a Location</string>
+    <string name="optional_configuration">Optional Configuration</string>
 </resources>

@@ -47,6 +47,7 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 animator shr_next_button_state_list_anim
+array Road_array
 array planets_array
 attr actionBarDivider
 attr actionBarItemBackground
@@ -1552,6 +1553,7 @@ id masked
 id media_actions
 id message
 id microbitText
+id microbitTextInput
 id middle
 id mini
 id month_bar
@@ -1598,6 +1600,7 @@ id recycler_view
 id right
 id right_icon
 id right_side
+id roadType
 id rounded
 id save_image_matrix
 id save_non_transition_alpha
@@ -1633,6 +1636,8 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
+id speedLimit
+id speedLimitInput
 id spinner
 id split_action_bar
 id src_atop
@@ -1658,6 +1663,9 @@ id textEnd
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
+id textView3
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1849,6 +1857,7 @@ string add_device
 string analytics
 string app_name
 string appbar_scrolling_view_behavior
+string base_configuration
 string bottom_sheet_behavior
 string car
 string character_counter_content_description
@@ -1856,6 +1865,10 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string d_add
+string d_cancel
+string d_extra
+string d_tittle
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
@@ -1864,6 +1877,8 @@ string home
 string icon_content_description
 string label
 string logout
+string m_length
+string m_letters
 string mapbox_attributionErrorNoBrowser
 string mapbox_attributionTelemetryMessage
 string mapbox_attributionTelemetryNegative
@@ -1897,7 +1912,9 @@ string mtrl_picker_header_prompt
 string mtrl_picker_header_selected
 string mtrl_picker_range_header_prompt
 string mtrl_picker_range_header_selected
+string o_error
 string objectid
+string optional_configuration
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -1905,7 +1922,9 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string people
 string road_mark
+string s_length
 string search_menu_title
+string select_a_location
 string settings
 string shr_accessories_label
 string shr_account_label
@@ -1926,6 +1945,7 @@ string shr_product_title
 string shr_search_title
 string shr_shoes_label
 string shr_tops_label
+string speed_limit
 string status_bar_notification_info_overflow
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
@@ -2290,6 +2310,7 @@ style TextAppearance_MaterialComponents_Subtitle2
 style TextAppearance_Shrine_TextInputLayout_HintText
 style TextAppearance_Shrine_Title
 style TextAppearance_Shrine_Toolbar
+style TextAppearance_Shrine_heading
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title

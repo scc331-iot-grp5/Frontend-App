@@ -73,8 +73,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginEnd="138dp"
-                android:layout_marginRight="138dp"
+                android:layout_marginEnd="128dp"
+                android:layout_marginRight="128dp"
                 android:text="@string/shr_button_next" />
 
         </RelativeLayout>

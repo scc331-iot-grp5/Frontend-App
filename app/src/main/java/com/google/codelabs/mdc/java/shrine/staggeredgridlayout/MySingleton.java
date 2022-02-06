@@ -1,5 +1,6 @@
 package com.google.codelabs.mdc.java.shrine.staggeredgridlayout;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.LruCache;
 
@@ -14,9 +15,9 @@ public class MySingleton {
     private static MySingleton instance;
     private RequestQueue requestQueue;
     private final ImageLoader imageLoader;
-    private static LoginFragment ctx;
+    private static Context ctx;
 
-    private MySingleton(LoginFragment context) {
+    private MySingleton(Context context) {
         ctx = context;
         requestQueue = getRequestQueue();
 
@@ -37,7 +38,7 @@ public class MySingleton {
                 });
     }
 
-    public static synchronized MySingleton getInstance(LoginFragment context) {
+    public static synchronized MySingleton getInstance(Context context) {
         if (instance == null) {
             instance = new MySingleton(context);
         }

@@ -4,14 +4,19 @@ package com.google.codelabs.mdc.java.shrine;
 import android.os.Build;
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 
+import android.text.Editable;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -21,7 +26,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
 import com.mapbox.mapboxsdk.geometry.LatLng;
@@ -29,7 +42,17 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
-public class AddDevice extends Fragment {
+import org.json.JSONObject;
+
+import java.util.regex.Pattern;
+
+public class AddDevice extends Fragment implements OnItemSelectedListener {
+
+        public String objectName = "";
+        public String roadName = "";
+        TextInputLayout speedLimitTextInput;
+        TextInputLayout microbitTextInput;
+        LatLng gPoint;
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -50,14 +73,18 @@ public class AddDevice extends Fragment {
             setUpToolbar(view);
 
             Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
-            // Create an ArrayAdapter using the string array and a default spinner layout
+            spinner.setOnItemSelectedListener(this);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                     R.array.planets_array, android.R.layout.simple_spinner_item);
-            // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            // Apply the adapter to the spinner
-            spinner.setPrompt("Please select ");
             spinner.setAdapter(adapter);
+
+            Spinner spinnerTwo = (Spinner) view.findViewById(R.id.roadType);
+            spinnerTwo.setOnItemSelectedListener(this);
+            ArrayAdapter<CharSequence> adapterTwo = ArrayAdapter.createFromResource(getContext(),
+                    R.array.Road_array, android.R.layout.simple_spinner_item);
+            adapterTwo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+            spinnerTwo.setAdapter(adapterTwo);
 
             MapView mapView = view.findViewById(R.id.mapView);
             mapView.onCreate(savedInstanceState);
@@ -69,6 +96,7 @@ public class AddDevice extends Fragment {
                         @Override
                         public void onMapClick(@NonNull LatLng point) {
                             mapboxMap.clear();
+                            gPoint = point;
                             Toast.makeText(getContext(), String.format("Location Selected at: %s", point.toString()), Toast.LENGTH_LONG).show();
                             mapboxMap.addMarker(new MarkerOptions()
                                     .position(point)
@@ -78,20 +106,6 @@ public class AddDevice extends Fragment {
                 }
             });
 
-
-
-        /*
-        // Set up the RecyclerView
-        RecyclerView recyclerView = view.findViewById(R.id.recycler_view);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(getContext(), 2, GridLayoutManager.VERTICAL, false));
-        ProductCardRecyclerViewAdapter adapter = new ProductCardRecyclerViewAdapter(
-                ProductEntry.initProductEntryList(getResources()));
-        recyclerView.setAdapter(adapter);
-        int largePadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing);
-        int smallPadding = getResources().getDimensionPixelSize(R.dimen.shr_product_grid_spacing_small);
-        recyclerView.addItemDecoration(new ProductGridItemDecoration(largePadding, smallPadding));
-        */
             // Set cut corner background for API 23+
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 view.findViewById(R.id.product_grid).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
@@ -121,7 +135,125 @@ public class AddDevice extends Fragment {
                 }
             });
 
+            MaterialButton add = view.findViewById(R.id.add);
+            microbitTextInput = view.findViewById(R.id.microbitText);
+            final TextInputEditText microbitEditText = view.findViewById(R.id.microbitTextInput);
+
+            speedLimitTextInput = view.findViewById(R.id.speedLimit);
+            final TextInputEditText speedLimitEditText = view.findViewById(R.id.speedLimitInput);
+
+            // Set an error if the password is less than 8 characters.
+            add.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!isMValid(microbitEditText.getText())) {
+                        microbitTextInput.setError(getString(R.string.m_length));
+                    }
+                    else if(!objectName.equals("Select an Object")) {
+                        new MaterialAlertDialogBuilder(getContext())
+                                .setTitle(R.string.d_tittle)
+                                .setMessage(R.string.d_extra)
+                                .setPositiveButton(R.string.d_add, (dialog, which) -> {
+                                    JSONObject json = new JSONObject();
+                                    String s;
+                                    if (roadName.equals("Select a Road Type")) {
+                                        roadName = "undefined";
+                                    }
+                                    s = "undefined";
+                                    if (speedLimitEditText.getText() != null) {
+                                        s = speedLimitEditText.getText().toString();
+                                    }
+                                    String ll = "undefined";
+                                    if (gPoint != null) {
+                                        ll = gPoint.toString();
+                                    }
+                                    try {
+                                        json.put("roadType", roadName);
+                                        json.put("object", objectName);
+                                        json.put("microbitID", microbitEditText.getText().toString());
+                                        json.put("speedLimit", s);
+                                        json.put("lat_long", ll);
+                                    } catch (Exception e) {
+                                    }
+
+                                    String url = "https://f074-86-4-178-72.ngrok.io/addDevice";
+
+                                    JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                                            (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
+                                                @Override
+                                                public void onResponse(JSONObject response) {
+                                                    // TODO: Handle error
+                                                }
+                                            }, new Response.ErrorListener() {
+                                                @Override
+                                                public void onErrorResponse(VolleyError error) {
+                                                    // TODO: Handle error
+
+                                                }
+                                            });
+
+                                    MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
+                                })
+                                .setNegativeButton(R.string.d_cancel, (dialog, which) -> {
+
+                                })
+                                .show();
+                    }
+                    else{
+                        microbitTextInput.setError(getString(R.string.o_error));
+                    }
+                }
+            });
+
+            // Clear the error
+            microbitEditText.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                    if (isMValid(microbitEditText.getText())) {
+                        microbitTextInput.setError(null); //Clear the error
+                    }
+                    else if(containsLetters(microbitEditText.getText())) {
+                        microbitTextInput.setError(getString(R.string.m_letters));
+                    }
+                    else if(!containsLetters(microbitEditText.getText())) {
+                        microbitTextInput.setError(null); //Clear the error
+                    }
+                    return false;
+                }
+            });
+
+            speedLimitEditText.setOnKeyListener(new View.OnKeyListener() {
+                @Override
+                public boolean onKey(View view, int i, KeyEvent keyEvent) {
+                    if (isSValid(speedLimitEditText.getText())) {
+                        speedLimitTextInput.setError(null);
+                    }
+                    else if(containsLetters(speedLimitEditText.getText())) {
+                        speedLimitTextInput.setError(getString(R.string.m_letters));
+                    }
+                    else if(!containsLetters(speedLimitEditText.getText())) {
+                        speedLimitTextInput.setError(null); //Clear the error
+                    }
+                    return false;
+                }
+            });
+
             return view;
+        }
+        private boolean isMValid(@Nullable Editable text) {
+            return text != null && text.length() == 4;
+        }
+        private boolean isSValid(@Nullable Editable text) {
+            if(text != null && text.length() > 1){
+                return true;
+            }
+            else if(text == null){
+                return true;
+            }
+            return false;
+        }
+        private boolean containsLetters(@Nullable Editable text) {
+            return Pattern.matches("[a-zA-Z]+", text.toString());
         }
 
         private void setUpToolbar(View view) {
@@ -147,4 +279,25 @@ public class AddDevice extends Fragment {
         }
 
 
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        Spinner spinner = (Spinner) adapterView;
+        if (spinner.getId() == R.id.spinner) {
+            microbitTextInput.setError(null);
+            objectName = adapterView.getItemAtPosition(i).toString();
+            if(objectName.equals("Road Mark")){
+                speedLimitTextInput.setEnabled(true);
+            }
+            else{
+                speedLimitTextInput.setEnabled(false);
+            }
+        }else if (spinner.getId() == R.id.roadType) {
+            roadName = adapterView.getItemAtPosition(i).toString();
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }

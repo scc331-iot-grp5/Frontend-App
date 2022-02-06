@@ -22,7 +22,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="ExtraText">
+        tools:ignore="ExtraText"
         app:elevation="0dp">
 
 
@@ -61,6 +61,14 @@
             android:padding="6dp"
             android:paddingTop="15dp">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/base_configuration"
+                android:textAppearance="@style/TextAppearance.Shrine.heading"/>
+
             <com.google.android.material.textfield.TextInputLayout
 
                 android:id="@+id/microbitText"
@@ -74,11 +82,13 @@
                 app:endIconMode="clear_text">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/microbitTextInput"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:maxLines="1"/>
 
             </com.google.android.material.textfield.TextInputLayout>
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -111,6 +121,13 @@
                 android:layout_margin="14dp"
                 android:background="#DD000000" />
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Shrine.heading"
+                android:text="@string/select_a_location" />
+
             <com.mapbox.mapboxsdk.maps.MapView
                 android:id="@+id/mapView"
                 android:layout_width="match_parent"
@@ -120,6 +137,83 @@
                 mapbox:mapbox_renderTextureMode="true"
                 mapbox:mapbox_styleUrl="@string/mapbox_style_mapbox_streets"
                 mapbox:mapbox_cameraZoom="15" />
+
+            <View
+                android:layout_width="333dp"
+                android:layout_height="1dp"
+                android:layout_margin="14dp"
+                android:background="#DD000000" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.Shrine.heading"
+                android:text="@string/optional_configuration" />
+
+            <com.google.android.material.textfield.TextInputLayout
+
+                android:id="@+id/speedLimit"
+                android:enabled="false"
+                style="@style/Widget.Shrine.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="10dp"
+                android:hint="@string/speed_limit"
+                app:startIconDrawable="@drawable/ic_baseline_directions_car_24"
+                app:endIconMode="clear_text">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:enabled="false"
+                    android:id="@+id/speedLimitInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:maxLines="1"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="2dp"
+                android:background="@color/colorPrimaryDark"
+                android:backgroundTint="#42000000"
+                >
+
+                <Spinner
+                    android:id="@+id/roadType"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/productGridBackgroundColor"
+                    android:minHeight="48dp"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="8dp"
+                    app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/add"
+                    style="@style/Widget.Shrine.Button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="128dp"
+                    android:text="@string/add_device" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 

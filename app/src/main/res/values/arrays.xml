@@ -6,4 +6,9 @@
         <item>Person</item>
         <item>Road Mark</item>
     </string-array>
+    <string-array name="Road_array">
+        <item>Select a Road Type</item>
+        <item>One Way</item>
+        <item>Both Ways</item>
+    </string-array>
 </resources>
