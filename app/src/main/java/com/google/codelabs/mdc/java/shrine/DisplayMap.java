@@ -13,6 +13,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -45,10 +47,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.Map;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class DisplayMap extends Fragment {
     RequestQueue queue;
     String gResponce;
+    int r = 1;
+    int c = 1;
+    int p = 1;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +83,49 @@ public class DisplayMap extends Fragment {
         MaterialButton home = view.findViewById(R.id.home);
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
+        CheckBox c1 = view.findViewById(R.id.c1);
+        CheckBox c2 = view.findViewById(R.id.c2);
+        CheckBox c3 = view.findViewById(R.id.c3);
+        c1.setChecked(true);
+        c2.setChecked(true);
+        c3.setChecked(true);
+        c1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                   c = 1;
+                } else{
+                    c = 0;
+                }
+                updateMap(view,savedInstanceState);
+            }
+        });
+        c2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    p = 1;
+                } else{
+                    p = 0;
+                }
+                updateMap(view,savedInstanceState);
+            }
+        });
+        c3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener()
+        {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    r = 1;
+                } else{
+                    r = 0;
+                }
+                updateMap(view,savedInstanceState);
+            }
+        });
+
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -102,6 +153,23 @@ public class DisplayMap extends Fragment {
             }
         });
 
+        Timer t = new Timer();
+
+        t.scheduleAtFixedRate(
+                new TimerTask()
+                {
+                    public void run()
+                    {
+                        updateMap(view,savedInstanceState);
+                    }
+                },
+                0,      // run first occurrence immediately
+                30000);  // run every three seconds
+
+        return view;
+    }
+
+    private void updateMap(View view, Bundle savedInstanceState){
         MapView mapView = view.findViewById(R.id.mapView2);
         mapView.onCreate(savedInstanceState);
 
@@ -109,7 +177,7 @@ public class DisplayMap extends Fragment {
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 String url = "https://f074-86-4-178-72.ngrok.io/map";
-
+                mapboxMap.clear();
                 StringRequest jsonObjectRequest = new StringRequest
                         (Request.Method.GET, url, new Response.Listener<String>(){
                             @Override
@@ -117,6 +185,7 @@ public class DisplayMap extends Fragment {
                                 try {
                                     JSONObject object=new JSONObject(response);
                                     JSONArray array=object.getJSONArray("loc");
+                                    System.out.println("Refresh");
                                     for(int i=0;i<array.length();i++) {
                                         JSONObject object1 = array.getJSONObject(i);
                                         Double x = (Double) object1.get("latitude");
@@ -126,19 +195,19 @@ public class DisplayMap extends Fragment {
                                         Icon personMark = IconFactory.getInstance(getContext()).fromResource(R.mipmap.ic_blje_foreground);
                                         Icon carMark = IconFactory.getInstance(getContext()).fromResource(R.mipmap.ic_orange_foreground);
 
-                                        if ((object1.get("name")).equals("RoadMark")) {
+                                        if (((object1.get("name")).equals("RoadMark"))&& r ==1) {
                                             mapboxMap.addMarker(new MarkerOptions()
                                                     .position(newPoint)
                                                     .title("point"));
                                         }
-                                        else if((object1.get("name")).equals("Car")){
+                                        else if(((object1.get("name")).equals("Car"))&& c ==1){
                                             mapboxMap.addMarker(new MarkerOptions()
                                                     .position(newPoint)
                                                     .title("point"))
                                                     .setIcon(carMark);
 
                                         }
-                                        else if((object1.get("name")).equals("Person")){
+                                        else if(((object1.get("name")).equals("Person"))&& p ==1){
                                             mapboxMap.addMarker(new MarkerOptions()
                                                     .position(newPoint)
                                                     .title("point"))
@@ -160,28 +229,8 @@ public class DisplayMap extends Fragment {
                 queue.add(jsonObjectRequest);
             }
         });
-
-        return view;
     }
-    private void getMapData(){
-        String url = "https://f074-86-4-178-72.ngrok.io/map";
 
-        StringRequest jsonObjectRequest = new StringRequest
-                (Request.Method.GET, url, new Response.Listener<String>(){
-                    @Override
-                    public void onResponse(String response) {
-                        //System.out.println(response);
-                        gResponce = response;
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        // TODO: Handle error
-
-                    }
-                });
-        queue.add(jsonObjectRequest);
-    }
     private void setUpToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.app_bar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();

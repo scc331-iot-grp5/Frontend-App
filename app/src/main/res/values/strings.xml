@@ -44,4 +44,5 @@
     <string name="select_a_location">Select a Location</string>
     <string name="optional_configuration">Optional Configuration</string>
     <string name="map">Map</string>
+    <string name="map_of_all_objects">Map of all Objects:</string>
 </resources>

@@ -170,16 +170,19 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                                     if (speedLimitEditText.getText() != null) {
                                         s = speedLimitEditText.getText().toString();
                                     }
-                                    String ll = "undefined";
+                                    Double lat = 0.0;
+                                    Double lon = 0.0;
                                     if (gPoint != null) {
-                                        ll = gPoint.toString();
+                                        lat = gPoint.getLatitude();
+                                        lon = gPoint.getLongitude();
                                     }
                                     try {
                                         json.put("roadType", roadName);
                                         json.put("object", objectName);
                                         json.put("microbitID", microbitEditText.getText().toString());
                                         json.put("speedLimit", s);
-                                        json.put("lat_long", ll);
+                                        json.put("lat", lat);
+                                        json.put("long", lon);
                                     } catch (Exception e) {
                                     }
 

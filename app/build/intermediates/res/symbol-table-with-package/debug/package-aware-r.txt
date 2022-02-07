@@ -1472,6 +1472,9 @@ id beginning
 id blocking
 id bottom
 id buttonPanel
+id c1
+id c2
+id c3
 id calendar_days_header
 id calendar_frame
 id cancel_action
@@ -1894,6 +1897,7 @@ string logout
 string m_length
 string m_letters
 string map
+string map_of_all_objects
 string mapbox_attributionErrorNoBrowser
 string mapbox_attributionTelemetryMessage
 string mapbox_attributionTelemetryNegative
