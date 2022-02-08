@@ -24,6 +24,7 @@
         <entry key="app/src/main/res/layout-v21/shr_product_grid_fragment.xml" value="0.11" />
         <entry key="app/src/main/res/layout/add_device.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/display_map.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/recyclerview_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/shr_backdrop.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_login_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/shr_main_activity.xml" value="0.28055555555555556" />
@@ -32,6 +33,7 @@
         <entry key="app/src/main/res/layout/shr_staggered_product_card_first.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_staggered_product_card_second.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/shr_staggered_product_card_third.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/user.xml" value="0.24351851851851852" />
         <entry key="app/src/main/res/menu/objects.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/menu/shr_toolbar_menu.xml" value="0.24375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_blje.xml" value="0.14739583333333334" />

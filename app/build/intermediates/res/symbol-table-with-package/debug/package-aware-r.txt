@@ -1334,6 +1334,7 @@ drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_directions_car_24
 drawable ic_baseline_login_24
+drawable ic_baseline_person_24
 drawable ic_blje_background
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
@@ -1610,6 +1611,7 @@ id right_icon
 id right_side
 id roadType
 id rounded
+id rvAnimals
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1696,7 +1698,10 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id userID
+id username
 id username_edit_text
+id users
 id view_offset_helper
 id visible
 id withText
@@ -1811,6 +1816,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout recyclerview_row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1829,6 +1835,7 @@ layout test_toolbar
 layout test_toolbar_custom_background
 layout test_toolbar_elevation
 layout test_toolbar_surface
+layout user
 menu objects
 menu shr_toolbar_menu
 mipmap ic_blje
@@ -1896,6 +1903,7 @@ string label
 string logout
 string m_length
 string m_letters
+string manage_users
 string map
 string map_of_all_objects
 string mapbox_attributionErrorNoBrowser

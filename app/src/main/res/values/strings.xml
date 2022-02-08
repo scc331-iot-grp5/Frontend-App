@@ -45,4 +45,5 @@
     <string name="optional_configuration">Optional Configuration</string>
     <string name="map">Map</string>
     <string name="map_of_all_objects">Map of all Objects:</string>
+    <string name="manage_users">Manage Users</string>
 </resources>

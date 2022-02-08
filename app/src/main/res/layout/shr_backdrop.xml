@@ -33,6 +33,16 @@
         android:text="@string/map" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/users"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/ic_baseline_person_24"
+        android:text="@string/manage_users" />
+
+    <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

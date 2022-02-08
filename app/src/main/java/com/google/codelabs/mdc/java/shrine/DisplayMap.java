@@ -83,6 +83,8 @@ public class DisplayMap extends Fragment {
         MaterialButton home = view.findViewById(R.id.home);
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
+        MaterialButton user = view.findViewById(R.id.users);
+
         CheckBox c1 = view.findViewById(R.id.c1);
         CheckBox c2 = view.findViewById(R.id.c2);
         CheckBox c3 = view.findViewById(R.id.c3);
@@ -150,6 +152,12 @@ public class DisplayMap extends Fragment {
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
+            }
+        });
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
             }
         });
 

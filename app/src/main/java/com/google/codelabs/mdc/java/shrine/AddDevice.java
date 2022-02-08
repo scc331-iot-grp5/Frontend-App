@@ -115,6 +115,7 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
             MaterialButton home = view.findViewById(R.id.home);
             MaterialButton addDevice = view.findViewById(R.id.addDevice);
             MaterialButton map = view.findViewById(R.id.map);
+            MaterialButton user = view.findViewById(R.id.users);
 
             // Set an error if the password is less than 8 characters.
             nextButton.setOnClickListener(new View.OnClickListener() {
@@ -139,6 +140,12 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                 @Override
                 public void onClick(View view) {
                     ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
+                }
+            });
+            user.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
                 }
             });
 
