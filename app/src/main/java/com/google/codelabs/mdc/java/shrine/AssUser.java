@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
 
 import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -40,6 +41,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.codelabs.mdc.java.shrine.network.ProductEntry;
 import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.Icon;
@@ -55,15 +57,15 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Pattern;
 
 public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
 
     MyRecyclerViewAdapter adapter;
     RequestQueue queue;
-    ArrayList<String> names = new ArrayList<>();
-    ArrayList<String> ids = new ArrayList<>();
-    ArrayList<String> urls = new ArrayList<>();
+    ArrayList<ProductEntry> people = new ArrayList<>();
+
     MyRecyclerViewAdapter.ItemClickListener x;
 
     @Override
@@ -83,6 +85,15 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         // Set up the toolbar
         setUpToolbar(view);
 
+        // set up the RecyclerView
+        RecyclerView recyclerView = view.findViewById(R.id.rvAnimals);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
+        recyclerView.addItemDecoration(dividerItemDecoration);
+        adapter = new MyRecyclerViewAdapter(getContext(),people);
+        adapter.setClickListener(x);
+        recyclerView.setAdapter(adapter);
         // data to populate the RecyclerView with
         String url = "https://f074-86-4-178-72.ngrok.io/users";
 
@@ -100,22 +111,11 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
                                 String name = (String) object1.get("name");
                                 String url = (String) object1.get("url");
 
-
-                                names.add((name));
-                                urls.add(url);
-                                ids.add(Integer.toString(userID));
+                                ProductEntry a = new ProductEntry(name, userID, url);
+                                people.add(a);
+                                adapter.updateList(people);
 
                             }
-                            // set up the RecyclerView
-                            RecyclerView recyclerView = view.findViewById(R.id.rvAnimals);
-                            LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-                            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-                            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
-                            recyclerView.addItemDecoration(dividerItemDecoration);
-                            adapter = new MyRecyclerViewAdapter(getContext(), names, urls, ids);
-                            adapter.setClickListener(x);
-                            recyclerView.setAdapter(adapter);
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -130,7 +130,28 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
 
         queue.add(jsonObjectRequest);
 
+        TextInputEditText searchField = view.findViewById(R.id.search_edit_text);
+        searchField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                // TODO Auto-generated method stub
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                // filter your list from your input
+                filter(s.toString());
+                //you can use runnable postDelayed like 500 ms to delay search text
+            }
+        });
 
         // Set cut corner background for API 23+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -179,6 +200,18 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
 
         return view;
     }
+    void filter(String text){
+        ArrayList<ProductEntry> temp = new ArrayList();
+        for(ProductEntry d: people){
+            //or use .equal(text) with you want equal match
+            //use .toLowerCase() for better matches
+            if(d.getName().toLowerCase().contains(text.toLowerCase()) || Integer.toString(d.getUserID()).contains(text)){
+                temp.add(d);
+            }
+        }
+        //update recyclerview
+        adapter.updateList(temp);
+    }
     private void setUpToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.app_bar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
@@ -204,6 +237,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        ((NavigationHost) getActivity()).navigateTo(new EditUser(adapter.getItem(position)), false); // Navigate to the next Fragment
+        //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,9 +1,11 @@
 package com.google.codelabs.mdc.java.shrine;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SectionIndexer;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -11,26 +13,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.toolbox.NetworkImageView;
 import com.google.codelabs.mdc.java.shrine.network.ImageRequester;
+import com.google.codelabs.mdc.java.shrine.network.ProductEntry;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAdapter.ViewHolder> {
 
-    private List<String> mData;
-    private List<String> uData;
-    private List<String> iData;
+    private List<ProductEntry> mData;
+
     private LayoutInflater mInflater;
     private ItemClickListener mClickListener;
     private ImageRequester imageRequester;
 
+
     // data is passed into the constructor
-    MyRecyclerViewAdapter(Context context, List<String> data,List<String> data2,List<String> data3) {
+    MyRecyclerViewAdapter(Context context, List<ProductEntry> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
-        this.uData = data2;
-        this.iData = data3;
         imageRequester = ImageRequester.getInstance();
-
     }
 
     // inflates the row layout from xml when needed
@@ -43,10 +45,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        String animal = mData.get(position);
+        String animal = mData.get(position).getName();
         holder.myTextView.setText(animal);
-        String image = uData.get(position);
-        String id = iData.get(position);
+        String image = mData.get(position).getURL();
+        String id = Integer.toString(mData.get(position).getUserID());
         holder.login.setText(id);
         imageRequester.setImageFromUrl(holder.productImage, image);
     }
@@ -79,8 +81,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     // convenience method for getting data at click position
-    String getItem(int id) {
-        return mData.get(id);
+    int getItem(int id) {
+        return mData.get(id).getUserID();
     }
 
     // allows clicks events to be caught
@@ -91,5 +93,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
         void onItemClick(View view, int position);
+    }
+
+    public void updateList(List<ProductEntry> list){
+        mData = list;
+        notifyDataSetChanged();
     }
 }

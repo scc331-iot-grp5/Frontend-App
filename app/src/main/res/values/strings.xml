@@ -46,4 +46,7 @@
     <string name="map">Map</string>
     <string name="map_of_all_objects">Map of all Objects:</string>
     <string name="manage_users">Manage Users</string>
+    <string name="search">Search</string>
+    <string name="user_details">User Details</string>
+    <string name="assigned_devices">Assigned Devices</string>
 </resources>

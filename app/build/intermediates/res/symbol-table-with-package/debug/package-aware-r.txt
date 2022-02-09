@@ -187,6 +187,10 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr chipSurfaceColor
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
 attr closeIcon
 attr closeIconEnabled
 attr closeIconEndPadding
@@ -1333,6 +1337,7 @@ drawable ic_baseline_add_circle_24
 drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_directions_car_24
+drawable ic_baseline_email_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_24
 drawable ic_blje_background
@@ -1350,6 +1355,8 @@ drawable ic_orange_background
 drawable ic_outline_map_24
 drawable ic_round_devices_other_24
 drawable ic_round_home_24
+drawable line
+drawable line_drawable
 drawable mapbox_compass_icon
 drawable mapbox_info_bg_selector
 drawable mapbox_info_icon_default
@@ -1399,10 +1406,13 @@ drawable shr_product_grid_background_shape
 drawable shr_search
 drawable spinner_background
 drawable test_custom_background
+drawable thumb
+drawable thumb_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 id ALT
 id CTRL
+id Contact
 id FUNCTION
 id META
 id SHIFT
@@ -1469,6 +1479,7 @@ id app_bar
 id async
 id attributionView
 id auto
+id background
 id beginning
 id blocking
 id bottom
@@ -1515,6 +1526,7 @@ id dialog_button
 id disableHome
 id dropdown_menu
 id edit_query
+id email
 id end
 id end_padder
 id enterAlways
@@ -1550,10 +1562,15 @@ id largeLabel
 id left
 id line1
 id line3
+id listMicrobits
 id listMode
 id list_item
 id logoView
 id logout
+id m_name
+id m_name2
+id m_name4
+id m_object
 id map
 id mapView
 id mapView2
@@ -1561,6 +1578,8 @@ id markerViewContainer
 id masked
 id media_actions
 id message
+id microbitID
+id microbitIddD
 id microbitText
 id microbitTextInput
 id middle
@@ -1575,6 +1594,7 @@ id mtrl_card_checked_layer_id
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id nameBox
 id navigation_header_container
 id never
 id next_button
@@ -1602,6 +1622,7 @@ id product_grid
 id product_image
 id product_price
 id product_title
+id profile
 id progress_circular
 id progress_horizontal
 id radio
@@ -1627,6 +1648,7 @@ id search_bar
 id search_button
 id search_close_btn
 id search_edit_frame
+id search_edit_text
 id search_go_btn
 id search_mag_icon
 id search_plate
@@ -1676,6 +1698,8 @@ id textStart
 id textView
 id textView2
 id textView3
+id textView32
+id textView5
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1693,6 +1717,7 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
+id uid
 id unchecked
 id uniform
 id unlabeled
@@ -1781,10 +1806,12 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout display_map
+layout edit_user
 layout mapbox_attribution_list_item
 layout mapbox_infowindow_content
 layout mapbox_mapview_internal
 layout mapbox_view_image_marker
+layout microbit_row
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -1881,6 +1908,7 @@ string add_device
 string analytics
 string app_name
 string appbar_scrolling_view_behavior
+string assigned_devices
 string base_configuration
 string bottom_sheet_behavior
 string car
@@ -1950,6 +1978,7 @@ string path_password_strike_through
 string people
 string road_mark
 string s_length
+string search
 string search_menu_title
 string select_a_location
 string settings
@@ -1974,6 +2003,7 @@ string shr_shoes_label
 string shr_tops_label
 string speed_limit
 string status_bar_notification_info_overflow
+string user_details
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style Animation_AppCompat_Dialog
@@ -2640,6 +2670,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha
