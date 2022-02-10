@@ -19,6 +19,7 @@ import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -69,9 +70,11 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
 
     MicrobitViewAdapter adapter;
     ArrayList<Device> devices = new ArrayList<>();
+    ArrayList<String> dev = new ArrayList<>();
     MicrobitViewAdapter.ItemClickListener x;
 
     public int userid;
+    public int m;
     RequestQueue queue;
     int userID;
     String name;
@@ -100,6 +103,7 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
         setUpToolbar(view);
         getData(view);
         getMData(view);
+        getMicrobitData(view);
 
         // set up the RecyclerView
         RecyclerView recyclerView = view.findViewById(R.id.listMicrobits);
@@ -110,6 +114,17 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
         adapter = new MicrobitViewAdapter(getContext(),devices);
         adapter.setClickListener(x);
         recyclerView.setAdapter(adapter);
+
+        Button popupButton = view.findViewById(R.id.assignMicrobit);
+        popupButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                PopUpClass popUpClass = new PopUpClass();
+                popUpClass.showPopupWindow(v,getContext(),dev,Integer.toString(userid));
+            }
+        });
 
         return view;
     }
@@ -182,6 +197,7 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject object1 = response.getJSONObject(i);
                                 int microID = (int) object1.get("microbitID");
+                                m = microID;
                                 String name = (String) object1.get("x");
                                 String url = (String) object1.get("name");
 
@@ -189,6 +205,47 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
                                 devices.add(a);
                                 adapter.updateList(devices);
 
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+    }
+    private void getMicrobitData(View view){
+        String url = "https://f074-86-4-178-72.ngrok.io/microbits";
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("microbitID", m);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+                                int microID = (int) object1.get("microbitID");
+                                String type = (String) object1.get("name");
+
+                                String str = Integer.toString(microID)+":"+type;
+
+                                dev.add(str);
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

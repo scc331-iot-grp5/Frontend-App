@@ -38,10 +38,11 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
     @Override
     public void onBindViewHolder(MicrobitViewAdapter.ViewHolder holder, int position) {
         String nameTwo = mData.get(position).getName();
-        holder.name.setText(nameTwo);
+
 
         String objectName = mData.get(position).getObjectName();
-        holder.objectName.setText(objectName);
+        holder.objectName.setText(nameTwo);
+        holder.name.setText(objectName);
 
         String id = Integer.toString(mData.get(position).getMicrobitID());
         holder.microbitID.setText(id);

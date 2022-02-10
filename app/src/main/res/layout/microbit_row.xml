@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:stateListAnimator = "@animator/shr_next_button_state_list_anim"
     android:padding="10dp">
 
     <LinearLayout

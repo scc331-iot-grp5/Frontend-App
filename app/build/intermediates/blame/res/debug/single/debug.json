@@ -84,6 +84,10 @@
         "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0-alpha03.aar/a017ab27118f8863f634e1278c0a3c87/res/anim/abc_shrink_fade_out_from_bottom.xml"
     },
     {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/layout_popup.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/popup.xml"
+    },
+    {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/drawable-hdpi-v4_design_ic_visibility_off.png.flat",
         "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/res/drawable-hdpi-v4/design_ic_visibility_off.png"
     },
@@ -198,6 +202,10 @@
     {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/color-v23_mtrl_on_surface_disabled.xml.flat",
         "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/res/color-v23/mtrl_on_surface_disabled.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/layout-v21_popup.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/popup.xml"
     },
     {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_ic_star_black_16dp.png.flat",
@@ -958,6 +966,10 @@
     {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_orange_foreground.png.flat",
         "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_orange_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/layout-v21_microbit_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/microbit_row.xml"
     },
     {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/layout_mtrl_calendar_month_bar.xml.flat",
@@ -2264,6 +2276,10 @@
         "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/appcompat-1.1.0-alpha03.aar/a017ab27118f8863f634e1278c0a3c87/res/drawable-xxxhdpi-v4/abc_scrubber_control_to_pressed_mtrl_000.png"
     },
     {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/drawable_custom_ripple.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/custom_ripple.xml"
+    },
+    {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/drawable-ldpi-v4_mapbox_user_puck_icon.png.flat",
         "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/res/drawable-ldpi-v4/mapbox_user_puck_icon.png"
     },
@@ -2694,6 +2710,10 @@
     {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
         "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/drawable-v21_custom_ripple.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable-v21/custom_ripple.xml"
     },
     {
         "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/res/merged/debug/anim_btn_checkbox_to_unchecked_icon_null_animation.xml.flat",
