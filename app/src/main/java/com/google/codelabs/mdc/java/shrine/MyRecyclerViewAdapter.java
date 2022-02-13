@@ -7,13 +7,22 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.codelabs.mdc.java.shrine.network.ImageRequester;
 import com.google.codelabs.mdc.java.shrine.network.ProductEntry;
+import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +33,10 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private List<ProductEntry> mData;
 
     private LayoutInflater mInflater;
-    private ItemClickListener mClickListener;
     private ImageRequester imageRequester;
+
+    private MyRecyclerViewAdapter.ItemClickListener mClickListener;
+    private MyRecyclerViewAdapter.ItemLongClickListener mLongClickListener;
 
 
     // data is passed into the constructor
@@ -61,7 +72,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
 
     // stores and recycles views as they are scrolled off screen
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
         TextView myTextView;
         TextView login;
         NetworkImageView productImage;
@@ -72,11 +83,51 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             login = itemView.findViewById(R.id.userID);
             productImage = itemView.findViewById(R.id.product_image);
             itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+        }
+        @Override
+        public boolean onLongClick(View view) {
+            System.out.println("Im bot here");
+            if (mLongClickListener != null) mLongClickListener.onItemLongClick(view, getAdapterPosition());
+            Toast.makeText(view.getContext(), "Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            new MaterialAlertDialogBuilder(view.getContext())
+                    .setTitle(R.string.d_tittle)
+                    .setMessage(R.string.d_extra_2)
+                    .setPositiveButton(R.string.d_remove, (dialog, which) -> {
+                        JSONObject json = new JSONObject();
+
+                        try {
+                            json.put("mId", getItem(getAdapterPosition()));
+                        } catch (Exception e) { }
+
+                        String url = "https://f074-86-4-178-72.ngrok.io/removeUser";
+
+                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                                (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
+                                    @Override
+                                    public void onResponse(JSONObject response) {
+                                        // TODO: Handle error
+                                    }
+                                }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        // TODO: Handle error
+
+                                    }
+                                });
+
+                        MySingleton.getInstance(view.getContext()).addToRequestQueue(jsonObjectRequest);
+                    })
+                    .setNegativeButton(R.string.d_cancel, (dialog, which) -> {
+
+                    })
+                    .show();
+            return true;
         }
     }
 
@@ -86,13 +137,19 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     }
 
     // allows clicks events to be caught
-    void setClickListener(ItemClickListener itemClickListener) {
+    void setClickListener(MyRecyclerViewAdapter.ItemClickListener itemClickListener) {
         this.mClickListener = itemClickListener;
+    }
+    void setLongClickListener(MyRecyclerViewAdapter.ItemLongClickListener itemClickListener) {
+        this.mLongClickListener = itemClickListener;
     }
 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
         void onItemClick(View view, int position);
+    }
+    public interface ItemLongClickListener{
+        void onItemLongClick(View view, int position);
     }
 
     public void updateList(List<ProductEntry> list){

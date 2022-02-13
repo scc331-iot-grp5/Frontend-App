@@ -62,7 +62,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClickListener{
+public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClickListener, MyRecyclerViewAdapter.ItemLongClickListener{
 
     MyRecyclerViewAdapter adapter;
     RequestQueue queue;
@@ -70,6 +70,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
     ArrayList<String> dev = new ArrayList<>();
 
     MyRecyclerViewAdapter.ItemClickListener x;
+    MyRecyclerViewAdapter.ItemLongClickListener y;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         recyclerView.addItemDecoration(dividerItemDecoration);
         adapter = new MyRecyclerViewAdapter(getContext(),people);
         adapter.setClickListener(x);
+        adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
         // data to populate the RecyclerView with
         String url = "https://f074-86-4-178-72.ngrok.io/users";
@@ -294,5 +296,10 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
     public void onItemClick(View view, int position) {
         ((NavigationHost) getActivity()).navigateTo(new EditUser(adapter.getItem(position)), false); // Navigate to the next Fragment
         //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onItemLongClick(View view, int position) {
+
     }
 }
