@@ -20,6 +20,9 @@
     <string name="d_add">Add</string>
     <string name="d_cancel">Cancel</string>
 
+    <string name="d_extra_2">Are you sure you want to Unassign this device?</string>
+    <string name="d_remove">Remove</string>
+
     <!-- Shrine backdrop menu labels -->
     <string name="shr_featured_label">Featured</string>
     <string name="shr_apartment_label">Apartment</string>
@@ -49,4 +52,6 @@
     <string name="search">Search</string>
     <string name="user_details">User Details</string>
     <string name="assigned_devices">Assigned Devices</string>
+    <string name="full_name">Full Name</string>
+    <string name="email_address">Email Address</string>
 </resources>

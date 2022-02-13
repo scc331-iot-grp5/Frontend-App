@@ -1339,6 +1339,7 @@ drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_directions_car_24
 drawable ic_baseline_email_24
+drawable ic_baseline_image_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_24
 drawable ic_blje_background
@@ -1356,6 +1357,7 @@ drawable ic_orange_background
 drawable ic_outline_map_24
 drawable ic_round_devices_other_24
 drawable ic_round_home_24
+drawable ic_sharp_add_24
 drawable line
 drawable line_drawable
 drawable mapbox_compass_icon
@@ -1415,9 +1417,11 @@ id ALT
 id CTRL
 id Contact
 id FUNCTION
+id Full_Name
 id META
 id SHIFT
 id SYM
+id UsernameDisplay
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1482,6 +1486,7 @@ id async
 id attributionView
 id auto
 id background
+id banner_url
 id beginning
 id blocking
 id bottom
@@ -1529,6 +1534,7 @@ id disableHome
 id dropdown_menu
 id edit_query
 id email
+id email_text
 id end
 id end_padder
 id enterAlways
@@ -1544,6 +1550,7 @@ id filled
 id filter_chip
 id fitToContents
 id fixed
+id floating_action_button
 id forever
 id ghost_view
 id group_divider
@@ -1581,6 +1588,7 @@ id masked
 id media_actions
 id message
 id messageButton
+id messageButton_U
 id microbitID
 id microbitIddD
 id microbitText
@@ -1598,6 +1606,7 @@ id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
 id nameBox
+id name_text
 id navigation_header_container
 id never
 id next_button
@@ -1626,6 +1635,7 @@ id product_image
 id product_price
 id product_title
 id profile
+id profile_Pic_url
 id progress_circular
 id progress_horizontal
 id radio
@@ -1675,6 +1685,7 @@ id speedLimit
 id speedLimitInput
 id spinner
 id spinneraaa
+id spinneraaa_U
 id split_action_bar
 id src_atop
 id src_in
@@ -1713,6 +1724,9 @@ id time
 id title
 id titleDividerNoCustom
 id titleText
+id titleText_U
+id titleText_sub
+id titleText_sub_optional
 id title_template
 id top
 id topPanel
@@ -1730,6 +1744,7 @@ id up
 id useLogo
 id userID
 id username
+id usernameLabel
 id username_edit_text
 id users
 id view_offset_helper
@@ -1849,6 +1864,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popup
+layout popup_user
 layout recyclerview_row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
@@ -1926,10 +1942,14 @@ string clear_text_end_icon_content_description
 string d_add
 string d_cancel
 string d_extra
+string d_extra_2
+string d_remove
 string d_tittle
+string email_address
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
 string fab_transformation_sheet_behavior
+string full_name
 string hide_bottom_view_on_scroll_behavior
 string home
 string icon_content_description
@@ -2646,6 +2666,7 @@ style Widget_Shrine_Button
 style Widget_Shrine_Button_TextButton
 style Widget_Shrine_TextInputLayout
 style Widget_Shrine_TextInputLayout_ExposedDropdownMenu
+style Widget_Shrine_TextInputLayout_Popup
 style Widget_Shrine_Toolbar
 style Widget_Support_CoordinatorLayout
 style mapbox_LocationComponent

@@ -66,12 +66,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemClickListener{
+public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemClickListener, MicrobitViewAdapter.ItemLongClickListener{
 
     MicrobitViewAdapter adapter;
     ArrayList<Device> devices = new ArrayList<>();
     ArrayList<String> dev = new ArrayList<>();
     MicrobitViewAdapter.ItemClickListener x;
+    MicrobitViewAdapter.ItemLongClickListener y;
 
     public int userid;
     public int m;
@@ -111,9 +112,11 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MicrobitViewAdapter(getContext(),devices);
+        adapter = new MicrobitViewAdapter(getContext(),devices,userid);
         adapter.setClickListener(x);
+        adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
+
 
         Button popupButton = view.findViewById(R.id.assignMicrobit);
         popupButton.setOnClickListener(new View.OnClickListener() {
@@ -281,5 +284,11 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
     @Override
     public void onItemClick(View view, int position) {
 
+    }
+
+    @Override
+    public void onItemLongClick(View view, int position) {
+        System.out.println("Im here");
+        Toast.makeText(view.getContext(), "Position is " + position, Toast.LENGTH_SHORT).show();
     }
 }

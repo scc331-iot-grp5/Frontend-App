@@ -34,11 +34,13 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.codelabs.mdc.java.shrine.network.ProductEntry;
@@ -65,6 +67,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
     MyRecyclerViewAdapter adapter;
     RequestQueue queue;
     ArrayList<ProductEntry> people = new ArrayList<>();
+    ArrayList<String> dev = new ArrayList<>();
 
     MyRecyclerViewAdapter.ItemClickListener x;
 
@@ -84,6 +87,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         //Menu menu = view.findViewById(R.id.menu);
         // Set up the toolbar
         setUpToolbar(view);
+        getMicrobitData(view);
 
         // set up the RecyclerView
         RecyclerView recyclerView = view.findViewById(R.id.rvAnimals);
@@ -196,9 +200,60 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
             }
         });
 
-
+        FloatingActionButton fab = view.findViewById(R.id.floating_action_button);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                PopUpClassUser popUpClass = new PopUpClassUser();
+                popUpClass.showPopupWindow(view,getContext(),dev);
+            }
+        });
 
         return view;
+    }
+    private void getMicrobitData(View view){
+        String url = "https://f074-86-4-178-72.ngrok.io/microbits";
+
+        dev.add("Select a Device to Assign");
+        dev.add("None");
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("microbitID", 0);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+                                int microID = (int) object1.get("microbitID");
+                                String type = (String) object1.get("name");
+
+                                String str = Integer.toString(microID)+":"+type;
+
+                                dev.add(str);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
     }
     void filter(String text){
         ArrayList<ProductEntry> temp = new ArrayList();
