@@ -106,48 +106,6 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                 }
             });
 
-            // Set cut corner background for API 23+
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                view.findViewById(R.id.product_grid).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
-            }
-
-            MaterialButton nextButton = view.findViewById(R.id.logout);
-            MaterialButton home = view.findViewById(R.id.home);
-            MaterialButton addDevice = view.findViewById(R.id.addDevice);
-            MaterialButton map = view.findViewById(R.id.map);
-            MaterialButton user = view.findViewById(R.id.users);
-
-            // Set an error if the password is less than 8 characters.
-            nextButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false); // Navigate to the next Fragment
-                }
-            });
-            home.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false); // Navigate to the next Fragment
-                }
-            });
-            addDevice.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((NavigationHost) getActivity()).navigateTo(new AddDevice(), false); // Navigate to the next Fragment
-                }
-            });
-            map.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
-                }
-            });
-            user.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
-                }
-            });
 
             MaterialButton add = view.findViewById(R.id.add);
             microbitTextInput = view.findViewById(R.id.microbitText);
@@ -280,12 +238,13 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                 activity.setSupportActionBar(toolbar);
             }
 
-            toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
-                    getContext(),
-                    view.findViewById(R.id.product_grid),
-                    new AccelerateDecelerateInterpolator(),
-                    getContext().getResources().getDrawable(R.drawable.shr_branded_menu), // Menu open icon
-                    getContext().getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
+            toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
+
+                }
+            });
         }
 
         @Override

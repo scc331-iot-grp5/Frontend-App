@@ -1529,6 +1529,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id devView
 id dialog_button
 id disableHome
 id dropdown_menu
@@ -1809,6 +1810,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout add_device
+layout all_dev
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1826,6 +1828,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout display_map
+layout edit_device
 layout edit_user
 layout mapbox_attribution_list_item
 layout mapbox_infowindow_content
@@ -1943,6 +1946,7 @@ string d_add
 string d_cancel
 string d_extra
 string d_extra_2
+string d_extra_3
 string d_remove
 string d_tittle
 string email_address
@@ -1957,6 +1961,7 @@ string label
 string logout
 string m_length
 string m_letters
+string manage_devices
 string manage_users
 string map
 string map_of_all_objects

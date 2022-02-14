@@ -88,43 +88,87 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
 
         @Override
         public boolean onLongClick(View view) {
-            System.out.println("Im bot here");
-            if (mLongClickListener != null) mLongClickListener.onItemLongClick(view, getAdapterPosition());
-            Toast.makeText(view.getContext(), "Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
-            new MaterialAlertDialogBuilder(view.getContext())
-                    .setTitle(R.string.d_tittle)
-                    .setMessage(R.string.d_extra_2)
-                    .setPositiveButton(R.string.d_remove, (dialog, which) -> {
-                        JSONObject json = new JSONObject();
 
-                        try {
-                            json.put("mId", getItem(getAdapterPosition()));
-                            json.put("uID", uID);
-                        } catch (Exception e) { }
+            if (uID != 0) {
+                System.out.println("Im bot here");
+                if (mLongClickListener != null)
+                    mLongClickListener.onItemLongClick(view, getAdapterPosition());
+                Toast.makeText(view.getContext(), "Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                new MaterialAlertDialogBuilder(view.getContext())
+                        .setTitle(R.string.d_tittle)
+                        .setMessage(R.string.d_extra_2)
+                        .setPositiveButton(R.string.d_remove, (dialog, which) -> {
+                            JSONObject json = new JSONObject();
 
-                        String url = "https://f074-86-4-178-72.ngrok.io/unass";
+                            try {
+                                json.put("mId", getItem(getAdapterPosition()));
+                                json.put("uID", uID);
+                            } catch (Exception e) {
+                            }
 
-                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                                (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
-                                    @Override
-                                    public void onResponse(JSONObject response) {
-                                        // TODO: Handle error
-                                    }
-                                }, new Response.ErrorListener() {
-                                    @Override
-                                    public void onErrorResponse(VolleyError error) {
-                                        // TODO: Handle error
+                            String url = "https://f074-86-4-178-72.ngrok.io/unass";
 
-                                    }
-                                });
+                            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                                    (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
+                                        @Override
+                                        public void onResponse(JSONObject response) {
+                                            // TODO: Handle error
+                                        }
+                                    }, new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            // TODO: Handle error
 
-                        MySingleton.getInstance(view.getContext()).addToRequestQueue(jsonObjectRequest);
-                    })
-                    .setNegativeButton(R.string.d_cancel, (dialog, which) -> {
+                                        }
+                                    });
 
-                    })
-                    .show();
-            return true;
+                            MySingleton.getInstance(view.getContext()).addToRequestQueue(jsonObjectRequest);
+                        })
+                        .setNegativeButton(R.string.d_cancel, (dialog, which) -> {
+
+                        })
+                        .show();
+                return true;
+            } else {
+                System.out.println("Im bot here");
+                if (mLongClickListener != null)
+                    mLongClickListener.onItemLongClick(view, getAdapterPosition());
+                Toast.makeText(view.getContext(), "Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                new MaterialAlertDialogBuilder(view.getContext())
+                        .setTitle(R.string.d_tittle)
+                        .setMessage(R.string.d_extra_3)
+                        .setPositiveButton(R.string.d_remove, (dialog, which) -> {
+                            JSONObject json = new JSONObject();
+
+                            try {
+                                json.put("mId", getItem(getAdapterPosition()));
+                            } catch (Exception e) {
+                            }
+
+                            String url = "https://f074-86-4-178-72.ngrok.io/removeM";
+
+                            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                                    (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
+                                        @Override
+                                        public void onResponse(JSONObject response) {
+                                            // TODO: Handle error
+                                        }
+                                    }, new Response.ErrorListener() {
+                                        @Override
+                                        public void onErrorResponse(VolleyError error) {
+                                            // TODO: Handle error
+
+                                        }
+                                    });
+
+                            MySingleton.getInstance(view.getContext()).addToRequestQueue(jsonObjectRequest);
+                        })
+                        .setNegativeButton(R.string.d_cancel, (dialog, which) -> {
+
+                        })
+                        .show();
+                return true;
+            }
         }
     }
 

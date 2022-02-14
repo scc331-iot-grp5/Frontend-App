@@ -145,7 +145,7 @@ public class DisplayMap extends Fragment {
         addDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AddDevice(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
