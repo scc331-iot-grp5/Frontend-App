@@ -48,7 +48,9 @@ animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 animator shr_next_button_state_list_anim
 array Road_array
+array Road_array_2
 array planets_array
+array types
 attr actionBarDivider
 attr actionBarItemBackground
 attr actionBarPopupTheme
@@ -1592,8 +1594,12 @@ id messageButton
 id messageButton_U
 id microbitID
 id microbitIddD
+id microbitName
 id microbitText
+id microbitText2
 id microbitTextInput
+id microbitTextInput2
+id microbitTextInputName
 id middle
 id mini
 id month_bar
@@ -1683,7 +1689,9 @@ id snap
 id snapMargins
 id spacer
 id speedLimit
+id speedLimit2
 id speedLimitInput
+id speedLimitInput2
 id spinner
 id spinneraaa
 id spinneraaa_U
@@ -2009,6 +2017,7 @@ string path_password_strike_through
 string people
 string road_mark
 string s_length
+string save
 string search
 string search_menu_title
 string select_a_location
@@ -2034,6 +2043,7 @@ string shr_shoes_label
 string shr_tops_label
 string speed_limit
 string status_bar_notification_info_overflow
+string update
 string user_details
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light

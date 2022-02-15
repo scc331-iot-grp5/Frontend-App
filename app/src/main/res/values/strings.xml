@@ -18,6 +18,7 @@
     <string name="d_tittle">Confirm</string>
     <string name="d_extra">Are you sure you want to add this device?</string>
     <string name="d_add">Add</string>
+    <string name="update">Update</string>
     <string name="d_cancel">Cancel</string>
 
     <string name="d_extra_2">Are you sure you want to unassign this device?</string>
@@ -56,4 +57,5 @@
     <string name="full_name">Full Name</string>
     <string name="email_address">Email Address</string>
     <string name="manage_devices">Manage Devices</string>
+    <string name="save">Save</string>
 </resources>
