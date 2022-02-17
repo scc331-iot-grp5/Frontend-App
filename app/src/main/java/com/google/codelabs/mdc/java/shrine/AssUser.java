@@ -1,14 +1,17 @@
 package com.google.codelabs.mdc.java.shrine;
 
 
+import android.annotation.SuppressLint;
 import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.widget.Toolbar;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -28,6 +31,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.TransitionInflater;
 
 
 import com.android.volley.Request;
@@ -71,6 +75,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
 
     MyRecyclerViewAdapter.ItemClickListener x;
     MyRecyclerViewAdapter.ItemLongClickListener y;
+    boolean HIDE_MENU = false;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -84,6 +89,12 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment with the ProductGrid theme
         View view = inflater.inflate(R.layout.user, container, false);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
+            setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_left));
+            setEnterTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+        }
+
         queue = Volley.newRequestQueue(getContext());
         //Menu menu = view.findViewById(R.id.menu);
         // Set up the toolbar
@@ -96,7 +107,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MyRecyclerViewAdapter(getContext(),people);
+        adapter = new MyRecyclerViewAdapter(getContext(),people,view);
         adapter.setClickListener(x);
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
@@ -169,6 +180,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
         MaterialButton user = view.findViewById(R.id.users);
+        MaterialButton rules = view.findViewById(R.id.rules);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -199,6 +211,12 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+            }
+        });
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
             }
         });
 
@@ -283,18 +301,26 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
                 getContext().getResources().getDrawable(R.drawable.shr_branded_menu), // Menu open icon
                 getContext().getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
     }
+    private void test(View view){
+        view.findViewById(R.id.backdrop).setVisibility(View.GONE);
+    }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater menuInflater) {
         menuInflater.inflate(R.menu.shr_toolbar_menu, menu);
-        //menuInflater.inflate(R.menu.objects, menu);
+        if (HIDE_MENU)
+        {
+            System.out.println("debugging");
+        }
         super.onCreateOptionsMenu(menu, menuInflater);
     }
 
 
     @Override
-    public void onItemClick(View view, int position) {
+    public void onItemClick(View view, int position, View big) {
+        test(big);
         ((NavigationHost) getActivity()).navigateTo(new EditUser(adapter.getItem(position)), false); // Navigate to the next Fragment
+
         //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 

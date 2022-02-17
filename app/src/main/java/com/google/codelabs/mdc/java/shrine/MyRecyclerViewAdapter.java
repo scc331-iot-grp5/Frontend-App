@@ -34,15 +34,17 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     private LayoutInflater mInflater;
     private ImageRequester imageRequester;
+    private View backView;
 
     private MyRecyclerViewAdapter.ItemClickListener mClickListener;
     private MyRecyclerViewAdapter.ItemLongClickListener mLongClickListener;
 
 
     // data is passed into the constructor
-    MyRecyclerViewAdapter(Context context, List<ProductEntry> data) {
+    MyRecyclerViewAdapter(Context context, List<ProductEntry> data, View v) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
+        this.backView = v;
         imageRequester = ImageRequester.getInstance();
     }
 
@@ -88,7 +90,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition(), backView);
         }
         @Override
         public boolean onLongClick(View view) {
@@ -146,7 +148,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
+        void onItemClick(View view, int position, View big);
     }
     public interface ItemLongClickListener{
         void onItemLongClick(View view, int position);

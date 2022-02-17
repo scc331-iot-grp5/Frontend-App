@@ -7,17 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".AddDevice">
 
-    <LinearLayout
-        style="@style/Widget.Shrine.Backdrop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:paddingTop="100dp"
-        android:paddingBottom="100dp">
-        <include layout="@layout/shr_backdrop" />
-
-    </LinearLayout>
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"

@@ -28,6 +28,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.TransitionInflater;
 
 
 import com.android.volley.Request;
@@ -73,6 +74,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     MicrobitViewAdapter.ItemLongClickListener y;
 
     RequestQueue queue;
+    View view;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -85,7 +87,12 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment with the ProductGrid theme
-        View view = inflater.inflate(R.layout.all_dev, container, false);
+        view = inflater.inflate(R.layout.all_dev, container, false);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
+            setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_left));
+            setEnterTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+        }
         queue = Volley.newRequestQueue(getContext());
         //Menu menu = view.findViewById(R.id.menu);
         // Set up the toolbar
@@ -98,7 +105,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MicrobitViewAdapter(getContext(),devices,0);
+        adapter = new MicrobitViewAdapter(getContext(),devices,0,view);
         adapter.setClickListener(x);
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
@@ -136,6 +143,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
         MaterialButton user = view.findViewById(R.id.users);
+        MaterialButton rules = view.findViewById(R.id.rules);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -168,11 +176,18 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
                 ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
             }
         });
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+            }
+        });
 
         FloatingActionButton fab = view.findViewById(R.id.floating_action_button);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                testTwo();
                 ((NavigationHost) getActivity()).navigateTo(new AddDevice(), false); // Navigate to the next Fragment
 
             }
@@ -258,9 +273,15 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         super.onCreateOptionsMenu(menu, menuInflater);
     }
 
-
+    private void test(View view){
+        view.findViewById(R.id.backdrop).setVisibility(View.GONE);
+    }
+    private void testTwo(){
+        view.findViewById(R.id.backdrop).setVisibility(View.GONE);
+    }
     @Override
-    public void onItemClick(View view, int position) {
+    public void onItemClick(View view, int position, View big) {
+        test(big);
         ((NavigationHost) getActivity()).navigateTo(new EditMicrobit(adapter.getItem(position)), false); // Navigate to the next Fragment
         //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }

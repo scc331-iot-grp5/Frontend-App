@@ -30,6 +30,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.transition.TransitionInflater;
 
 
 import com.android.volley.Request;
@@ -66,7 +67,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 
-public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemClickListener, MicrobitViewAdapter.ItemLongClickListener{
+public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClickListener, MicrobitViewAdapter.ItemLongClickListener{
 
     MicrobitViewAdapter adapter;
     ArrayList<Device> devices = new ArrayList<>();
@@ -99,6 +100,11 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment with the ProductGrid theme
         View view = inflater.inflate(R.layout.edit_user, container, false);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
+            setEnterTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+            setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+        }
         queue = Volley.newRequestQueue(getContext());
         imageRequester = ImageRequester.getInstance();
         setUpToolbar(view);
@@ -112,7 +118,7 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MicrobitViewAdapter(getContext(),devices,userid);
+        adapter = new MicrobitViewAdapter(getContext(),devices,userid,view);
         adapter.setClickListener(x);
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
@@ -282,7 +288,7 @@ public class EditUser extends Fragment implements  MyRecyclerViewAdapter.ItemCli
 
 
     @Override
-    public void onItemClick(View view, int position) {
+    public void onItemClick(View view, int position, View big) {
 
     }
 

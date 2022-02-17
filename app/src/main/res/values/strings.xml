@@ -58,4 +58,9 @@
     <string name="email_address">Email Address</string>
     <string name="manage_devices">Manage Devices</string>
     <string name="save">Save</string>
+    <string name="manage_rules">Manage Rules</string>
+    <string name="step_one">Step One</string>
+    <string name="rules">Rules:</string>
+    <string name="next">Next</string>
+    <string name="condition_must_have_a_assigned_group_select">Condition Must Have a Assigned Group (select)</string>
 </resources>

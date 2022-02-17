@@ -47,8 +47,14 @@ animator mtrl_fab_show_motion_spec
 animator mtrl_fab_transformation_sheet_collapse_spec
 animator mtrl_fab_transformation_sheet_expand_spec
 animator shr_next_button_state_list_anim
+animator slide_in_left
+animator slide_in_right
+animator slide_out_left
+animator slide_out_right
+array Operators
 array Road_array
 array Road_array_2
+array cond
 array planets_array
 array types
 attr actionBarDivider
@@ -817,6 +823,7 @@ color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color loginPageBackgroundColor
@@ -907,6 +914,7 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color productGridBackgroundColor
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1344,6 +1352,7 @@ drawable ic_baseline_email_24
 drawable ic_baseline_image_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_24
+drawable ic_baseline_rule_24
 drawable ic_blje_background
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
@@ -1359,6 +1368,7 @@ drawable ic_orange_background
 drawable ic_outline_map_24
 drawable ic_round_devices_other_24
 drawable ic_round_home_24
+drawable ic_round_warning_24
 drawable ic_sharp_add_24
 drawable line
 drawable line_drawable
@@ -1478,6 +1488,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addConditions
 id addDevice
 id alertTitle
 id all
@@ -1487,6 +1498,7 @@ id assignMicrobit
 id async
 id attributionView
 id auto
+id backdrop
 id background
 id banner_url
 id beginning
@@ -1513,6 +1525,9 @@ id clip_horizontal
 id clip_vertical
 id collapseActionView
 id compassView
+id condition
+id conditionLabel
+id conditions
 id confirm_button
 id container
 id content
@@ -1616,6 +1631,7 @@ id nameBox
 id name_text
 id navigation_header_container
 id never
+id nextConditions
 id next_button
 id noScroll
 id none
@@ -1625,6 +1641,7 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id operatorLabel
 id option_1
 id option_2
 id option_3
@@ -1652,7 +1669,10 @@ id right_icon
 id right_side
 id roadType
 id rounded
+id rules
+id rulesView
 id rvAnimals
+id rvRules
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1723,7 +1743,6 @@ id textView
 id textView2
 id textView3
 id textView32
-id textView5
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -1756,8 +1775,11 @@ id username
 id usernameLabel
 id username_edit_text
 id users
+id valueEditText
+id valueLabel
 id view_offset_helper
 id visible
+id warningLabel
 id withText
 id wrap_content
 integer abc_config_activityDefaultDur
@@ -1819,6 +1841,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout add_device
 layout all_dev
+layout all_rules
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1859,6 +1882,7 @@ layout mtrl_layout_snackbar_include
 layout mtrl_month_grid
 layout mtrl_picker_actions
 layout mtrl_picker_dialog
+layout new_rule_row
 layout notification_action
 layout notification_action_tombstone
 layout notification_media_action
@@ -1877,6 +1901,7 @@ layout notification_template_part_time
 layout popup
 layout popup_user
 layout recyclerview_row
+layout rules_row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -1888,6 +1913,7 @@ layout shr_product_grid_fragment
 layout shr_staggered_product_card_first
 layout shr_staggered_product_card_second
 layout shr_staggered_product_card_third
+layout step_one
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_reflow_chipgroup
@@ -1950,6 +1976,7 @@ string character_counter_overflowed_content_description
 string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
+string condition_must_have_a_assigned_group_select
 string d_add
 string d_cancel
 string d_extra
@@ -1970,6 +1997,7 @@ string logout
 string m_length
 string m_letters
 string manage_devices
+string manage_rules
 string manage_users
 string map
 string map_of_all_objects
@@ -2006,6 +2034,7 @@ string mtrl_picker_header_prompt
 string mtrl_picker_header_selected
 string mtrl_picker_range_header_prompt
 string mtrl_picker_range_header_selected
+string next
 string o_error
 string objectid
 string optional_configuration
@@ -2016,6 +2045,7 @@ string path_password_eye_mask_visible
 string path_password_strike_through
 string people
 string road_mark
+string rules
 string s_length
 string save
 string search
@@ -2043,6 +2073,7 @@ string shr_shoes_label
 string shr_tops_label
 string speed_limit
 string status_bar_notification_info_overflow
+string step_one
 string update
 string user_details
 style AlertDialog_AppCompat
@@ -2267,6 +2298,7 @@ style Base_Widget_MaterialComponents_TextInputLayout
 style CardView
 style CardView_Dark
 style CardView_Light
+style CustomActivityAnimation
 style EmptyTheme
 style MaterialAlertDialog_MaterialComponents
 style MaterialAlertDialog_MaterialComponents_Body_Text
@@ -2409,6 +2441,7 @@ style TextAppearance_Shrine_TextInputLayout_HintText
 style TextAppearance_Shrine_Title
 style TextAppearance_Shrine_Toolbar
 style TextAppearance_Shrine_heading
+style TextAppearance_Shrine_heading_warning
 style TextAppearance_Widget_AppCompat_ExpandedMenu_Item
 style TextAppearance_Widget_AppCompat_Toolbar_Subtitle
 style TextAppearance_Widget_AppCompat_Toolbar_Title
@@ -2773,3 +2806,6 @@ styleable ViewStubCompat android_id android_layout android_inflatedId
 styleable mapbox_BubbleLayout mapbox_bl_arrowDirection mapbox_bl_arrowHeight mapbox_bl_arrowPosition mapbox_bl_arrowWidth mapbox_bl_bubbleColor mapbox_bl_cornersRadius mapbox_bl_strokeColor mapbox_bl_strokeWidth
 styleable mapbox_LocationComponent mapbox_accuracyAlpha mapbox_accuracyAnimationEnabled mapbox_accuracyColor mapbox_backgroundDrawable mapbox_backgroundDrawableStale mapbox_backgroundStaleTintColor mapbox_backgroundTintColor mapbox_bearingDrawable mapbox_bearingTintColor mapbox_compassAnimationEnabled mapbox_elevation mapbox_enableStaleState mapbox_foregroundDrawable mapbox_foregroundDrawableStale mapbox_foregroundStaleTintColor mapbox_foregroundTintColor mapbox_gpsDrawable mapbox_iconPaddingBottom mapbox_iconPaddingLeft mapbox_iconPaddingRight mapbox_iconPaddingTop mapbox_layer_below mapbox_maxZoom mapbox_maxZoomIconScale mapbox_minZoom mapbox_minZoomIconScale mapbox_staleStateTimeout mapbox_trackingAnimationDurationMultiplier mapbox_trackingGesturesManagement mapbox_trackingInitialMoveThreshold mapbox_trackingMultiFingerMoveThreshold
 styleable mapbox_MapView mapbox_apiBaseUrl mapbox_cameraBearing mapbox_cameraTargetLat mapbox_cameraTargetLng mapbox_cameraTilt mapbox_cameraZoom mapbox_cameraZoomMax mapbox_cameraZoomMin mapbox_cross_source_collisions mapbox_enableTilePrefetch mapbox_enableZMediaOverlay mapbox_foregroundLoadColor mapbox_localIdeographFontFamily mapbox_pixelRatio mapbox_renderTextureMode mapbox_renderTextureTranslucentSurface mapbox_styleJson mapbox_styleUrl mapbox_uiAttribution mapbox_uiAttributionGravity mapbox_uiAttributionMarginBottom mapbox_uiAttributionMarginLeft mapbox_uiAttributionMarginRight mapbox_uiAttributionMarginTop mapbox_uiAttributionTintColor mapbox_uiCompass mapbox_uiCompassDrawable mapbox_uiCompassFadeFacingNorth mapbox_uiCompassGravity mapbox_uiCompassMarginBottom mapbox_uiCompassMarginLeft mapbox_uiCompassMarginRight mapbox_uiCompassMarginTop mapbox_uiDoubleTapGestures mapbox_uiLogo mapbox_uiLogoGravity mapbox_uiLogoMarginBottom mapbox_uiLogoMarginLeft mapbox_uiLogoMarginRight mapbox_uiLogoMarginTop mapbox_uiRotateGestures mapbox_uiScrollGestures mapbox_uiTiltGestures mapbox_uiZoomControls mapbox_uiZoomGestures
+transition fade
+transition slide_left
+transition slide_right

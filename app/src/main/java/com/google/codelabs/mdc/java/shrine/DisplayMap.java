@@ -21,6 +21,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.transition.TransitionInflater;
 
 
 import com.android.volley.Request;
@@ -70,6 +71,12 @@ public class DisplayMap extends Fragment {
         // Inflate the layout for this fragment with the ProductGrid theme
         Mapbox.getInstance(getContext(), "pk.eyJ1IjoiY2FtZXJvbnB1Z2gyODIiLCJhIjoiY2t6OHdoNG1jMHp3dTJ2bXU4M2kzYmV3bCJ9.RMjNS0Ll5wPTkLt27txUsg");
         View view = inflater.inflate(R.layout.display_map, container, false);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
+            setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_left));
+            setEnterTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+        }
+
         queue = Volley.newRequestQueue(getContext());
         // Set up the toolbar
         setUpToolbar(view);
@@ -84,6 +91,7 @@ public class DisplayMap extends Fragment {
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
         MaterialButton user = view.findViewById(R.id.users);
+        MaterialButton rules = view.findViewById(R.id.rules);
 
         CheckBox c1 = view.findViewById(R.id.c1);
         CheckBox c2 = view.findViewById(R.id.c2);
@@ -158,6 +166,12 @@ public class DisplayMap extends Fragment {
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+            }
+        });
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
             }
         });
 

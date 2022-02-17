@@ -25,6 +25,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.transition.TransitionInflater;
 
 
 import com.android.volley.Request;
@@ -89,6 +90,11 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
         Mapbox.getInstance(getContext(), "pk.eyJ1IjoiY2FtZXJvbnB1Z2gyODIiLCJhIjoiY2t6OHdoNG1jMHp3dTJ2bXU4M2kzYmV3bCJ9.RMjNS0Ll5wPTkLt27txUsg");
 
         View view = inflater.inflate(R.layout.edit_device, container, false);
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
+            setEnterTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+            setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
+        }
         //Menu menu = view.findViewById(R.id.menu);
         getData(view,savedInstanceState);
 

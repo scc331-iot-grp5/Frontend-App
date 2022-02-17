@@ -16,6 +16,21 @@
         <item>One Way</item>
         <item>Both Ways</item>
     </string-array>
+    <string-array name="Operators">
+        <item>></item>
+        <item>=</item>
+        <item>>=</item>
+        <item>in</item>
+    </string-array>
+    <string-array name="cond">
+        <item>Select a Condition</item>
+        <item>Temperature</item>
+        <item>Direction</item>
+        <item>Distance</item>
+        <item>x acc</item>
+        <item>y acc</item>
+        <item>z acc</item>
+    </string-array>
     <string-array name="Road_array_2">
         <item>One Way</item>
         <item>Both Ways</item>

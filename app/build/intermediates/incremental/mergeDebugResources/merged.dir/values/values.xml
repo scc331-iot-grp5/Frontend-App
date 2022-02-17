@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2" xmlns:ns2="http://schemas.android.com/tools">
+    <string-array name="Operators">
+        <item>></item>
+        <item>=</item>
+        <item>>=</item>
+        <item>in</item>
+    </string-array>
     <string-array name="Road_array">
         <item>Select a Road Type</item>
         <item>One Way</item>
@@ -8,6 +14,15 @@
     <string-array name="Road_array_2">
         <item>One Way</item>
         <item>Both Ways</item>
+    </string-array>
+    <string-array name="cond">
+        <item>Select a Condition</item>
+        <item>Temperature</item>
+        <item>Direction</item>
+        <item>Distance</item>
+        <item>x acc</item>
+        <item>y acc</item>
+        <item>z acc</item>
     </string-array>
     <string-array name="planets_array">
         <item>Select an Object</item>
@@ -167,6 +182,7 @@
     <color name="error_color_material_light">#ff5722</color>
     <color name="foreground_material_dark">@android:color/white</color>
     <color name="foreground_material_light">@android:color/black</color>
+    <color name="green">#00FF00</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
@@ -219,6 +235,7 @@
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
     <color name="productGridBackgroundColor">#FFFBFA</color>
+    <color name="red">#FF0000</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -679,6 +696,7 @@
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="chip_text">Chip text</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
+    <string name="condition_must_have_a_assigned_group_select">Condition Must Have a Assigned Group (select)</string>
     <string name="d_add">Add</string>
     <string name="d_cancel">Cancel</string>
     <string name="d_extra">Are you sure you want to add this device?</string>
@@ -699,6 +717,7 @@
     <string name="m_length">MicrobitID must be 4 digits</string>
     <string name="m_letters">Must only contain numbers</string>
     <string name="manage_devices">Manage Devices</string>
+    <string name="manage_rules">Manage Rules</string>
     <string name="manage_users">Manage Users</string>
     <string name="map">Map</string>
     <string name="map_of_all_objects">Map of all Objects:</string>
@@ -735,6 +754,7 @@
     <string description="A single date [CHAR_LIMIT=60]" name="mtrl_picker_header_selected">%1$s</string>
     <string description="Indicates that the user must take the action of picking dates within the calendar to form a range [CHAR_LIMIT=60]" name="mtrl_picker_range_header_prompt">Pick a Date Range</string>
     <string description="Two dates separated by a dash representing a range [CHAR_LIMIT=60]" name="mtrl_picker_range_header_selected">%1$s - %2$s</string>
+    <string name="next">Next</string>
     <string name="o_error">Please select an Object type</string>
     <string name="objectid">Object</string>
     <string name="optional_configuration">Optional Configuration</string>
@@ -745,6 +765,7 @@
     <string name="path_password_strike_through" translatable="false">M3.27,4.27 L19.74,20.74</string>
     <string name="people">People</string>
     <string name="road_mark">Road Mark</string>
+    <string name="rules">Rules:</string>
     <string name="s_length">Speed Limit must be at least 1 digits</string>
     <string name="save">Save</string>
     <string name="search">Search</string>
@@ -772,6 +793,7 @@
     <string name="shr_tops_label">Tops</string>
     <string name="speed_limit">Speed Limit</string>
     <string name="status_bar_notification_info_overflow">999+</string>
+    <string name="step_one">Step One</string>
     <string name="update">Update</string>
     <string name="user_details">User Details</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>

@@ -26,15 +26,17 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
     private List<Device> mData;
     private int uID;
     private LayoutInflater mInflater;
+    private View backView;
     private MicrobitViewAdapter.ItemClickListener mClickListener;
     private MicrobitViewAdapter.ItemLongClickListener mLongClickListener;
 
 
     // data is passed into the constructor
-    MicrobitViewAdapter(Context context, List<Device> data,int x) {
+    MicrobitViewAdapter(Context context, List<Device> data,int x, View v){
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
         this.uID = x;
+        this.backView = v;
     }
 
     // inflates the row layout from xml when needed
@@ -83,7 +85,7 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
 
         @Override
         public void onClick(View view) {
-            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition());
+            if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition(), backView);
         }
 
         @Override
@@ -189,7 +191,7 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
 
     // parent activity will implement this method to respond to click events
     public interface ItemClickListener {
-        void onItemClick(View view, int position);
+        void onItemClick(View view, int position, View big);
 
     }
     public interface ItemLongClickListener{

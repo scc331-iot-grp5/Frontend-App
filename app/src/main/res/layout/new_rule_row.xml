@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:background="@color/red"
+    android:backgroundTint="@color/red"
+    android:longClickable="true">
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:background="@color/productGridBackgroundColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/conditionLabel"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:textSize="14sp"
+            android:text="Condition" />
+
+        <TextView
+            android:id="@+id/condition"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="Temp"
+            android:textSize="14sp" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:background="@color/productGridBackgroundColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/operatorLabel"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:text="Operator"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="7dp"
+            android:padding="2dp"
+            android:background="@color/colorPrimaryDark"
+            android:backgroundTint="#42000000"
+            >
+
+            <Spinner
+                android:id="@+id/conditions"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/productGridBackgroundColor"
+                tools:ignore="SpeakableTextPresentCheck" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginRight="13dp"
+                android:layout_marginBottom="8dp"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="13dp" />
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="100dp"
+        android:layout_height="90dp"
+        android:background="@color/productGridBackgroundColor"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/valueLabel"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+
+            android:text="Value"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.Shrine.TextInputLayout"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:hint="Value"
+            app:endIconMode="clear_text">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/valueEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:maxLines="1" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/ic_round_warning_24"
+        android:tint="@color/red"
+        android:background="@color/productGridBackgroundColor"
+        />
+
+</LinearLayout>
