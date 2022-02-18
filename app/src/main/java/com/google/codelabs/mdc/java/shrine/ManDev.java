@@ -105,7 +105,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MicrobitViewAdapter(getContext(),devices,0,view);
+        adapter = new MicrobitViewAdapter(getContext(),devices,0,view,R.layout.microbit_row);
         adapter.setClickListener(x);
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);

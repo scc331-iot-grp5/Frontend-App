@@ -1347,6 +1347,7 @@ drawable ic_add_24dp
 drawable ic_baseline_add_circle_24
 drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
+drawable ic_baseline_check_24
 drawable ic_baseline_directions_car_24
 drawable ic_baseline_email_24
 drawable ic_baseline_image_24
@@ -1431,6 +1432,7 @@ id Contact
 id FUNCTION
 id Full_Name
 id META
+id ObjectGroups
 id SHIFT
 id SYM
 id UsernameDisplay
@@ -1576,6 +1578,7 @@ id hideable
 id home
 id homeAsUp
 id icon
+id iconTick
 id icon_group
 id ifRoom
 id image
@@ -1694,6 +1697,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectMicrobits
 id select_dialog_listview
 id selected
 id shortcut
@@ -1782,6 +1786,7 @@ id visible
 id warningLabel
 id withText
 id wrap_content
+id zoneGroups
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
 integer app_bar_elevation_anim_duration
@@ -1861,6 +1866,7 @@ layout design_text_input_start_icon
 layout display_map
 layout edit_device
 layout edit_user
+layout m_row
 layout mapbox_attribution_list_item
 layout mapbox_infowindow_content
 layout mapbox_mapview_internal
@@ -1914,6 +1920,7 @@ layout shr_staggered_product_card_first
 layout shr_staggered_product_card_second
 layout shr_staggered_product_card_third
 layout step_one
+layout step_two
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_reflow_chipgroup

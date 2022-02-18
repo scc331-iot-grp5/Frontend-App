@@ -27,6 +27,7 @@ import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
 
@@ -59,6 +60,14 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder>{
     public void onBindViewHolder(RuleAdapter.ViewHolder holder, int position) {
         String nameTwo = mData.get(position).getName();
         condition.setText(nameTwo);
+        String v = mData.get(position).getValue();
+        value.setText(v);
+
+        String[] myItems= holder.itemView.getResources().getStringArray(R.array.Operators);
+        String[] myItemsTwo = add2BeginningOfArray(myItems,mData.get(position).getOperator());
+        ArrayAdapter<CharSequence> adapterList = new ArrayAdapter(holder.itemView.getContext(), android.R.layout.simple_spinner_item, myItemsTwo);
+        adapterList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        holder.spinner.setAdapter(adapterList);
 
     }
 
@@ -90,10 +99,6 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder>{
             value = itemView.findViewById(R.id.valueEditText);
 
             spinner = (Spinner) itemView.findViewById(R.id.conditions);
-            ArrayAdapter<CharSequence> adapterList = ArrayAdapter.createFromResource(itemView.getContext(),
-                    R.array.Operators, android.R.layout.simple_spinner_item);
-            adapterList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapterList);
 
             itemView.setOnClickListener(this);
             spinner.setOnItemSelectedListener(this);
@@ -148,7 +153,14 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder>{
         void onItemClick(View view, int position);
 
     }
+    public static <T> T[] add2BeginningOfArray(T[] elements, T element)
+    {
+        T[] newArray = Arrays.copyOf(elements, elements.length + 1);
+        newArray[0] = element;
+        System.arraycopy(elements, 0, newArray, 1, elements.length);
 
+        return newArray;
+    }
     public void updateList(List<Conditions> list){
         mData = list;
         notifyDataSetChanged();

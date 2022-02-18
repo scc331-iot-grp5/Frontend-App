@@ -57,10 +57,21 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
 
     RuleAdapter adapter;
     ArrayList<Conditions> conditions = new ArrayList<>();
+    ArrayList<Conditions> conditionsToPass = new ArrayList<>();
+
     RuleAdapter.ItemClickListener x;
     String conditionsA;
+
+    ArrayList<Conditions> conWithAll = new ArrayList<>();
+
     boolean anyConditionIsFalse = true;
 
+    StepOne(){
+
+    }
+    StepOne(ArrayList<Conditions> x){
+        this.conWithAll = x;
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,7 +111,12 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
 
-        adapter = new RuleAdapter(getContext(),conditions);
+
+        if(conWithAll.isEmpty())
+            adapter = new RuleAdapter(getContext(),conditions);
+        else
+            adapter = new RuleAdapter(getContext(),conWithAll);
+
         adapter.setClickListener(x);
         adapter.setSpinnerListener(this);
         recyclerView.setAdapter(adapter);
@@ -176,6 +192,14 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
     @Override
     public void onItemClick(View view, int position) {
         Conditions X = new Conditions(adapter.getName(position),adapter.getListSymbol(position), adapter.getValue(position));
-        ((NavigationHost) getActivity()).navigateTo(new StepTwo(X), false); // Navigate to the next Fragment
+        conditionsToPass.add(X);
+        for (int i = 0; i < adapter.getItemCount(); i++) {
+            if(i != position){
+                Conditions ass = new Conditions(adapter.getName(i),adapter.getListSymbol(i), adapter.getValue(i));
+                conditionsToPass.add(ass);
+            }
+        }
+
+        ((NavigationHost) getActivity()).navigateTo(new StepTwo(conditionsToPass), false); // Navigate to the next Fragment
     }
 }

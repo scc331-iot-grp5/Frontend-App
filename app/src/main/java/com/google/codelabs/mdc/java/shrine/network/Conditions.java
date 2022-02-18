@@ -1,14 +1,22 @@
 package com.google.codelabs.mdc.java.shrine.network;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class Conditions {
 
     public String name;
-    public String operator;
-    public String value;
+    public String operator = " ";
+    public String value = " ";
+    public String zoneGroup = " ";
+    public String objectGroup = " ";
+    public ArrayList<Integer> microbits = new ArrayList<>();
 
 
     public Conditions(String name) {
         this.name = name;
+        this.value = "0";
+        this.operator = " ";
     }
 
     public Conditions(String name, String o, String a) {
@@ -33,5 +41,16 @@ public class Conditions {
     public void setValue(String english) {
         this.value = english;
     }
+
+    public void setZoneGroup(String english) {
+        this.zoneGroup = english;
+    }
+    public void setObjectGroup(String english) {
+        this.objectGroup = english;
+    }
+    public void setMicrobits(ArrayList<Integer> english) {
+        this.microbits = english;
+    }
+
 
 }

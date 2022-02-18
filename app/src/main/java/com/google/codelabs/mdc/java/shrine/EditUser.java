@@ -118,7 +118,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(), layoutManager.getOrientation());
         recyclerView.addItemDecoration(dividerItemDecoration);
-        adapter = new MicrobitViewAdapter(getContext(),devices,userid,view);
+        adapter = new MicrobitViewAdapter(getContext(),devices,userid,view,R.layout.microbit_row);
         adapter.setClickListener(x);
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);

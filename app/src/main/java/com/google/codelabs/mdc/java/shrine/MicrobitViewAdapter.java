@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,22 +28,24 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
     private int uID;
     private LayoutInflater mInflater;
     private View backView;
+    private int resource;
     private MicrobitViewAdapter.ItemClickListener mClickListener;
     private MicrobitViewAdapter.ItemLongClickListener mLongClickListener;
 
 
     // data is passed into the constructor
-    MicrobitViewAdapter(Context context, List<Device> data,int x, View v){
+    MicrobitViewAdapter(Context context, List<Device> data,int x, View v, int resource){
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
         this.uID = x;
         this.backView = v;
+        this.resource = resource;
     }
 
     // inflates the row layout from xml when needed
     @Override
     public MicrobitViewAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = mInflater.inflate(R.layout.microbit_row, parent, false);
+        View view = mInflater.inflate(resource, parent, false);
         return new MicrobitViewAdapter.ViewHolder(view);
     }
 
@@ -73,12 +76,14 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
         TextView name;
         TextView microbitID;
         TextView objectName;
+        LinearLayout l;
 
         ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.m_name);
             microbitID = itemView.findViewById(R.id.microbitID);
             objectName = itemView.findViewById(R.id.m_object);
+            l = itemView.findViewById(R.id.iconTick);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
         }
@@ -86,12 +91,18 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
         @Override
         public void onClick(View view) {
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition(), backView);
+
+            if(resource == R.layout.m_row) {
+
+            }
         }
 
         @Override
         public boolean onLongClick(View view) {
-
-            if (uID != 0) {
+            if(uID == 1){
+                return true;
+            }
+            else if (uID != 0) {
                 System.out.println("Im bot here");
                 if (mLongClickListener != null)
                     mLongClickListener.onItemLongClick(view, getAdapterPosition());
