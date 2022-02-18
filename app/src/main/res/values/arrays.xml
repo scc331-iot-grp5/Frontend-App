@@ -31,6 +31,12 @@
         <item>y acc</item>
         <item>z acc</item>
     </string-array>
+    <string-array name="events">
+        <item>Select an Event</item>
+        <item>Report Incident</item>
+        <item>Device Alert</item>
+        <item>Web Alert</item>
+    </string-array>
     <string-array name="Road_array_2">
         <item>One Way</item>
         <item>Both Ways</item>

@@ -11,6 +11,7 @@ public class Conditions {
     public String zoneGroup = " ";
     public String objectGroup = " ";
     public ArrayList<Integer> microbits = new ArrayList<>();
+    public boolean asignedDevices = false;
 
 
     public Conditions(String name) {
@@ -25,6 +26,16 @@ public class Conditions {
         this.value = a;
     }
 
+    public Conditions(String name, String o, String a, String zone, String obj, ArrayList<Integer> k, boolean is) {
+        this.name = name;
+        this.operator = o;
+        this.value = a;
+        this.zoneGroup = zone;
+        this.objectGroup = obj;
+        this.microbits = k;
+        this.asignedDevices = is;
+    }
+
     public String getName() {
         return name;
     }
@@ -37,6 +48,14 @@ public class Conditions {
     }
     public String getOperator(){return this.operator;}
     public String getValue(){return this.value;}
+    public String getZoneGroup(){return this.zoneGroup;}
+    public String getObjectGroup(){return this.objectGroup;}
+
+    public ArrayList<Integer> getMicrobits() {
+        return microbits;
+    }
+
+    public boolean isTrue(){return this.asignedDevices;}
 
     public void setValue(String english) {
         this.value = english;
@@ -50,6 +69,9 @@ public class Conditions {
     }
     public void setMicrobits(ArrayList<Integer> english) {
         this.microbits = english;
+    }
+    public void setAsignedDevices(boolean english) {
+        this.asignedDevices = english;
     }
 
 

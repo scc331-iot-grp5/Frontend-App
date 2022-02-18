@@ -40,6 +40,7 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.codelabs.mdc.java.shrine.network.Device;
+import com.google.codelabs.mdc.java.shrine.network.Rules;
 import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 import com.mapbox.mapboxsdk.Mapbox;
 import com.mapbox.mapboxsdk.annotations.MarkerOptions;
@@ -56,8 +57,11 @@ import java.util.regex.Pattern;
 public class StepOne extends Fragment implements OnItemSelectedListener, RuleAdapter.ItemClickListener {
 
     RuleAdapter adapter;
+    Rules newRule = new Rules();
     ArrayList<Conditions> conditions = new ArrayList<>();
     ArrayList<Conditions> conditionsToPass = new ArrayList<>();
+
+    ArrayList<Conditions> temp ;
 
     RuleAdapter.ItemClickListener x;
     String conditionsA;
@@ -72,6 +76,12 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
     StepOne(ArrayList<Conditions> x){
         this.conWithAll = x;
     }
+
+    StepOne(Rules x){
+        this.newRule = x;
+    }
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -112,15 +122,22 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
         recyclerView.addItemDecoration(dividerItemDecoration);
 
 
-        if(conWithAll.isEmpty())
-            adapter = new RuleAdapter(getContext(),conditions);
-        else
-            adapter = new RuleAdapter(getContext(),conWithAll);
+        if(conWithAll.isEmpty() && newRule.isItEmpty()) {
+            adapter = new RuleAdapter(getContext(), conditions);
+            temp = conditions;
+        }
+        else if(conWithAll.isEmpty()) {
+            adapter = new RuleAdapter(getContext(), newRule.getAllCons());
+            temp = newRule.getAllCons();
+        }
+        else if(newRule.isItEmpty()) {
+            adapter = new RuleAdapter(getContext(), conWithAll);
+            temp = conWithAll;
+        }
 
         adapter.setClickListener(x);
         adapter.setSpinnerListener(this);
         recyclerView.setAdapter(adapter);
-
 
         LinearLayout warning = view.findViewById(R.id.warningLabel);
 
@@ -129,8 +146,8 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
             @Override
             public void onClick(View view) {
                 Conditions X = new Conditions(conditionsA);
-                conditions.add(X);
-                adapter.updateList(conditions);
+                temp.add(X);
+                adapter.updateList(temp);
                 if(anyConditionIsFalse){
                     warning.setVisibility(View.VISIBLE);
                 }
@@ -141,11 +158,8 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //need to add the extra attributes later
-                //Conditions X = new Conditions(adapter.getCondition(),adapter.getListSymbol(), adapter.getValue());
-                //ArrayList<Conditions> temp = new ArrayList<>();
-                //temp.add(X);
-                //((NavigationHost) getActivity()).navigateTo(new StepThree(temp), false); // Navigate to the next Fragment
+               Rules a = new Rules(temp);
+                ((NavigationHost) getActivity()).navigateTo(new StepThree(a), false); // Navigate to the next Fragment
             }
         });
 
@@ -191,11 +205,14 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
 
     @Override
     public void onItemClick(View view, int position) {
-        Conditions X = new Conditions(adapter.getName(position),adapter.getListSymbol(position), adapter.getValue(position));
+        Conditions X = new Conditions(adapter.getName(position),adapter.getListSymbol(position), adapter.getValue(position), adapter.getZone(position),
+                adapter.getObject(position), adapter.getMicrobits(position),adapter.getTrue(position));
+
         conditionsToPass.add(X);
         for (int i = 0; i < adapter.getItemCount(); i++) {
             if(i != position){
-                Conditions ass = new Conditions(adapter.getName(i),adapter.getListSymbol(i), adapter.getValue(i));
+                Conditions ass = new Conditions(adapter.getName(i),adapter.getListSymbol(i), adapter.getValue(i), adapter.getZone(i),
+                        adapter.getObject(i), adapter.getMicrobits(i),adapter.getTrue(i));
                 conditionsToPass.add(ass);
             }
         }

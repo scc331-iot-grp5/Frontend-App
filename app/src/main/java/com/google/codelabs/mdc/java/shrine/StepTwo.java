@@ -145,6 +145,8 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
                 X.setZoneGroup(zone);
                 X.setObjectGroup(object);
                 X.setMicrobits(l);
+                X.setAsignedDevices(true);
+
                 ((NavigationHost) getActivity()).navigateTo(new StepOne(givenCons), false); // Navigate to the next Fragment
             }
         });
@@ -204,7 +206,7 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((NavigationHost) getActivity()).navigateTo(new StepOne(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new StepOne(givenCons), false); // Navigate to the next Fragment
 
             }
         });
@@ -223,7 +225,7 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
         Spinner spinner = (Spinner) adapterView;
         if (spinner.getId() == R.id.zoneGroups){
             zone = adapterView.getItemAtPosition(i).toString();
-        }else if (spinner.getId() == R.id.roadType) {
+        }else if (spinner.getId() == R.id.ObjectGroups) {
             object = adapterView.getItemAtPosition(i).toString();
         }
     }

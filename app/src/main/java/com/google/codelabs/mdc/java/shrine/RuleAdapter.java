@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.Request;
@@ -27,6 +30,7 @@ import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.locks.Condition;
@@ -69,6 +73,12 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder>{
         adapterList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         holder.spinner.setAdapter(adapterList);
 
+        if(mData.get(position).isTrue()){
+            holder.i.setImageResource(R.drawable.ic_baseline_check_24);
+            holder.i.setColorFilter(ContextCompat.getColor(holder.itemView.getContext(), R.color.green), android.graphics.PorterDuff.Mode.MULTIPLY);
+            holder.la.setBackgroundResource(R.color.green);
+        }
+
     }
 
     // total number of rows
@@ -89,14 +99,34 @@ public class RuleAdapter extends RecyclerView.Adapter<RuleAdapter.ViewHolder>{
         return mData.get(pos).getName();
     }
 
+    public String getZone(int pos){
+        return mData.get(pos).getZoneGroup();
+    }
+
+    public String getObject(int pos){
+        return mData.get(pos).getObjectGroup();
+    }
+
+    public ArrayList<Integer> getMicrobits(int pos){
+        return mData.get(pos).getMicrobits();
+    }
+
+    public boolean getTrue(int pos){
+        return mData.get(pos).isTrue();
+    }
+
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, AdapterView.OnItemSelectedListener, TextWatcher {
         Spinner spinner;
+        ImageView i;
+        LinearLayout la;
 
         ViewHolder(View itemView) {
             super(itemView);
             condition = itemView.findViewById(R.id.condition);
             value = itemView.findViewById(R.id.valueEditText);
+            i = itemView.findViewById(R.id.ruleIcon);
+            la = itemView.findViewById(R.id.xax);
 
             spinner = (Spinner) itemView.findViewById(R.id.conditions);
 
