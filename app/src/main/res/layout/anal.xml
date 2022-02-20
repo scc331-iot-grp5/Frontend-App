@@ -61,7 +61,7 @@
             android:paddingTop="15dp">
 
             <RelativeLayout
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="80dp"
                 android:layout_width="match_parent"
                 android:layout_gravity="center|center_horizontal"
                 android:layout_height="wrap_content">
@@ -69,12 +69,12 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/speedo"
                     style="@style/Widget.Shrine.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="199dp"
+                    android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="115dp"
-                    android:layout_marginRight="115dp"
+                    android:layout_marginEnd="79dp"
+                    android:layout_marginRight="79dp"
                     android:text="Speedometer" />
 
             </RelativeLayout>
@@ -87,12 +87,12 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/readings"
                     style="@style/Widget.Shrine.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="133dp"
-                    android:layout_marginRight="133dp"
+                    android:layout_marginEnd="79dp"
+                    android:layout_marginRight="79dp"
                     android:text="Readings" />
 
             </RelativeLayout>
@@ -105,12 +105,12 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/cm"
                     style="@style/Widget.Shrine.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="198dp"
+                    android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="121dp"
-                    android:layout_marginRight="121dp"
+                    android:layout_marginEnd="79dp"
+                    android:layout_marginRight="79dp"
                     android:text="Crash Map" />
 
             </RelativeLayout>
@@ -124,7 +124,7 @@
                     android:id="@+id/re"
                     style="@style/Widget.Shrine.Button"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:layout_marginEnd="78dp"
@@ -134,25 +134,23 @@
             </RelativeLayout>
 
             <RelativeLayout
-                android:layout_marginTop="50dp"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
-                android:layout_height="wrap_content">
+                android:layout_marginTop="50dp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/heatMap"
                     style="@style/Widget.Shrine.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="192dp"
+                    android:layout_height="match_parent"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="133dp"
-                    android:layout_marginRight="133dp"
+                    android:layout_marginEnd="79dp"
+                    android:layout_marginRight="79dp"
                     android:text="HeatMap" />
 
             </RelativeLayout>
-
-
 
 
         </LinearLayout>

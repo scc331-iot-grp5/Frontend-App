@@ -30,6 +30,7 @@ public class CalendarPopUp{
     int day = 0;
     int month = 0;
     int year = 0;
+    String m = " ";
 
     public void showPopupWindow(final View view, Context context) {
 
@@ -60,6 +61,10 @@ public class CalendarPopUp{
             public void onClick(View v) {
                 day = picker.getDayOfMonth();
                 month = picker.getMonth();
+                if(month == 0 || month == 1 ||month == 2 ||month == 3 ||month == 4 ||month == 5 ||month == 6 ||month == 7 ||month == 8){
+                    month = month +1;
+                    m = '0'+ Integer.toString(month);
+                }
                 year = picker.getYear();
                 popupWindow.dismiss();
 
@@ -79,7 +84,7 @@ public class CalendarPopUp{
         });
     }
     public String getDate(){
-        return (Integer.toString(day) + "/" + Integer.toString(month) + "/" + Integer.toString(year));
+        return (Integer.toString(year) + "-" + m + "-" + Integer.toString(day));
     }
 
 }

@@ -50,6 +50,25 @@
                     }
                 },
                 {
+                    "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/values/attrs.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "219",
+                        "endLines": "20",
+                        "endColumns": "24",
+                        "endOffsets": "1000"
+                    },
+                    "to": {
+                        "startLines": "5429",
+                        "startColumns": "4",
+                        "startOffsets": "302375",
+                        "endLines": "5443",
+                        "endColumns": "24",
+                        "endOffsets": "303143"
+                    }
+                },
+                {
                     "source": "/Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/res/values/values.xml",
                     "from": {
                         "startLines": "-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1",
@@ -115,12 +134,9 @@
                 {
                     "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/values/arrays.xml",
                     "from": {
-                        "startLines": "-1,18,-1,-1,-1,-1,-1,-1",
-                        "startColumns": "-1,4,-1,-1,-1,-1,-1,-1",
-                        "startOffsets": "-1,530,-1,-1,-1,-1,-1,-1",
-                        "endLines": "-1,22,-1,-1,-1,-1,-1,-1",
-                        "endColumns": "-1,19,-1,-1,-1,-1,-1,-1",
-                        "endOffsets": "-1,672,-1,-1,-1,-1,-1,-1"
+                        "startLines": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startColumns": "-1,-1,-1,-1,-1,-1,-1,-1",
+                        "startOffsets": "-1,-1,-1,-1,-1,-1,-1,-1"
                     },
                     "to": {
                         "startLines": "2,8,13,18,22,31,37,43",

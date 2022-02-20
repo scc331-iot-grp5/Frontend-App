@@ -74,6 +74,7 @@ public class CrashMap extends Fragment{
     View view;
     RequestQueue queue;
     CalendarPopUp calenderPopUp;
+    String filterDate;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,18 +97,9 @@ public class CrashMap extends Fragment{
         }
         // Set up the toolbar
         setUpToolbar(view);
+        updateMap(view,savedInstanceState);
 
         //GET SPEED FROM DB UPDATE theSPEED
-
-        MapView mapView = view.findViewById(R.id.crashMap);
-        mapView.onCreate(savedInstanceState);
-
-        mapView.getMapAsync(new OnMapReadyCallback(){
-            @Override
-            public void onMapReady(MapboxMap mapboxMap) {
-
-            }
-        });
 
         Button popupButton = view.findViewById(R.id.selectDate);
         popupButton.setOnClickListener(new View.OnClickListener() {
@@ -119,11 +111,78 @@ public class CrashMap extends Fragment{
             }
         });
 
+        Button re = view.findViewById(R.id.refresh);
+        re.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                System.out.println(calenderPopUp.getDate());
+                filterDate = calenderPopUp.getDate();
+                updateMap(view,savedInstanceState);
+            }
+        });
+
        //MaterialDatePicker a = new MaterialDatePicker
         //System.out.println(calenderPopUp.getDate());
 
 
         return view;
+    }
+    private void updateMap(View view, Bundle savedInstanceState){
+        MapView mapView = view.findViewById(R.id.crashMap);
+        mapView.onCreate(savedInstanceState);
+
+        mapView.getMapAsync(new OnMapReadyCallback(){
+            @Override
+            public void onMapReady(MapboxMap mapboxMap) {
+                mapboxMap.clear();
+                String url = "https://f074-86-4-178-72.ngrok.io/getCrashMap";
+                JSONArray json = new JSONArray();
+                JSONObject j = new JSONObject();
+
+                try {
+                    j.put("Date", filterDate);
+                    json.put(0,j);
+                }
+                catch(Exception e){}
+
+                JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                        (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                            @Override
+                            public void onResponse(JSONArray response) {
+                                try {
+                                    for (int i = 0; i < response.length(); i++) {
+                                        JSONObject object1 = response.getJSONObject(i);
+                                        Double x = (Double) object1.get("latitude");
+                                        Double y = (Double) object1.get("longitude");
+                                        //String tittle = (String) object1.get("microbitId");
+                                        LatLng newPoint = new LatLng(x,y);
+                                        Icon personMark = IconFactory.getInstance(getContext()).fromResource(R.mipmap.ic_blje_foreground);
+                                        Icon carMark = IconFactory.getInstance(getContext()).fromResource(R.mipmap.ic_orange_foreground);
+
+
+                                        mapboxMap.addMarker(new MarkerOptions()
+                                                    .position(newPoint)
+                                                    .title("point"))
+                                                    .setIcon(carMark);
+
+
+
+                                    }
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                // TODO: Handle error
+
+                            }
+                        });
+                queue.add(jsonObjectRequest);
+            }
+        });
     }
     private void setUpToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.app_bar);

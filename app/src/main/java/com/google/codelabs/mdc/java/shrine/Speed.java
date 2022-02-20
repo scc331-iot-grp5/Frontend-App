@@ -71,6 +71,8 @@ public class Speed extends Fragment{
     View view;
     SpeedometerView Speed;
     float theSpeed = 100f;
+    RequestQueue queue;
+    TextInputEditText s;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,7 +93,7 @@ public class Speed extends Fragment{
 
         // Set up the toolbar
         setUpToolbar(view);
-
+        queue = Volley.newRequestQueue(getContext());
         Speed = (SpeedometerView)view.findViewById(R.id.speedometer);
         Speed.setLabelConverter(new SpeedometerView.LabelConverter() {
             @Override
@@ -100,6 +102,17 @@ public class Speed extends Fragment{
             }
         });
 
+        MaterialButton hm = view.findViewById(R.id.save);
+
+        // Set an error if the password is less than 8 characters.
+        hm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getData();
+            }
+        });
+
+        s = view.findViewById(R.id.urlNameText);
 // configure value range and ticks
         Speed.setMaxSpeed(100);
         Speed.setMajorTickStep(25);
@@ -108,10 +121,49 @@ public class Speed extends Fragment{
         Speed.addColoredRange(0, 50, Color.GREEN);
         Speed.addColoredRange(50, 75, Color.YELLOW);
         Speed.addColoredRange(75, 100, Color.RED);
-        Speed.setSpeed(theSpeed, 2000, 500);
+        //Speed.setSpeed(theSpeed, 2000, 500);
 
         //GET SPEED FROM DB UPDATE theSPEED
         return view;
+    }
+    private void getData(){
+        String url = "https://f074-86-4-178-72.ngrok.io/speedo";
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("id",s.getText().toString());
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+                                double x = (double) object1.get("speed");
+                                theSpeed = (float) (x);
+                                Speed.setSpeed(theSpeed, 2000, 500);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
     }
 
     private void setUpToolbar(View view) {

@@ -53,20 +53,7 @@
             <RelativeLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/refresh"
-                    style="@style/Widget.Shrine.Button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginEnd="260dp"
-                    android:layout_marginRight="100dp"
-                    android:text="Refresh" />
-
-            </RelativeLayout>
+                android:layout_height="wrap_content"/>
             <TextView
                 android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
@@ -101,23 +88,36 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginEnd="13dp" />
             </RelativeLayout>
-            <RelativeLayout
-                android:layout_marginTop="10dp"
+
+            <TextView
+                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:text="MicrobitID (Optional)"
+                android:textAppearance="@style/TextAppearance.Shrine.heading"/>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/addConditions"
-                    style="@style/Widget.Shrine.Button"
-                    android:layout_width="wrap_content"
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.Shrine.TextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="MicrobitID">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/idText"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginEnd="140dp"
-                    android:layout_marginRight="140dp"
-                    android:text="Add" />
+                    android:inputType="text"
+                    android:maxLines="1" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            </RelativeLayout>
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/selectDate"
+                style="@style/Widget.Shrine.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="89dp"
+                android:layout_marginRight="89dp"
+                android:text="Select Date Range" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -138,20 +138,27 @@
                 android:elevation="10dp" />
 
             <RelativeLayout
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/selectDate"
+                    android:id="@+id/addConditions"
                     style="@style/Widget.Shrine.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="89dp"
-                    android:layout_marginRight="89dp"
-                    android:text="Select Date Range" />
+                    android:layout_marginEnd="140dp"
+                    android:layout_marginRight="140dp"
+                    android:text="Add" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
             </RelativeLayout>
 

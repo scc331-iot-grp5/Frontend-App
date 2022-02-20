@@ -72,9 +72,11 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
 
     View view;
     ReadingsAdapter adapter;
+    RequestQueue queue;
     ArrayList<Reading> read = new ArrayList<>();
     ReadingsAdapter.ItemClickListener x;
     ReadingsAdapter.ItemLongClickListener y;
+    String mID;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,6 +89,7 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         // Inflate the layout for this fragment with the ProductGrid theme
         view = inflater.inflate(R.layout.readings, container, false);
+        queue = Volley.newRequestQueue(getContext());
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
             TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
             setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_left));
@@ -98,10 +101,6 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
 
         //GET SPEED FROM DB UPDATE theSPEED
 
-        read.add(new Reading("13","20","NNW"));
-        read.add(new Reading("13","22","NNW"));
-        read.add(new Reading("11","20","NNW"));
-        read.add(new Reading("13","24","NNW"));
 
         // set up the RecyclerView
         RecyclerView recyclerView = view.findViewById(R.id.readingsView);
@@ -114,6 +113,15 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
 
+        TextInputEditText a =view.findViewById(R.id.urlNameText);
+        MaterialButton save = view.findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mID = a.getText().toString();
+                getMData(view);
+            }
+        });
 
         TextInputEditText searchField = view.findViewById(R.id.search_edit_text);
         searchField.addTextChangedListener(new TextWatcher() {
@@ -139,6 +147,51 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
         });
 
         return view;
+    }
+    private void getMData(View view){
+        String url = "https://f074-86-4-178-72.ngrok.io/readings";
+        read.clear();
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("microbitID", mID);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                int microID = (int) object1.get("temp");
+                                int name = (int) object1.get("acc");
+                                int url = (int) object1.get("compass");
+                                String time = (String) object1.get("time");
+
+                                Reading a = new Reading(Integer.toString(microID), Integer.toString(name), Integer.toString(url),time);
+                                read.add(a);
+                                adapter.updateList(read);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
     }
     void filter(String text){
         ArrayList<Reading> temp = new ArrayList();

@@ -92,6 +92,11 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
     RequestQueue queue;
     CalendarPopUpTwo calenderPopUp;
     LineChart volumeReportChart;
+    String searchType;
+    XAxis xAxis;
+    YAxis leftAxis;
+    String before = " ";
+    String after = " ";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -123,15 +128,6 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
             }
         });
 
-        Button re = view.findViewById(R.id.refresh);
-        re.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                System.out.println(calenderPopUp.getDateBefore());
-                System.out.println(calenderPopUp.getDateAfter());
-            }
-        });
 
         Spinner spinner = (Spinner) view.findViewById(R.id.conditions);
         spinner.setOnItemSelectedListener(this);
@@ -140,14 +136,33 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
         adapterList.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapterList);
 
+        TextInputEditText nameInput = view.findViewById(R.id.idText);
+
         MaterialButton add = view.findViewById(R.id.addConditions);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                try {
+                    before = calenderPopUp.getDateBefore();
+                    after = calenderPopUp.getDateAfter();
+                }catch (Exception e){}
 
+                if(searchType.equals("Microbits")){
+                    if(before.equals(" ") && after.equals(" "))
+                        getData();
+                    else {
+                        before = calenderPopUp.getDateBefore();
+                        after = calenderPopUp.getDateAfter();
+                        getDataWithParameters(before, after);
+                    }
+                }
+                else if(searchType.equals("Temperature")){
+                        before = calenderPopUp.getDateBefore();
+                        after = calenderPopUp.getDateAfter();
+                        getTempWithParameters(before, after,nameInput.getText().toString());
+                }
             }
         });
-
 
         volumeReportChart = view.findViewById(R.id.reportingChart);
         volumeReportChart.setTouchEnabled(true);
@@ -164,8 +179,8 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
         ll2.setLineWidth(4f);
         ll2.enableDashedLine(10f, 10f, 0f);
 
-        XAxis xAxis = volumeReportChart.getXAxis();
-        YAxis leftAxis = volumeReportChart.getAxisLeft();
+        xAxis = volumeReportChart.getXAxis();
+        leftAxis = volumeReportChart.getAxisLeft();
         XAxis.XAxisPosition position = XAxis.XAxisPosition.BOTTOM;
         xAxis.setPosition(position);
 
@@ -176,29 +191,191 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
         description.setTextSize(15f);
 
         List<String> dates = new ArrayList<>();
-        dates.add("2022-02-10");
-        dates.add("2022-02-11");
-        dates.add("2022-02-12");
 
         List<Double> number = new ArrayList<>();
-        number.add(22.2);
-        number.add(10.1);
-        number.add(9.0);
 
-        //dates is an array of dates
+        dates.add("2022-02-01");
+        dates.add("2022-02-02");
+        dates.add("2022-02-03");
+
+
+        number.add(1.0);
+        number.add(2.0);
+        number.add(3.1);
+
         xAxis.setValueFormatter(new ClaimsXAxisValueFormatter(dates));
         leftAxis.setValueFormatter(new ClaimsYAxisValueFormatter());
         renderData(dates, number);
-        //GET SPEED FROM DB UPDATE theSPEED
 
         return view;
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
+        Spinner spinner = (Spinner) adapterView;
+        if (spinner.getId() == R.id.conditions) {
+            searchType = adapterView.getItemAtPosition(i).toString();
+        }
     }
+    public void getTempWithParameters(String b, String a, String id){
+        String url = "https://f074-86-4-178-72.ngrok.io/tempGraphRange";
 
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("mID",id);
+            j.put("before", b);
+            j.put("after", a);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        List<String> dates = new ArrayList<>();
+
+        List<Double> number = new ArrayList<>();
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String date = (String) object1.get("date");
+                                double tot = (double) object1.get("temp");
+                                System.out.println(date);
+                                System.out.println(tot);
+                                number.add(tot);
+                                dates.add(date);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        renderData(dates, number);
+
+
+                        //GET SPEED FROM DB UPDATE theSPEED
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+    }
+    public void getDataWithParameters(String b, String a){
+        String url = "https://f074-86-4-178-72.ngrok.io/microbitsGraphRange";
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("before", b);
+            j.put("after", a);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        List<String> dates = new ArrayList<>();
+
+        List<Double> number = new ArrayList<>();
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String date = (String) object1.get("date");
+                                int tot = (int) object1.get("TOT");
+                                System.out.println(date);
+                                System.out.println(tot);
+                                number.add((double) tot);
+                                dates.add(date);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        renderData(dates, number);
+
+
+                        //GET SPEED FROM DB UPDATE theSPEED
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+    }
+    public void getData(){
+        String url = "https://f074-86-4-178-72.ngrok.io/microbitsGraph";
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("microbitID", 0);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        List<String> dates = new ArrayList<>();
+
+        List<Double> number = new ArrayList<>();
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String date = (String) object1.get("date");
+                                int tot = (int) object1.get("TOT");
+                                System.out.println(date);
+                                System.out.println(tot);
+                                number.add((double) tot);
+                                dates.add(date);
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                        renderData(dates, number);
+
+
+                        //GET SPEED FROM DB UPDATE theSPEED
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+    }
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
@@ -309,9 +486,17 @@ Depends on the position number on the X axis, we need to display the label, Here
     private void setDataForWeeksWise(List<Double> amounts) {
 
         ArrayList<Entry> values = new ArrayList<>();
-        values.add(new Entry(1, amounts.get(0).floatValue()));
-        values.add(new Entry(2, amounts.get(1).floatValue()));
-        values.add(new Entry(3, amounts.get(2).floatValue()));
+        try {
+            values.add(new Entry(1, amounts.get(0).floatValue()));
+            values.add(new Entry(2, amounts.get(1).floatValue()));
+            values.add(new Entry(3, amounts.get(2).floatValue()));
+            values.add(new Entry(4, amounts.get(3).floatValue()));
+            values.add(new Entry(5, amounts.get(4).floatValue()));
+            values.add(new Entry(6, amounts.get(5).floatValue()));
+            values.add(new Entry(7, amounts.get(6).floatValue()));
+            values.add(new Entry(8, amounts.get(7).floatValue()));
+            values.add(new Entry(9, amounts.get(8).floatValue()));
+        }catch (Exception e){}
 
 
         LineDataSet set1;

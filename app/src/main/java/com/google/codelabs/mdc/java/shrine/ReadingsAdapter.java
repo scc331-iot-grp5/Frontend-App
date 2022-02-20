@@ -53,10 +53,12 @@ public class ReadingsAdapter extends RecyclerView.Adapter<ReadingsAdapter.ViewHo
         String nameTwo = mData.get(position).getTemp();
         String image = mData.get(position).getAcc();
         String id = mData.get(position).getCompass();
+        String t = mData.get(position).getTime();
 
         holder.temp.setText(nameTwo);
         holder.acc.setText(image);
         holder.compass.setText(id);
+        holder.time.setText(t);
 
     }
 
@@ -72,12 +74,14 @@ public class ReadingsAdapter extends RecyclerView.Adapter<ReadingsAdapter.ViewHo
         TextView temp;
         TextView acc;
         TextView compass;
+        TextView time;
 
         ViewHolder(View itemView) {
             super(itemView);
             temp = itemView.findViewById(R.id.temp);
             acc = itemView.findViewById(R.id.acc);
             compass = itemView.findViewById(R.id.compass);
+            time = itemView.findViewById(R.id.time);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
         }

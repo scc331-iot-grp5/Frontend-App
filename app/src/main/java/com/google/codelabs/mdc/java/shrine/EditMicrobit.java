@@ -186,7 +186,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
                 else if(!objectName.equals("Select an Object")) {
                     new MaterialAlertDialogBuilder(getContext())
                             .setTitle(R.string.d_tittle)
-                            .setMessage(R.string.d_extra)
+                            .setMessage("Are you sure you want to update this device?")
                             .setPositiveButton(R.string.update, (dialog, which) -> {
                                 JSONObject json = new JSONObject();
                                 String s;

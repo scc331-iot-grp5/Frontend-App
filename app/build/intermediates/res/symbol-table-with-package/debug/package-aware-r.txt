@@ -133,6 +133,7 @@ attr behavior_overlapTop
 attr behavior_peekHeight
 attr behavior_saveFlags
 attr behavior_skipCollapsed
+attr blur
 attr borderWidth
 attr borderlessButtonStyle
 attr bottomAppBarStyle
@@ -273,6 +274,11 @@ attr counterOverflowTextColor
 attr counterTextAppearance
 attr counterTextColor
 attr customNavigationLayout
+attr dataPadding
+attr dataPaddingBottom
+attr dataPaddingLeft
+attr dataPaddingRight
+attr dataPaddingTop
 attr defaultQueryHint
 attr dialogCornerRadius
 attr dialogPreferredPadding
@@ -534,10 +540,14 @@ attr materialThemeOverlay
 attr maxActionInlineWidth
 attr maxButtonHeight
 attr maxCharacterCount
+attr maxDrawingHeight
+attr maxDrawingWidth
 attr maxImageSize
+attr maxOpacity
 attr maxSpeed
 attr measureWithLargestChild
 attr menu
+attr minOpacity
 attr minTouchTargetSize
 attr multiChoiceItemLayout
 attr navigationContentDescription
@@ -546,6 +556,7 @@ attr navigationMode
 attr navigationViewStyle
 attr number
 attr numericModifiers
+attr opacity
 attr overlapAnchor
 attr paddingBottomNoButtons
 attr paddingEnd
@@ -569,6 +580,7 @@ attr progressBarStyle
 attr queryBackground
 attr queryHint
 attr radioButtonStyle
+attr radius
 attr ratingBarStyle
 attr ratingBarStyleIndicator
 attr ratingBarStyleSmall
@@ -717,6 +729,7 @@ attr tooltipText
 attr track
 attr trackTint
 attr trackTintMode
+attr transparentBackground
 attr ttcIndex
 attr useCompatPadding
 attr useMaterialThemeColors
@@ -1357,6 +1370,7 @@ drawable ic_baseline_directions_24
 drawable ic_baseline_directions_car_24
 drawable ic_baseline_email_24
 drawable ic_baseline_image_24
+drawable ic_baseline_lock_clock_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_24
 drawable ic_baseline_rule_24
@@ -1528,6 +1542,7 @@ id cancel_button
 id center
 id center_horizontal
 id center_vertical
+id change_async_status
 id checkbox
 id checked
 id chip
@@ -1574,6 +1589,7 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id example_map
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1599,6 +1615,7 @@ id homeAsUp
 id icon
 id iconTick
 id icon_group
+id idText
 id ifRoom
 id image
 id info
@@ -1619,6 +1636,7 @@ id logout
 id m_name
 id m_name2
 id m_name4
+id m_name5
 id m_object
 id map
 id mapView
@@ -1904,6 +1922,7 @@ layout design_text_input_start_icon
 layout display_map
 layout edit_device
 layout edit_user
+layout hmap
 layout line_grpah
 layout m_row
 layout mapbox_attribution_list_item
@@ -2815,6 +2834,7 @@ styleable FontFamilyFont android_font android_fontWeight android_fontStyle andro
 styleable ForegroundLinearLayout android_foreground android_foregroundGravity foregroundInsidePadding
 styleable GradientColor android_startColor android_endColor android_type android_centerX android_centerY android_gradientRadius android_tileMode android_centerColor android_startX android_startY android_endX android_endY
 styleable GradientColorItem android_color android_offset
+styleable HeatMap blur dataPadding dataPaddingBottom dataPaddingLeft dataPaddingRight dataPaddingTop maxDrawingHeight maxDrawingWidth maxOpacity minOpacity opacity radius transparentBackground
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset

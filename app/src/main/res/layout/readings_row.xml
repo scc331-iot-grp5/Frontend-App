@@ -10,7 +10,7 @@
 
     <LinearLayout
         android:layout_width="177dp"
-        android:layout_height="110dp"
+        android:layout_height="120dp"
         android:orientation="vertical">
 
         <TextView
@@ -42,6 +42,15 @@
             android:drawableLeft="@drawable/ic_baseline_directions_24"
             android:text="Compass:"
             android:textSize="18sp" />
+        <TextView
+            android:id="@+id/m_name5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableLeft="@drawable/ic_baseline_lock_clock_24"
+            android:text="Time:"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
@@ -70,6 +79,15 @@
 
         <TextView
             android:id="@+id/compass"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Name"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:layout_gravity="center"

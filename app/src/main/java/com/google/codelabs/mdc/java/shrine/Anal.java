@@ -148,6 +148,16 @@ public class Anal extends Fragment{
             }
         });
 
+        MaterialButton hm = view.findViewById(R.id.heatMap);
+
+        // Set an error if the password is less than 8 characters.
+        hm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new HMap(), false); // Navigate to the next Fragment
+            }
+        });
+
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {

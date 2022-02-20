@@ -33,6 +33,8 @@ public class CalendarPopUpTwo{
     int day2 = 0;
     int month2 = 0;
     int year2 = 0;
+    String m1 = " ";
+    String m2 = " ";
 
     public void showPopupWindow(final View view, Context context) {
         //Create a View object yourself through inflater
@@ -61,6 +63,10 @@ public class CalendarPopUpTwo{
             public void onClick(View v) {
                 day = picker.getDayOfMonth();
                 month = picker.getMonth();
+                if(month == 0 || month == 1 ||month == 2 ||month == 3 ||month == 4 ||month == 5 ||month == 6 ||month == 7 ||month == 8){
+                    month = month +1;
+                    m1 = '0'+ Integer.toString(month);
+                }
                 year = picker.getYear();
             }
         });
@@ -70,7 +76,11 @@ public class CalendarPopUpTwo{
             @Override
             public void onClick(View v) {
                 day2 = picker.getDayOfMonth();
-                month2 = picker.getMonth();
+                int month = picker.getMonth();
+                if(month == 0 || month == 1 ||month == 2 ||month == 3 ||month == 4 ||month == 5 ||month == 6 ||month == 7 ||month == 8){
+                    month = month +1;
+                    m2 = '0'+ Integer.toString(month);
+                }
                 year2 = picker.getYear();
                 popupWindow.dismiss();
 
@@ -90,10 +100,10 @@ public class CalendarPopUpTwo{
         });
     }
     public String getDateBefore(){
-        return (Integer.toString(day) + "-" + Integer.toString(month) + "-" + Integer.toString(year));
+        return (Integer.toString(year) + "-" + m1 + "-" + Integer.toString(day));
     }
     public String getDateAfter(){
-        return (Integer.toString(day2) + "-" + Integer.toString(month2) + "-" + Integer.toString(year2));
+        return (Integer.toString(year2) + "-" + m2 + "-" + Integer.toString(day2));
     }
 
 }
