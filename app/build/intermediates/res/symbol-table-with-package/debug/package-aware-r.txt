@@ -52,6 +52,7 @@ animator slide_in_right
 animator slide_out_left
 animator slide_out_right
 array Operators
+array R
 array Road_array
 array Road_array_2
 array cond
@@ -534,6 +535,7 @@ attr maxActionInlineWidth
 attr maxButtonHeight
 attr maxCharacterCount
 attr maxImageSize
+attr maxSpeed
 attr measureWithLargestChild
 attr menu
 attr minTouchTargetSize
@@ -598,6 +600,7 @@ attr singleSelection
 attr snackbarButtonStyle
 attr snackbarStyle
 attr spanCount
+attr speed
 attr spinBars
 attr spinnerDropDownItemStyle
 attr spinnerStyle
@@ -1349,12 +1352,15 @@ drawable ic_baseline_add_circle_24
 drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_check_24
+drawable ic_baseline_device_thermostat_24
+drawable ic_baseline_directions_24
 drawable ic_baseline_directions_car_24
 drawable ic_baseline_email_24
 drawable ic_baseline_image_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_24
 drawable ic_baseline_rule_24
+drawable ic_baseline_speed_24
 drawable ic_blje_background
 drawable ic_keyboard_arrow_left_black_24dp
 drawable ic_keyboard_arrow_right_black_24dp
@@ -1422,6 +1428,7 @@ drawable shr_menu
 drawable shr_product_grid_background_shape
 drawable shr_search
 drawable spinner_background
+drawable spot_mask
 drawable test_custom_background
 drawable thumb
 drawable thumb_drawable
@@ -1438,6 +1445,8 @@ id ObjectGroups
 id SHIFT
 id SYM
 id UsernameDisplay
+id a
+id acc
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1527,7 +1536,9 @@ id chronometer
 id clear_text
 id clip_horizontal
 id clip_vertical
+id cm
 id collapseActionView
+id compass
 id compassView
 id condition
 id conditionLabel
@@ -1537,9 +1548,11 @@ id container
 id content
 id contentPanel
 id coordinator
+id crashMap
 id custom
 id customPanel
 id cut
+id datePicker1
 id date_picker_actions
 id date_picker_header
 id date_picker_header_title
@@ -1574,8 +1587,12 @@ id fitToContents
 id fixed
 id floating_action_button
 id forever
+id getDate
+id getDateAfter
+id getDateBefore
 id ghost_view
 id group_divider
+id heatMap
 id hideable
 id home
 id homeAsUp
@@ -1669,7 +1686,12 @@ id profile_Pic_url
 id progress_circular
 id progress_horizontal
 id radio
+id re
+id readings
+id readingsView
 id recycler_view
+id refresh
+id reportingChart
 id right
 id right_icon
 id right_side
@@ -1703,6 +1725,7 @@ id search_mag_icon
 id search_plate
 id search_src_text
 id search_voice_btn
+id selectDate
 id selectMicrobits
 id select_dialog_listview
 id selected
@@ -1722,6 +1745,8 @@ id speedLimit
 id speedLimit2
 id speedLimitInput
 id speedLimitInput2
+id speedo
+id speedometer
 id spinner
 id spinneraaa
 id spinneraaa_U
@@ -1743,6 +1768,7 @@ id tag_screen_reader_focusable
 id tag_transition_group
 id tag_unhandled_key_event_manager
 id tag_unhandled_key_listeners
+id temp
 id text
 id text2
 id textEnd
@@ -1855,6 +1881,10 @@ layout abc_tooltip
 layout add_device
 layout all_dev
 layout all_rules
+layout anal
+layout calandar_popup
+layout calandar_popup_2
+layout crash_map
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1874,6 +1904,7 @@ layout design_text_input_start_icon
 layout display_map
 layout edit_device
 layout edit_user
+layout line_grpah
 layout m_row
 layout mapbox_attribution_list_item
 layout mapbox_infowindow_content
@@ -1914,6 +1945,8 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout popup
 layout popup_user
+layout readings
+layout readings_row
 layout recyclerview_row
 layout rules_row
 layout select_dialog_item_material
@@ -1927,6 +1960,7 @@ layout shr_product_grid_fragment
 layout shr_staggered_product_card_first
 layout shr_staggered_product_card_second
 layout shr_staggered_product_card_third
+layout speed
 layout step_one
 layout step_three
 layout step_two
@@ -2017,6 +2051,7 @@ string manage_rules
 string manage_users
 string map
 string map_of_all_objects
+string map_of_crashes
 string mapbox_attributionErrorNoBrowser
 string mapbox_attributionTelemetryMessage
 string mapbox_attributionTelemetryNegative
@@ -2087,6 +2122,7 @@ string shr_product_title
 string shr_search_title
 string shr_shoes_label
 string shr_tops_label
+string speed
 string speed_limit
 string status_bar_notification_info_overflow
 string step_one
@@ -2804,6 +2840,7 @@ styleable SearchView android_focusable android_maxWidth android_inputType androi
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable Snackbar snackbarButtonStyle snackbarStyle
 styleable SnackbarLayout android_maxWidth actionTextColorAlpha animationMode backgroundOverlayColorAlpha elevation maxActionInlineWidth
+styleable SpeedometerView maxSpeed speed
 styleable Spinner android_entries android_popupBackground android_prompt android_dropDownWidth popupTheme
 styleable StateListDrawable android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable StateListDrawableItem android_drawable

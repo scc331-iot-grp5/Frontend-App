@@ -87,11 +87,11 @@ public class DisplayMap extends Fragment {
         }
 
         MaterialButton nextButton = view.findViewById(R.id.logout);
-        MaterialButton home = view.findViewById(R.id.home);
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
         MaterialButton user = view.findViewById(R.id.users);
         MaterialButton rules = view.findViewById(R.id.rules);
+        MaterialButton anal = view.findViewById(R.id.a);
 
         CheckBox c1 = view.findViewById(R.id.c1);
         CheckBox c2 = view.findViewById(R.id.c2);
@@ -144,12 +144,6 @@ public class DisplayMap extends Fragment {
                 ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false); // Navigate to the next Fragment
             }
         });
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false); // Navigate to the next Fragment
-            }
-        });
         addDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -174,19 +168,14 @@ public class DisplayMap extends Fragment {
                 ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
             }
         });
+        anal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Anal(), false); // Navigate to the next Fragment
+            }
+        });
 
-        Timer t = new Timer();
-
-        t.scheduleAtFixedRate(
-                new TimerTask()
-                {
-                    public void run()
-                    {
-                        updateMap(view,savedInstanceState);
-                    }
-                },
-                0,      // run first occurrence immediately
-                30000);  // run every three seconds
+        updateMap(view,savedInstanceState);
 
         return view;
     }

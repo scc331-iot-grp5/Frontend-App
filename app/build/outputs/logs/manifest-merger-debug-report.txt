@@ -6,6 +6,7 @@ INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/Andr
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:17:1-22:12
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/7394c21562d45f626d37b27f5d5a3099/AndroidManifest.xml:2:1-20:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:2:1-20:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/circleimageview-3.1.0.aar/9f3621e65a36963db1a7d4f19ea4fc91/AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.volley:volley:1.1.1] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-volley-1.1.1.aar/d07f02668b87e3178692a90a4090baba/AndroidManifest.xml:2:1-11:12
@@ -137,6 +138,8 @@ MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronp
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/material-1.1.0-alpha06.aar/2c409b5f0cdb45b02d0c33c6de59da98/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/legacy-support-v4-1.0.0.aar/67aaf0f2d01f29ca3e5da0c5de266f31/AndroidManifest.xml:20:5-44
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/7394c21562d45f626d37b27f5d5a3099/AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/7394c21562d45f626d37b27f5d5a3099/AndroidManifest.xml:16:5-18:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:5:5-7:41
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/jetified-mapbox-android-sdk-6.8.0.aar/6ea769fd6cbcbb86a4d5737207bf6161/AndroidManifest.xml:5:5-7:41
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/cameronpugh/.gradle/caches/transforms-1/files-1.1/circleimageview-3.1.0.aar/9f3621e65a36963db1a7d4f19ea4fc91/AndroidManifest.xml:5:5-7:41

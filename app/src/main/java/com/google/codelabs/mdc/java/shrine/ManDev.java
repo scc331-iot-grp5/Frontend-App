@@ -139,23 +139,17 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         }
 
         MaterialButton nextButton = view.findViewById(R.id.logout);
-        MaterialButton home = view.findViewById(R.id.home);
         MaterialButton addDevice = view.findViewById(R.id.addDevice);
         MaterialButton map = view.findViewById(R.id.map);
         MaterialButton user = view.findViewById(R.id.users);
         MaterialButton rules = view.findViewById(R.id.rules);
+        MaterialButton anal = view.findViewById(R.id.a);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false); // Navigate to the next Fragment
-            }
-        });
-        home.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ProductGridFragment(), false); // Navigate to the next Fragment
             }
         });
         addDevice.setOnClickListener(new View.OnClickListener() {
@@ -180,6 +174,12 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+            }
+        });
+        anal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Anal(), false); // Navigate to the next Fragment
             }
         });
 

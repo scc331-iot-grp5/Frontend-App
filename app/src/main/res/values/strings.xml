@@ -63,4 +63,6 @@
     <string name="rules">Rules:</string>
     <string name="next">Next</string>
     <string name="condition_must_have_a_assigned_group_select">Condition Must Have a Assigned Group (select)</string>
+    <string name="speed">Speed</string>
+    <string name="map_of_crashes">Map of Crashes</string>
 </resources>
