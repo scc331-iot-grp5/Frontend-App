@@ -104,28 +104,52 @@ public class StepThree extends Fragment implements OnItemSelectedListener{
             @Override
             public void onClick(View view) {
                 JSONObject json = new JSONObject();
-                JSONArray array = new JSONArray();
+                JSONArray arrayTwo = new JSONArray();
+                JSONArray arrayBigger = new JSONArray();
 
                 for (int i = 0; i < newRule.getAllCons().size(); i++){
-                    JSONArray arrayBigger = new JSONArray();
-                    arrayBigger.put(newRule.getAllCons().get(i).getZoneGroup());
-                    arrayBigger.put(newRule.getAllCons().get(i).getObjectGroup());
+
+                    try {
+                        json.put("zone", newRule.getAllCons().get(i).getZoneGroup());
+                        JSONObject j = new JSONObject();
+                        j.put("microbitGroup",newRule.getAllCons().get(i).getObjectGroup());
+
+
                     for (int a = 0; a<newRule.getAllCons().get(i).getMicrobits().size(); a++){
-                        arrayBigger.put(newRule.getAllCons().get(i).getMicrobits().get(a).toString());
+                        //arrayBigger.put(Integer.parseInt("microbit"),newRule.getAllCons().get(i).getMicrobits().get(a).toString());
+                        JSONObject ja = new JSONObject();
+                        j.put("microbit",newRule.getAllCons().get(i).getMicrobits().get(a).toString());
+
                     }
-                    arrayBigger.put(newRule.getAllCons().get(i).getName());
-                    arrayBigger.put(newRule.getAllCons().get(i).getValue());
-                    arrayBigger.put(newRule.getAllCons().get(i).getOperator());
+                    //arrayBigger.put(Integer.parseInt("fact"),newRule.getAllCons().get(i).getName());
+                        JSONObject jap = new JSONObject();
+                        j.put("fact",newRule.getAllCons().get(i).getName());
 
-                    array.put(arrayBigger);
+                    //arrayBigger.put(Integer.parseInt("operator"),newRule.getAllCons().get(i).getOperator());
+                        JSONObject japa = new JSONObject();
+                        j.put("operator",newRule.getAllCons().get(i).getOperator());
+
+                    //arrayBigger.put(Integer.parseInt("value"),newRule.getAllCons().get(i).getValue());
+                        JSONObject japan = new JSONObject();
+                        j.put("value",newRule.getAllCons().get(i).getValue());
+                        arrayBigger.put(j);
+
+                    } catch (Exception e) {
+                    }
                 }
-
                 try {
-                    json.put("Event Type", event);
-                    json.put("Rule Name", nameInput.getText().toString());
+                    JSONObject japan = new JSONObject();
+                    japan.put("type",event);
+                    japan.put("severity","10");
+                    arrayTwo.put(japan);
+                } catch (Exception e) {
+                }
+                try {
+                    json.put("conditions", arrayBigger);
+                    json.put("events", arrayTwo);
+                    json.put("RuleName", nameInput.getText().toString());
                     json.put("Message",message.getText().toString() );
                     json.put("Rule Image", url.getText().toString());
-                    json.put("Conditions", array);
                 } catch (Exception e) {
                 }
 

@@ -29,18 +29,19 @@
     </string-array>
     <string-array name="cond">
         <item>Select a Condition</item>
-        <item>Temperature</item>
-        <item>Direction</item>
-        <item>Distance</item>
-        <item>x acc</item>
-        <item>y acc</item>
-        <item>z acc</item>
+        <item>temperature</item>
+        <item>direction</item>
+        <item>distance</item>
+        <item>speed</item>
+        <item>x acceleration</item>
+        <item>y acceleration</item>
+        <item>z acceleration</item>
     </string-array>
     <string-array name="events">
         <item>Select an Event</item>
-        <item>Report Incident</item>
-        <item>Device Alert</item>
-        <item>Web Alert</item>
+        <item>reportIncident</item>
+        <item>triggerAlert</item>
+        <item>sendMessage</item>
     </string-array>
     <string-array name="Road_array_2">
         <item>One Way</item>

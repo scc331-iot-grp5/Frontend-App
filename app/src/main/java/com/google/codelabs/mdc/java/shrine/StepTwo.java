@@ -105,9 +105,9 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
         setUpToolbar(view);
 
         ArrayList<String> zones = new ArrayList<>(); //TEMP
-        zones.add("Green Zone");
-        zones.add("Red Zone");
-        zones.add("Blue Zone") ;
+        zones.add("1");
+        zones.add("2");
+        zones.add("3") ;
 
         Spinner spinner = (Spinner) view.findViewById(R.id.zoneGroups);
         spinner.setOnItemSelectedListener(this);

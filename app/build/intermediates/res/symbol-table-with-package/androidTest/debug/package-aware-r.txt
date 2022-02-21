@@ -1,0 +1,4 @@
+com.google.codelabs.mdc.java.shrine.test
+style InstrumentationActivityInvokerBootstrapActivityTheme
+style InstrumentationActivityInvokerEmptyActivityTheme
+style InstrumentationActivityInvokerFloatingActivityTheme
