@@ -32,6 +32,8 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
     private MicrobitViewAdapter.ItemClickListener mClickListener;
     private MicrobitViewAdapter.ItemLongClickListener mLongClickListener;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
 
     // data is passed into the constructor
     MicrobitViewAdapter(Context context, List<Device> data,int x, View v, int resource){
@@ -119,7 +121,7 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
                             } catch (Exception e) {
                             }
 
-                            String url = "https://f074-86-4-178-72.ngrok.io/unass";
+                            String url = connection + "/unass";
 
                             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                                     (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
@@ -158,7 +160,7 @@ public class MicrobitViewAdapter extends RecyclerView.Adapter<MicrobitViewAdapte
                             } catch (Exception e) {
                             }
 
-                            String url = "https://f074-86-4-178-72.ngrok.io/removeM";
+                            String url = connection + "/removeM";
 
                             JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                                     (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {

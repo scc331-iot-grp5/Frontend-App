@@ -75,6 +75,8 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
     MicrobitViewAdapter.ItemClickListener x;
     MicrobitViewAdapter.ItemLongClickListener y;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     public int userid;
     public int m;
     RequestQueue queue;
@@ -147,7 +149,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
         }
         catch(Exception e){}
 
-        String url = "https://f074-86-4-178-72.ngrok.io/userIndividual";
+        String url = connection + "/userIndividual";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){
@@ -186,7 +188,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
         MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
     }
     private void getMData(View view){
-        String url = "https://f074-86-4-178-72.ngrok.io/mData";
+        String url = connection + "/mData";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();
@@ -230,7 +232,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
         queue.add(jsonObjectRequest);
     }
     private void getMicrobitData(View view){
-        String url = "https://f074-86-4-178-72.ngrok.io/microbits";
+        String url = connection + "/microbits";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

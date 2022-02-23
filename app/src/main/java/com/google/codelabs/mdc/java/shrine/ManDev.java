@@ -73,6 +73,8 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     MicrobitViewAdapter.ItemClickListener x;
     MicrobitViewAdapter.ItemLongClickListener y;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     RequestQueue queue;
     View view;
 
@@ -197,7 +199,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     }
     //get all data not with userID
     private void getMData(View view){
-        String url = "https://f074-86-4-178-72.ngrok.io/mData2";
+        String url = connection + "/mData2";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

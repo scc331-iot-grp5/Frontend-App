@@ -36,7 +36,7 @@ public class PopUpClass implements OnItemSelectedListener {
     String id;
     String objectName;
     String userID;
-
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
 
     public void showPopupWindow(final View view, Context context, ArrayList<String> x, String u) {
 
@@ -49,6 +49,8 @@ public class PopUpClass implements OnItemSelectedListener {
         //Specify the length and width through constants
         int width = LinearLayout.LayoutParams.MATCH_PARENT;
         int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+
 
         //Make Inactive Items Outside Of PopupWindow
         boolean focusable = true;
@@ -105,7 +107,7 @@ public class PopUpClass implements OnItemSelectedListener {
         }
         catch(Exception e){}
 
-        String url = "https://f074-86-4-178-72.ngrok.io/ass";
+        String url = connection + "/ass";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){

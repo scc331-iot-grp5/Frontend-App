@@ -77,6 +77,7 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
     ReadingsAdapter.ItemClickListener x;
     ReadingsAdapter.ItemLongClickListener y;
     String mID;
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -149,7 +150,7 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
         return view;
     }
     private void getMData(View view){
-        String url = "https://f074-86-4-178-72.ngrok.io/readings";
+        String url = connection + "/readings";
         read.clear();
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

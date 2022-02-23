@@ -76,6 +76,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
     MyRecyclerViewAdapter.ItemClickListener x;
     MyRecyclerViewAdapter.ItemLongClickListener y;
     boolean HIDE_MENU = false;
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -112,7 +113,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
         // data to populate the RecyclerView with
-        String url = "https://f074-86-4-178-72.ngrok.io/users";
+        String url = connection + "/users";
 
         StringRequest jsonObjectRequest = new StringRequest
                 (Request.Method.GET, url, new Response.Listener<String>() {
@@ -232,7 +233,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         return view;
     }
     private void getMicrobitData(View view){
-        String url = "https://f074-86-4-178-72.ngrok.io/microbits";
+        String url = connection + "/microbits";
 
         dev.add("Select a Device to Assign");
         dev.add("None");

@@ -60,6 +60,8 @@ public class StepThree extends Fragment implements OnItemSelectedListener{
     public Rules newRule;
     String event;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     StepThree(Rules x){
         this.newRule = x;
     }
@@ -153,7 +155,7 @@ public class StepThree extends Fragment implements OnItemSelectedListener{
                 } catch (Exception e) {
                 }
 
-                String url = "https://f074-86-4-178-72.ngrok.io/addRule";
+                String url = connection + "/addRule";
 
                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                         (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {

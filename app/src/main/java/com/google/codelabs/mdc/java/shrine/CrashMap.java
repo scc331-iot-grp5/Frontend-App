@@ -67,6 +67,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.regex.Pattern;
 
 public class CrashMap extends Fragment{
@@ -74,6 +75,7 @@ public class CrashMap extends Fragment{
     View view;
     RequestQueue queue;
     CalendarPopUp calenderPopUp;
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
     String filterDate;
 
     @Override
@@ -136,7 +138,7 @@ public class CrashMap extends Fragment{
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
                 mapboxMap.clear();
-                String url = "https://f074-86-4-178-72.ngrok.io/getCrashMap";
+                String url = connection + "/getCrashMap";
                 JSONArray json = new JSONArray();
                 JSONObject j = new JSONObject();
 

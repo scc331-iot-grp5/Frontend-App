@@ -72,6 +72,8 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
     public String objectName = "";
     public String roadName = "";
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
 
     public EditMicrobit(int userid){
         this.microbitID = userid;
@@ -216,7 +218,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
                                     System.out.println(e);
                                 }
 
-                                String url = "https://f074-86-4-178-72.ngrok.io/updateDevice";
+                                String url =  connection + "/updateDevice";
 
                                 JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                                         (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
@@ -266,7 +268,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
         }
         catch(Exception e){}
 
-        String url = "https://f074-86-4-178-72.ngrok.io/microbitIndividual";
+        String url = connection + "/microbitIndividual";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){

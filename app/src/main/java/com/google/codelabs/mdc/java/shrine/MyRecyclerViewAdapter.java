@@ -39,6 +39,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private MyRecyclerViewAdapter.ItemClickListener mClickListener;
     private MyRecyclerViewAdapter.ItemLongClickListener mLongClickListener;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
 
     // data is passed into the constructor
     MyRecyclerViewAdapter(Context context, List<ProductEntry> data, View v) {
@@ -107,7 +109,7 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
                             json.put("mId", getItem(getAdapterPosition()));
                         } catch (Exception e) { }
 
-                        String url = "https://f074-86-4-178-72.ngrok.io/removeUser";
+                        String url = connection + "/removeUser";
 
                         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {

@@ -72,6 +72,8 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
     RulesViewAdapter.ItemClickListener x;
     RulesViewAdapter.ItemLongClickListener y;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     RequestQueue queue;
 
     @Override
@@ -102,7 +104,7 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
 
-        String url = "https://f074-86-4-178-72.ngrok.io/rules";
+        String url = connection + "/rules";
 
         StringRequest jsonObjectRequest = new StringRequest
                 (Request.Method.GET, url, new Response.Listener<String>() {

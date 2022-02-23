@@ -86,6 +86,8 @@ public class HMap extends Fragment implements CompoundButton.OnCheckedChangeList
     double temperature=0;
     View view;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -139,7 +141,7 @@ public class HMap extends Fragment implements CompoundButton.OnCheckedChangeList
     }
 
     private void getData(){
-        String url = "https://f074-86-4-178-72.ngrok.io/heatMap";
+        String url = connection + "/heatMap";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

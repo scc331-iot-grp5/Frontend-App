@@ -70,6 +70,8 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
     ArrayList<Integer> l = new ArrayList<>();
     MicrobitViewAdapter.ItemClickListener x;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     RequestQueue queue;
 
     String zone;
@@ -154,7 +156,7 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
         return view;
     }
     private void getMData(View view){
-        String url = "https://f074-86-4-178-72.ngrok.io/mData2";
+        String url = connection + "/mData2";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

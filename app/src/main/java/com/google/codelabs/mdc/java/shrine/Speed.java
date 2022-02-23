@@ -73,6 +73,7 @@ public class Speed extends Fragment{
     float theSpeed = 100f;
     RequestQueue queue;
     TextInputEditText s;
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -127,7 +128,7 @@ public class Speed extends Fragment{
         return view;
     }
     private void getData(){
-        String url = "https://f074-86-4-178-72.ngrok.io/speedo";
+        String url = connection +  "/speedo";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

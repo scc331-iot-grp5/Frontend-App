@@ -58,6 +58,8 @@ public class DisplayMap extends Fragment {
     int c = 1;
     int p = 1;
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -187,7 +189,7 @@ public class DisplayMap extends Fragment {
         mapView.getMapAsync(new OnMapReadyCallback(){
             @Override
             public void onMapReady(MapboxMap mapboxMap) {
-                String url = "https://f074-86-4-178-72.ngrok.io/map";
+                String url = connection + "/map";
                 mapboxMap.clear();
                 StringRequest jsonObjectRequest = new StringRequest
                         (Request.Method.GET, url, new Response.Listener<String>(){

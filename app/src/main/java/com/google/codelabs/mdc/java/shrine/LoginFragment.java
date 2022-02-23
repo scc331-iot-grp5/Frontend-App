@@ -29,6 +29,7 @@ import org.json.JSONObject;
 public class LoginFragment extends Fragment {
 
     boolean login = false;
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
 
     @Override
     public View onCreateView(
@@ -79,7 +80,7 @@ public class LoginFragment extends Fragment {
         }
         catch(Exception e){}
 
-        String url = "https://f074-86-4-178-72.ngrok.io/log-in";
+        String url = connection + "/log-in";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){

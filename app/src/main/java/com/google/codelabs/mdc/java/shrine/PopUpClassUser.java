@@ -35,6 +35,7 @@ public class PopUpClassUser implements AdapterView.OnItemSelectedListener {
     TextInputEditText name;
     TextInputEditText email;
     TextInputEditText profile;
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
     TextInputEditText banner;
 
 
@@ -120,7 +121,7 @@ public class PopUpClassUser implements AdapterView.OnItemSelectedListener {
         }
         catch(Exception e){}
 
-        String url = "https://f074-86-4-178-72.ngrok.io/newUser";
+        String url = connection + "/newUser";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){

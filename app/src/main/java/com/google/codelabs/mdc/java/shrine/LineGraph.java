@@ -98,6 +98,8 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
     String before = " ";
     String after = " ";
 
+    String connection = "https://6e66-148-88-245-146.ngrok.io";
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -218,7 +220,7 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
         }
     }
     public void getTempWithParameters(String b, String a, String id){
-        String url = "https://f074-86-4-178-72.ngrok.io/tempGraphRange";
+        String url = connection + "/tempGraphRange";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();
@@ -272,7 +274,7 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
         queue.add(jsonObjectRequest);
     }
     public void getDataWithParameters(String b, String a){
-        String url = "https://f074-86-4-178-72.ngrok.io/microbitsGraphRange";
+        String url = connection + "/microbitsGraphRange";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();
@@ -325,7 +327,7 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
         queue.add(jsonObjectRequest);
     }
     public void getData(){
-        String url = "https://f074-86-4-178-72.ngrok.io/microbitsGraph";
+        String url = connection + "/microbitsGraph";
 
         JSONArray json = new JSONArray();
         JSONObject j = new JSONObject();

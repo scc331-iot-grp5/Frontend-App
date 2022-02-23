@@ -55,6 +55,8 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
         TextInputLayout microbitTextInput;
         LatLng gPoint;
 
+        String connection = "https://6e66-148-88-245-146.ngrok.io";
+
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -157,7 +159,7 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                                     } catch (Exception e) {
                                     }
 
-                                    String url = "https://f074-86-4-178-72.ngrok.io/addDevice";
+                                    String url = connection + "/addDevice";
 
                                     JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                                             (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
