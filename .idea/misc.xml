@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v21/baseline_gps_not_fixed_24.xml" value="0.1735" />
         <entry key="app/src/main/res/drawable-v21/custom_ripple.xml" value="0.4197916666666667" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.14739583333333334" />
         <entry key="app/src/main/res/drawable/custom_ripple.xml" value="0.4197916666666667" />
@@ -32,15 +33,18 @@
         <entry key="app/src/main/res/layout-v21/popup_user.xml" value="0.25" />
         <entry key="app/src/main/res/layout-v21/shr_product_grid_fragment.xml" value="0.11" />
         <entry key="app/src/main/res/layout/add_device.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/add_zone_name.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/all_dev.xml" value="0.22" />
         <entry key="app/src/main/res/layout/all_rules.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/anal.xml" value="0.310807868064051" />
         <entry key="app/src/main/res/layout/calandar_popup.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/calandar_popup_2.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/crash_map.xml" value="0.2625" />
+        <entry key="app/src/main/res/layout/custom_spinner_items.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/display_map.xml" value="0.33" />
         <entry key="app/src/main/res/layout/edit_device.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/layout/edit_user.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/google_map.xml" value="0.1" />
         <entry key="app/src/main/res/layout/hmap.xml" value="0.25" />
         <entry key="app/src/main/res/layout/line_grpah.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/m_row.xml" value="0.24114583333333334" />

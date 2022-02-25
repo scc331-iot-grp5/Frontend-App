@@ -1,0 +1,85 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
+            "map": [
+                {
+                    "source": "/Users/cameronpugh/.gradle/caches/transforms-3/101ff0b58494dd0679990e39b99e836d/transformed/material-1.1.0-alpha06/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,6,9,12",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,330,502,662",
+                        "endLines": "5,8,11,14",
+                        "endColumns": "10,10,10,10",
+                        "endOffsets": "325,497,657,826"
+                    },
+                    "to": {
+                        "startLines": "94,98,101,104",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "6183,6458,6630,6790",
+                        "endLines": "97,100,103,106",
+                        "endColumns": "10,10,10,10",
+                        "endOffsets": "6453,6625,6785,6954"
+                    }
+                },
+                {
+                    "source": "/Users/cameronpugh/.gradle/caches/transforms-3/43e747ee3d46b61416f2e9bf6c8015ec/transformed/appcompat-1.1.0-alpha03/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,20,34,35,36,37,41,42,43,44",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,190,325,400,487,1371,2267,2386,2513,2618,2842,2957,3064,3177",
+                        "endLines": "2,3,4,5,19,33,34,35,36,40,41,42,43,47",
+                        "endColumns": "134,134,74,86,12,12,118,126,104,12,114,106,112,12",
+                        "endOffsets": "185,320,395,482,1366,2262,2381,2508,2613,2837,2952,3059,3172,3402"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,20,34,35,36,37,41,42,43,44",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "110,245,380,455,542,1426,2322,2441,2568,2673,2897,3012,3119,3232",
+                        "endLines": "2,3,4,5,19,33,34,35,36,40,41,42,43,47",
+                        "endColumns": "134,134,74,86,12,12,118,126,104,12,114,106,112,12",
+                        "endOffsets": "240,375,450,537,1421,2317,2436,2563,2668,2892,3007,3114,3227,3457"
+                    }
+                },
+                {
+                    "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/values-v23/styles.xml",
+                    "from": {
+                        "startLines": "17,68,95,91,100,105,7,24,47,72,80,32,60,40,84,50",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "782,3402,4712,4549,4998,5287,204,1234,2324,3612,3991,1557,2953,1997,4186,2454",
+                        "endLines": "22,70,99,93,104,109,15,30,49,78,82,38,66,45,89,59",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "1228,3606,4993,4706,5282,5559,776,1551,2449,3985,4180,1991,3396,2318,4543,2948"
+                    },
+                    "to": {
+                        "startLines": "51,57,60,65,68,73,78,87,107,110,117,120,127,134,140,146",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3612,4063,4272,4558,4720,5009,5286,5861,6959,7089,7465,7659,8098,8546,8872,9234",
+                        "endLines": "56,59,64,67,72,77,86,93,109,116,119,126,133,139,145,155",
+                        "endColumns": "12,12,12,12,12,12,12,12,12,12,12,12,12,12,12,12",
+                        "endOffsets": "4058,4267,4553,4715,5004,5281,5856,6178,7084,7460,7654,8093,8541,8867,9229,9728"
+                    }
+                },
+                {
+                    "source": "/Users/cameronpugh/.gradle/caches/transforms-3/241d86309c851b7162d9b48c2d63886c/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "48",
+                        "startColumns": "4",
+                        "startOffsets": "3462",
+                        "endLines": "50",
+                        "endColumns": "12",
+                        "endOffsets": "3607"
+                    }
+                }
+            ]
+        }
+    ]
+}

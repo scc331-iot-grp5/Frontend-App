@@ -1,0 +1,144 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.google.codelabs.mdc.java.shrine"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="32" />
+9-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+11-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:5-81
+11-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:22-78
+12    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+12-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:5-81
+12-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:5:22-78
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:7:5-67
+13-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:7:22-64
+14    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+14-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:8:5-79
+14-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:8:22-76
+15    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+15-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:9:5-80
+15-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:9:22-77
+16    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+16-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:10:5-81
+16-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:10:22-78
+17
+18    <uses-feature
+18-->[com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:26:5-28:35
+19        android:glEsVersion="0x00020000"
+19-->[com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:27:9-41
+20        android:required="true" />
+20-->[com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:28:9-32
+21
+22    <queries>
+22-->[com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:30:5-34:15
+23
+24        <!-- Needs to be explicitly declared on Android R+ -->
+25        <package android:name="com.google.android.apps.maps" />
+25-->[com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:9-64
+25-->[com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:33:18-61
+26    </queries>
+27
+28    <uses-feature
+28-->[com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:12:5-14:36
+29        android:name="android.hardware.wifi"
+29-->[com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:13:9-45
+30        android:required="false" />
+30-->[com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:14:9-33
+31
+32    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+32-->[com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:18:5-76
+32-->[com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:18:22-73
+33    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+33-->[com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-3/039d6b4634ea795ae17e8fb02636d3e9/transformed/jetified-mapbox-android-core-0.2.1/AndroidManifest.xml:11:5-79
+33-->[com.mapbox.mapboxsdk:mapbox-android-core:0.2.1] /Users/cameronpugh/.gradle/caches/transforms-3/039d6b4634ea795ae17e8fb02636d3e9/transformed/jetified-mapbox-android-core-0.2.1/AndroidManifest.xml:11:22-76
+34
+35    <application
+35-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:12:5-39:19
+36        android:name="com.google.codelabs.mdc.java.shrine.application.ShrineApplication"
+36-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:18:9-89
+37        android:allowBackup="true"
+37-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:13:9-35
+38        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+38-->[androidx.core:core:1.2.0] /Users/cameronpugh/.gradle/caches/transforms-3/1a336299bf9616f73cb0585d4a0fa6f3/transformed/core-1.2.0/AndroidManifest.xml:24:18-86
+39        android:debuggable="true"
+40        android:icon="@mipmap/ic_launcher"
+40-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:14:9-43
+41        android:label="@string/shr_app_name"
+41-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:15:9-45
+42        android:roundIcon="@mipmap/ic_launcher_round"
+42-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:16:9-54
+43        android:supportsRtl="true"
+43-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:17:9-35
+44        android:testOnly="true"
+45        android:theme="@style/Theme.Shrine" >
+45-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:19:9-44
+46        <meta-data
+46-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:21:9-23:69
+47            android:name="com.google.android.gms.version"
+47-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:22:13-58
+48            android:value="@integer/google_play_services_version" />
+48-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:23:13-66
+49        <meta-data
+50            android:name="com.google.android.geo.API_KEY"
+50-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:25:13-58
+51            android:value="AIzaSyCiTXE9U4Zn3Hzd1PoK-8s7ct88J5e0h0Y" />
+51-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:26:13-44
+52
+53        <uses-library
+53-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:28:9-29:39
+54            android:name="org.apache.http.legacy"
+54-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:28:23-60
+55            android:required="false" />
+55-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:29:13-37
+56
+57        <activity
+57-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:31:9-38:20
+58            android:name="com.google.codelabs.mdc.java.shrine.MainActivity"
+58-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:31:19-47
+59            android:exported="true" >
+59-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:32:13-36
+60            <intent-filter>
+60-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:33:13-37:29
+61                <action android:name="android.intent.action.MAIN" />
+61-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:34:17-69
+61-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:34:25-66
+62
+63                <category android:name="android.intent.category.LAUNCHER" />
+63-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:36:17-77
+63-->/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:36:27-74
+64            </intent-filter>
+65        </activity>
+66
+67        <service android:name="com.mapbox.android.telemetry.TelemetryService" />
+67-->[com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-3/5f56c0f42cf5e6b1c816d8cab570e4dd/transformed/jetified-mapbox-android-telemetry-3.5.6/AndroidManifest.xml:16:9-81
+67-->[com.mapbox.mapboxsdk:mapbox-android-telemetry:3.5.6] /Users/cameronpugh/.gradle/caches/transforms-3/5f56c0f42cf5e6b1c816d8cab570e4dd/transformed/jetified-mapbox-android-telemetry-3.5.6/AndroidManifest.xml:16:18-78
+68
+69        <activity
+69-->[com.google.android.gms:play-services-base:18.0.1] /Users/cameronpugh/.gradle/caches/transforms-3/337367889edc937b065f11221262de24/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
+70            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+70-->[com.google.android.gms:play-services-base:18.0.1] /Users/cameronpugh/.gradle/caches/transforms-3/337367889edc937b065f11221262de24/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:19-85
+71            android:exported="false"
+71-->[com.google.android.gms:play-services-base:18.0.1] /Users/cameronpugh/.gradle/caches/transforms-3/337367889edc937b065f11221262de24/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:22:19-43
+72            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+72-->[com.google.android.gms:play-services-base:18.0.1] /Users/cameronpugh/.gradle/caches/transforms-3/337367889edc937b065f11221262de24/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:21:19-78
+73
+74        <provider
+74-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/96ea9bf008857cdcceeee1732e53c7f0/transformed/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:23:9-27:43
+75            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+75-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/96ea9bf008857cdcceeee1732e53c7f0/transformed/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:24:13-79
+76            android:authorities="com.google.codelabs.mdc.java.shrine.lifecycle-process"
+76-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/96ea9bf008857cdcceeee1732e53c7f0/transformed/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:25:13-69
+77            android:exported="false"
+77-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/96ea9bf008857cdcceeee1732e53c7f0/transformed/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:26:13-37
+78            android:multiprocess="true" />
+78-->[androidx.lifecycle:lifecycle-process:2.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/96ea9bf008857cdcceeee1732e53c7f0/transformed/jetified-lifecycle-process-2.0.0/AndroidManifest.xml:27:13-40
+79    </application>
+80
+81</manifest>

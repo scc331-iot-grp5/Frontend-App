@@ -90,7 +90,7 @@ public class LoginFragment extends Fragment {
                             if ((response.get("username")).equals(username)) {
                                 System.out.println(response);
                                 System.out.println(username);
-                                ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
+                                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
                             }
                             else{
                                 p.setError(getString(R.string.shr_incorrect_password));

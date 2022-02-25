@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ira/values-ira.xml",
+            "map": [
+                {
+                    "source": "/Users/cameronpugh/.gradle/caches/transforms-3/dfb1b96e90e71fd5ea4f32882c9144fb/transformed/jetified-library-1.2.5/res/values-ira/values-ira.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,134,205,279,361",
+                        "endColumns": "78,70,73,81,64",
+                        "endOffsets": "129,200,274,356,421"
+                    }
+                }
+            ]
+        }
+    ]
+}

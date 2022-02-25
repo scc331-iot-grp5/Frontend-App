@@ -1,0 +1,610 @@
+[
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_blue.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_blue.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_outline_rectangle_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_outline_rectangle_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_launcher_foreground.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable-xhdpi/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_lock_clock_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_lock_clock_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_analytics_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_analytics_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_blje_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_blje_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_thumb_drawable.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/thumb_drawable.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_orange_background.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_orange_background.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_crash_map.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/crash_map.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_outline_polyline_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_outline_polyline_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_blje_round.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_blje_round.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/animator_slide_in_left.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/animator/slide_in_left.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_login_fragment.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_login_fragment.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_orange_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_orange_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_all_dev.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/all_dev.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_launcher_background.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_orange_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_orange_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_blje_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_blje_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable-v21_baseline_gps_not_fixed_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable-v21/baseline_gps_not_fixed_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_orange_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_orange_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_readings_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/readings_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_orange.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_orange.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_outline_map_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_outline_map_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_step_two.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/step_two.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_sharp_add_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_sharp_add_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout-v21_popup_user.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/popup_user.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout-v21_add_device.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/add_device.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_orange_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_orange_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_display_map.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/display_map.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_orange_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_orange_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_add_24dp.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_add_24dp.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_all_rules.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/all_rules.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable-v21_spot_mask.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable-v21/spot_mask.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/transition_slide_left.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/transition/slide_left.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_round_warning_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_round_warning_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_line_drawable.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/line_drawable.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_orange.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_orange.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_blje_background.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_blje_background.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_logo.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_logo.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_email_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_email_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_line.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/line.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_blje_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_blje_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_custom_ripple.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/custom_ripple.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_search.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_search.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/menu_objects.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/menu/objects.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_add_zone_name.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/add_zone_name.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_orange.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_orange.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_hmap.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/hmap.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_blje.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_blje.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_outline_circle_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_outline_circle_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_border_color_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_border_color_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_product_grid_fragment.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_product_grid_fragment.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_orange_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_orange_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_edit_user.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/edit_user.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_user.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/user.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_add_device.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/add_device.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/menu_shr_toolbar_menu.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/menu/shr_toolbar_menu.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_login_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_login_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout-v21_shr_product_grid_fragment.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/shr_product_grid_fragment.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_blje_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_blje_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/transition-v21_slide_right.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/transition-v21/slide_right.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable-v21_custom_ripple.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable-v21/custom_ripple.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/animator_slide_in_right.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/animator/slide_in_right.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_blje.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_blje.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/animator_slide_out_right.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/animator/slide_out_right.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_blje_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_blje_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_blje_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_blje_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_microbit_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/microbit_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_person_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_person_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_rules_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/rules_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_blje_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_blje_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_m_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/m_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_line_grpah.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/line_grpah.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_edit_device.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/edit_device.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_delete_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_delete_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_branded_menu.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_branded_menu.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_orange.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_orange.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/transition-v21_slide_left.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/transition-v21/slide_left.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_orange.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_orange.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_orange_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_orange_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_orange_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_orange_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_step_one.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/step_one.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_popup.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/popup.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/animator_shr_next_button_state_list_anim.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/animator/shr_next_button_state_list_anim.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/animator_slide_out_left.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/animator/slide_out_left.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_custom_spinner_items.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/custom_spinner_items.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_check_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_check_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_anal.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/anal.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_google_map.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/google_map.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/transition_fade.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/transition/fade.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_device_thermostat_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_device_thermostat_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_orange_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_orange_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_add_circle_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_add_circle_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_filter.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_filter.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_blje_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_blje_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_gradient_spinner.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/gradient_spinner.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_calandar_popup_2.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/calandar_popup_2.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_speed_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_speed_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_speed.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/speed.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_green.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_green.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_arrow_drop_down_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_staggered_product_card_second.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_staggered_product_card_second.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_round_devices_other_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_round_devices_other_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_blje.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_blje.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_image_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_image_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_product_card.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_product_card.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_step_three.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/step_three.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_orange.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_orange.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/raw_products.json.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/raw/products.json"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_readings.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/readings.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_new_rule_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/new_rule_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_spinner_background.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/spinner_background.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_staggered_product_card_third.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_staggered_product_card_third.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_recyclerview_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/recyclerview_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_product_grid_background_shape.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_product_grid_background_shape.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_blje_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_blje_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_close_menu.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_close_menu.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_staggered_product_card_first.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_staggered_product_card_first.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_rule_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_rule_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_popup_user.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/popup_user.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_main_activity.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_main_activity.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/transition_slide_right.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/transition/slide_right.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout-v21_microbit_row.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/microbit_row.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_drive_file_rename_outline_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_drive_file_rename_outline_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_round_home_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_round_home_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_blje.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_blje.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_blje.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_blje.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_orange_round.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-mdpi/ic_orange_round.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_directions_car_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_directions_car_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_shr_backdrop.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/shr_backdrop.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_format_color_fill_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_format_color_fill_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_orange_round.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-anydpi-v26/ic_orange_round.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout_calandar_popup.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout/calandar_popup.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_blje_foreground.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-hdpi/ic_blje_foreground.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/layout-v21_popup.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/layout-v21/popup.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_directions_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_directions_24.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_shr_menu.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/shr_menu.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_thumb.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/thumb.xml"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_blje.png.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/mipmap-xhdpi/ic_blje.png"
+    },
+    {
+        "merged": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/merged_res/debug/drawable_ic_baseline_edit_24.xml.flat",
+        "source": "/Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/res/drawable/ic_baseline_edit_24.xml"
+    }
+]
