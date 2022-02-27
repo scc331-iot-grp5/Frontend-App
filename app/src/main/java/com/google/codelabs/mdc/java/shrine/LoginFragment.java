@@ -14,12 +14,14 @@ import androidx.fragment.app.Fragment;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
 
@@ -68,29 +70,35 @@ public class LoginFragment extends Fragment {
     }
 
     private boolean isPasswordValid(@Nullable Editable text) {
-        return text != null && text.length() >= 8;
+        return text != null && text.length() >= 2;
     }
 
     private void isLoginCorrect(@Nullable String username, @Nullable String password, TextInputLayout p){
+        JSONArray j = new JSONArray();
         JSONObject json = new JSONObject();
 
         try {
             json.put("username",username);
             json.put("password",password);
+            j.put(json);
         }
         catch(Exception e){}
 
         String url = connection + "/log-in";
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, j, new Response.Listener<JSONArray>(){
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                            if ((response.get("username")).equals(username)) {
-                                System.out.println(response);
-                                System.out.println(username);
+                            JSONObject object1 = response.getJSONObject(0);
+                            if ((int)(object1.get("is_administrator")) == 1) {
+                                System.out.println("Admin");
                                 ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
+                            }
+                            else if ((int)(object1.get("is_administrator")) != 1) {
+                                System.out.println("User");
+                                ((NavigationHost) getActivity()).navigateTo(new UserMap((int)object1.get("id")), false); // Navigate to the next Fragment
                             }
                             else{
                                 p.setError(getString(R.string.shr_incorrect_password));

@@ -95,7 +95,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
             if (mClickListener != null) mClickListener.onItemClick(view, getAdapterPosition(), backView);
         }
         @Override
-        public boolean onLongClick(View view) {
+        public boolean onLongClick(View view)
+        {
             System.out.println("Im bot here");
             if (mLongClickListener != null) mLongClickListener.onItemLongClick(view, getAdapterPosition());
             Toast.makeText(view.getContext(), "Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();

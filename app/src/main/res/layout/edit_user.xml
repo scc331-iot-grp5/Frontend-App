@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".EditUser">
 
-
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -152,32 +151,6 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/usernameLabel"
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Username" />
-
-                    <TextView
-                        android:id="@+id/UsernameDisplay"
-                        android:layout_width="200dp"
-                        android:layout_height="43dp"
-                        android:layout_gravity="center"
-                        android:layout_marginBottom="20dp"
-                        android:drawableLeft="@drawable/ic_baseline_email_24"
-                        android:gravity="top"
-                        android:text="Username"
-                        android:textSize="24sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="left"
-                    android:layout_marginLeft="20dp"
-                    android:orientation="vertical">
-
-                    <TextView
                         android:id="@+id/Full_Name"
                         android:layout_width="200dp"
                         android:layout_height="wrap_content"
@@ -193,6 +166,14 @@
                         android:gravity="top"
                         android:text="Full Name"
                         android:textSize="24sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
 
                 </LinearLayout>
             </LinearLayout>

@@ -65,4 +65,9 @@
     <string name="condition_must_have_a_assigned_group_select">Condition Must Have a Assigned Group (select)</string>
     <string name="speed">Speed</string>
     <string name="map_of_crashes">Map of Crashes</string>
+    <string name="my_profile">My Profile</string>
+    <string name="my_map">My Map</string>
+    <string name="my_analytics">My Analytics</string>
+    <string name="microbitid">MicrobitID</string>
+    <string name="is_administrator">Is Administrator</string>
 </resources>

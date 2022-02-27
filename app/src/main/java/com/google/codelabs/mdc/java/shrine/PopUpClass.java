@@ -64,7 +64,7 @@ public class PopUpClass implements OnItemSelectedListener {
         //Initialize the elements of our window, install the handler
 
         TextView test2 = popupView.findViewById(R.id.titleText);
-        test2.setText("Select a Device to Add");
+        test2.setText("Select a Device to Assign");
 
         Spinner spinner = (Spinner) popupView.findViewById(R.id.spinneraaa);
         spinner.setOnItemSelectedListener(this);

@@ -152,61 +152,6 @@
                 android:layout_margin="14dp"
                 android:background="#DD000000" />
 
-            <TextView
-                android:id="@+id/textView3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="@style/TextAppearance.Shrine.heading"
-                android:text="@string/optional_configuration" />
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/speedLimit2"
-                android:enabled="false"
-                style="@style/Widget.Shrine.TextInputLayout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="10dp"
-                android:hint="@string/speed_limit"
-                app:startIconDrawable="@drawable/ic_baseline_directions_car_24"
-                app:endIconMode="clear_text">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:enabled="false"
-                    android:id="@+id/speedLimitInput2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:maxLines="1"/>
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="2dp"
-                android:background="@color/colorPrimaryDark"
-                android:backgroundTint="#42000000"
-                >
-
-                <Spinner
-                    android:id="@+id/roadType"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@color/productGridBackgroundColor"
-                    android:minHeight="48dp"
-                    tools:ignore="SpeakableTextPresentCheck" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentBottom="true"
-                    android:layout_marginRight="13dp"
-                    android:layout_marginBottom="8dp"
-                    app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
-            </RelativeLayout>
-
             <RelativeLayout
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
@@ -219,8 +164,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_marginEnd="128dp"
-                    android:layout_marginRight="128dp"
+                    android:layout_marginEnd="140dp"
+                    android:layout_marginRight="140dp"
                     android:text="@string/save" />
 
             </RelativeLayout>

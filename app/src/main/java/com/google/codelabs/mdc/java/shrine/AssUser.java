@@ -113,18 +113,25 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         adapter.setLongClickListener(y);
         recyclerView.setAdapter(adapter);
         // data to populate the RecyclerView with
+
         String url = connection + "/users";
 
-        StringRequest jsonObjectRequest = new StringRequest
-                (Request.Method.GET, url, new Response.Listener<String>() {
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url,json, new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                            JSONObject object = new JSONObject(response);
-                            JSONArray array = object.getJSONArray("loc");
                             System.out.println("Refresh");
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject object1 = array.getJSONObject(i);
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
                                 int userID = (int) object1.get("userID");
                                 String name = (String) object1.get("name");
                                 String url = (String) object1.get("url");
@@ -199,7 +206,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
@@ -255,7 +262,7 @@ public class AssUser extends Fragment implements MyRecyclerViewAdapter.ItemClick
                             System.out.println("Refresh");
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject object1 = response.getJSONObject(i);
-                                int microID = (int) object1.get("microbitID");
+                                int microID = (int) object1.get("id");
                                 String type = (String) object1.get("name");
 
                                 String str = Integer.toString(microID)+":"+type;

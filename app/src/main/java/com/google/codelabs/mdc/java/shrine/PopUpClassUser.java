@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
@@ -35,8 +36,10 @@ public class PopUpClassUser implements AdapterView.OnItemSelectedListener {
     TextInputEditText name;
     TextInputEditText email;
     TextInputEditText profile;
+    CheckBox access;
     String connection = "https://6e66-148-88-245-146.ngrok.io";
     TextInputEditText banner;
+    boolean admin = false;
 
 
     public void showPopupWindow(final View view, Context context,ArrayList<String> x) {
@@ -75,6 +78,14 @@ public class PopUpClassUser implements AdapterView.OnItemSelectedListener {
         email = popupView.findViewById(R.id.email_text);
         profile = popupView.findViewById(R.id.profile_Pic_url);
         banner = popupView.findViewById(R.id.banner_url);
+        access = popupView.findViewById(R.id.access);
+
+        access.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                admin = true;
+            }
+        });
 
         Button buttonEdit = popupView.findViewById(R.id.messageButton_U);
         buttonEdit.setOnClickListener(new View.OnClickListener() {
@@ -113,11 +124,11 @@ public class PopUpClassUser implements AdapterView.OnItemSelectedListener {
         JSONObject json = new JSONObject();
 
         try {
-            json.put("id",id);
             json.put("fullname",a);
             json.put("email",b);
             json.put("profileURL",c);
             json.put("bannerURL",d);
+            json.put("is_admin",admin);
         }
         catch(Exception e){}
 

@@ -7,17 +7,37 @@ import com.google.android.gms.maps.model.Polygon;
 public class Zone {
 
     public String name;
+    public int id;
     public int borderColor;
     public int fillColor;
+    public int toDelete;
 
     public Polygon polygon;
 
 
-    public Zone(Polygon polygon,String name , int borderColor, int fillColor) {
+    public Zone(Polygon polygon,String name , int borderColor, int fillColor,int id) {
         this.polygon = polygon;
         this.name = name;
         this.borderColor = borderColor;
         this.fillColor = fillColor;
+        this.id = id;
+        this.toDelete = 0;
+    }
+
+    public int getToDelete() {
+        return toDelete;
+    }
+
+    public void setToDelete(int toDelete) {
+        this.toDelete = toDelete;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getBorderColor() {

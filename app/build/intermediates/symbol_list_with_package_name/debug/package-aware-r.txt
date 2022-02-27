@@ -1563,9 +1563,9 @@ id META
 id ObjectGroups
 id SHIFT
 id SYM
-id UsernameDisplay
 id a
 id acc
+id access
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
 id accessibility_custom_action_1
@@ -1786,6 +1786,8 @@ id mtrl_card_checked_layer_id
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id myAnalytics
+id myProfile
 id nameBox
 id name_text
 id navigation_header_container
@@ -1833,7 +1835,6 @@ id reportingChart
 id right
 id right_icon
 id right_side
-id roadType
 id rounded
 id ruleIcon
 id ruleNameText
@@ -1881,10 +1882,6 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
-id speedLimit
-id speedLimit2
-id speedLimitInput
-id speedLimitInput2
 id speedo
 id speedometer
 id spinner
@@ -1919,7 +1916,6 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView2
-id textView3
 id textView32
 id text_input_end_icon
 id text_input_start_icon
@@ -1951,9 +1947,9 @@ id urlNameText
 id useLogo
 id userID
 id username
-id usernameLabel
 id username_edit_text
 id users
+id usersMicrobits
 id valueEditText
 id valueLabel
 id view_offset_helper
@@ -2122,6 +2118,13 @@ layout test_toolbar_custom_background
 layout test_toolbar_elevation
 layout test_toolbar_surface
 layout user
+layout user_anal
+layout user_backdrop
+layout user_google_map
+layout user_line_graph
+layout user_profile
+layout user_readings
+layout user_speed
 menu objects
 menu shr_toolbar_menu
 mipmap ic_blje
@@ -2210,6 +2213,7 @@ string full_name
 string hide_bottom_view_on_scroll_behavior
 string home
 string icon_content_description
+string is_administrator
 string label
 string logout
 string m_length
@@ -2249,6 +2253,7 @@ string materialcolorpicker__descLib
 string materialcolorpicker__errHex
 string materialcolorpicker__hash
 string materialcolorpicker__inputColor
+string microbitid
 string mtrl_badge_numberless_content_description
 string mtrl_chip_close_icon_content_description
 string mtrl_exceed_max_badge_number_suffix
@@ -2259,6 +2264,9 @@ string mtrl_picker_header_prompt
 string mtrl_picker_header_selected
 string mtrl_picker_range_header_prompt
 string mtrl_picker_range_header_selected
+string my_analytics
+string my_map
+string my_profile
 string next
 string o_error
 string objectid

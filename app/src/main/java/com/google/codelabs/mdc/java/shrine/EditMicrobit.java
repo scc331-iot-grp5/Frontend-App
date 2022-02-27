@@ -31,6 +31,7 @@ import androidx.transition.TransitionInflater;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.NetworkImageView;
 import com.google.android.material.button.MaterialButton;
@@ -47,30 +48,33 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
 public class EditMicrobit extends Fragment implements OnItemSelectedListener {
 
     int microbitID;
-    TextInputLayout speedLimitTextInput;
+
     TextInputLayout microbitTextInput;
     LatLng gPoint;
     String name;
     String type;
-    String rt;
+
     int id ;
-    int speed ;
+
     Double x ;
     Double y ;
     LatLng newPoint;
     Spinner spinner;
-    Spinner spinnerTwo;
     public String objectName = "";
-    public String roadName = "";
+
+
+    ArrayList<String> a = new ArrayList<>();
 
     String connection = "https://6e66-148-88-245-146.ngrok.io";
 
@@ -98,6 +102,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
             setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
         }
         //Menu menu = view.findViewById(R.id.menu);
+        getObjects();
         getData(view,savedInstanceState);
 
         // Set up the toolbar
@@ -105,10 +110,6 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
 
         spinner = (Spinner) view.findViewById(R.id.spinner);
         spinner.setOnItemSelectedListener(this);
-
-
-        spinnerTwo = (Spinner) view.findViewById(R.id.roadType);
-        spinnerTwo.setOnItemSelectedListener(this);
 
         try {
             Thread.sleep(1000);
@@ -141,10 +142,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
 
         microbitTextInput = view.findViewById(R.id.microbitText2);
         final TextInputEditText microbitEditText = view.findViewById(R.id.microbitTextInput2);
-
-        speedLimitTextInput = view.findViewById(R.id.speedLimit2);
-        final TextInputEditText speedLimitEditText = view.findViewById(R.id.speedLimitInput2);
-        final TextInputEditText la = view.findViewById(R.id.microbitTextInputName);
+        final TextInputEditText nameText = view.findViewById(R.id.microbitTextInputName);
 
         microbitEditText.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -162,21 +160,6 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
             }
         });
 
-        speedLimitEditText.setOnKeyListener(new View.OnKeyListener() {
-            @Override
-            public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                if (isSValid(speedLimitEditText.getText())) {
-                    speedLimitTextInput.setError(null);
-                }
-                else if(containsLetters(speedLimitEditText.getText())) {
-                    speedLimitTextInput.setError(getString(R.string.m_letters));
-                }
-                else if(!containsLetters(speedLimitEditText.getText())) {
-                    speedLimitTextInput.setError(null); //Clear the error
-                }
-                return false;
-            }
-        });
 
         MaterialButton add = view.findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
@@ -191,14 +174,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
                             .setMessage("Are you sure you want to update this device?")
                             .setPositiveButton(R.string.update, (dialog, which) -> {
                                 JSONObject json = new JSONObject();
-                                String s;
-                                if (roadName.equals("Select a Road Type")) {
-                                    roadName = "undefined";
-                                }
-                                s = "undefined";
-                                if (speedLimitEditText.getText() != null) {
-                                    s = speedLimitEditText.getText().toString();
-                                }
+
                                 Double lat = 0.0;
                                 Double lon = 0.0;
 
@@ -207,11 +183,9 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
                                     lon = gPoint.getLongitude();
                                 }
                                 try {
-                                    json.put("roadType", roadName);
                                     json.put("object", objectName);
                                     json.put("microbitID", microbitEditText.getText().toString());
-                                    json.put("mName", la.getText().toString());
-                                    json.put("speedLimit", s);
+                                    json.put("name", nameText.getText().toString());
                                     json.put("lat", lat);
                                     json.put("long", lon);
                                 } catch (Exception e) {
@@ -248,7 +222,48 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
         });
 
         return view;
+    }
+    private void getObjects(){
+        String url = connection +  "/objects";
 
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("id",0);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String names = (String) object1.get("name");
+                                a.add(names);
+                            }
+                            ArrayAdapter<CharSequence> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, a);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            spinner.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
 
 
     }
@@ -262,53 +277,40 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
     }
     private void getData(View view,Bundle savedInstanceState){
         JSONObject json = new JSONObject();
+        JSONArray j = new JSONArray();
 
         try {
             json.put("mID",microbitID);
+            j.put(json);
         }
         catch(Exception e){}
 
         String url = connection + "/microbitIndividual";
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, j, new Response.Listener<JSONArray>(){
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                             name = (String) response.get("name");
-                             type = (String) response.get("type");
-                             id = (int) response.get("id");
-                            if(type.equals("RoadMark")){
-                                 speed = (int) response.get("speed");
-                                 rt = (String) response.get("rt");
-                                 x = (Double) response.get("x");
-                                 y = (Double) response.get("y");
+                            JSONObject object1 = response.getJSONObject(0);
+                             name = (String) object1.get("name");
+
+                             id = (int) object1.get("id");
+
+                            try {
+                                 x = (Double) object1.get("x");
+                                 y = (Double) object1.get("y");
                                  newPoint = new LatLng(x,y);
-                                 speedLimitTextInput.setEnabled(true);
-                                 TextInputEditText speedLimitEditText = view.findViewById(R.id.speedLimitInput2);
-                                 speedLimitEditText.setText(Integer.toString(speed));
 
-                                String[] myItemsa= getResources().getStringArray(R.array.Road_array_2);
-                                String[] myItemsTwoa = add2BeginningOfArray(myItemsa,rt);
-                                ArrayAdapter<CharSequence> adapterTwo = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, myItemsTwoa);
-                                adapterTwo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                                spinnerTwo.setAdapter(adapterTwo);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-
 
                             TextInputEditText idBox =  view.findViewById(R.id.microbitTextInput2);
                             TextInputEditText nameBox =  view.findViewById(R.id.microbitTextInputName);
 
                             nameBox.setText(name);
                             idBox.setText(Integer.toString(id));
-
-                            String[] myItems= getResources().getStringArray(R.array.types);
-                            String[] myItemsTwo = add2BeginningOfArray(myItems,type);
-                            ArrayAdapter<CharSequence> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, myItemsTwo);
-                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                            spinner.setAdapter(adapter);
-
-
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -369,14 +371,6 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
         if (spinner.getId() == R.id.spinner) {
             microbitTextInput.setError(null);
             objectName = adapterView.getItemAtPosition(i).toString();
-            if(objectName.equals("Road Mark")){
-                speedLimitTextInput.setEnabled(true);
-            }
-            else{
-                speedLimitTextInput.setEnabled(false);
-            }
-        }else if (spinner.getId() == R.id.roadType) {
-            roadName = adapterView.getItemAtPosition(i).toString();
         }
     }
 

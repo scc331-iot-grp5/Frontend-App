@@ -103,7 +103,6 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
     ArrayList<Marker> markers = new ArrayList<>();
 
     ArrayList<Zone> listOfPolygons = new ArrayList<>();
-    ArrayList<ZoneCircle> listOfCircles = new ArrayList<>();
 
     int flags[] = {R.drawable.baseline_gps_not_fixed_24,R.drawable.ic_outline_rectangle_24, R.drawable.ic_outline_circle_24, R.drawable.ic_outline_polyline_24, R.drawable.ic_baseline_edit_24, R.drawable.ic_baseline_delete_24};
 
@@ -222,7 +221,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
-                ((NavigationHost) getActivity()).navigateTo(new DisplayMap(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
@@ -282,11 +281,21 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
         circleOptions.radius(radius);
         circleOptions.strokeColor(selectedColorRGB);
         circleOptions.fillColor(backgroundColor);
-
         Circle newCircle = mMap.addCircle(circleOptions);
-        newCircle.setClickable(true);
+        newCircle.setClickable(false);
+        newCircle.setVisible(false);
 
-        listOfCircles.add( new ZoneCircle(newCircle,"temp name",selectedColorRGB,backgroundColor));
+        PolygonOptions ada = new PolygonOptions();
+        ada.addAll(getPolgonFromCircle(newCircle));
+        ada.strokeColor(newCircle.getStrokeColor());
+        ada.strokeWidth(5);
+        ada.fillColor(newCircle.getFillColor());
+
+        Polygon newPoly = mMap.addPolygon(ada);
+        newPoly.setVisible(true);
+        newPoly.setClickable(true);
+
+        listOfPolygons.add( new Zone(newPoly,"temp name",selectedColorRGB,backgroundColor,1000));
 
         for (int i = 0; i < listOfPolyLines.size(); i++) {
             listOfPolyLines.get(i).setVisible(false);
@@ -304,7 +313,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
 
         newPoly.setClickable(true);
 
-        listOfPolygons.add( new Zone(newPoly,"temp name",selectedColorRGB,backgroundColor));
+        listOfPolygons.add( new Zone(newPoly,"temp name",selectedColorRGB,backgroundColor,1000));
 
         for (int i = 0; i < listOfPolyLines.size(); i++) {
             listOfPolyLines.get(i).setVisible(false);
@@ -376,11 +385,16 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
                                 JSONObject object1 = response.getJSONObject(i);
 
                                 String name = (String) object1.get("name");
+                                int id = (int) object1.get("id");
                                 int r = (int) object1.get("r");
                                 int g = (int) object1.get("g");
                                 int b = (int) object1.get("b");
                                 int color = Color.rgb(r,g,b);
-                                int backgroundColor = Color.argb(10,r,g,b);
+                                int ba = (int) object1.get("ba");
+                                int br = (int) object1.get("br");
+                                int bg = (int) object1.get("bg");
+                                int bb = (int) object1.get("bb");
+                                int backgroundColor = Color.argb(ba,br,bg,bb);
 
                                 System.out.println(color);
                                 System.out.println(backgroundColor);
@@ -414,7 +428,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
                                     Polygon newPoly = mMap.addPolygon(options);
                                     newPoly.setClickable(true);
 
-                                    listOfPolygons.add( new Zone(newPoly,name,color,backgroundColor));
+                                    listOfPolygons.add( new Zone(newPoly,name,color,backgroundColor,id));
                                     tempListOfVal.clear();
                                 }
 
@@ -435,14 +449,18 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
         MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
 
     }
+
     public void sendAllZonesToDB()
     {
+        //delete all delete();
         for (int i = 0; i < listOfPolygons.size(); i++)
         {
             Polygon temp = listOfPolygons.get(i).getPolygon();
             String name = listOfPolygons.get(i).getName();
+            int idd = listOfPolygons.get(i).getId();
             int border = listOfPolygons.get(i).getBorderColor();
             int background = listOfPolygons.get(i).getFillColor();
+            int isD = listOfPolygons.get(i).getToDelete();
 
             JSONArray points = new JSONArray();
             JSONArray allPoints = new JSONArray();
@@ -480,91 +498,17 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
 
                 f.put("geoJSON", b.toString());
 
+                zoneObject.put("id",idd);
+                zoneObject.put("isDelete",isD);
                 zoneObject.put("name",name);
                 zoneObject.put("geoJSON",b);
-                zoneObject.put("RGB-border",border);
-                zoneObject.put("RGB-background",background);
-
-            } catch (Exception e) {
-            }
-
-            String url = connection + "/zone";
-
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                    (Request.Method.POST, url, zoneObject, new Response.Listener<JSONObject>() {
-                        @Override
-                        public void onResponse(JSONObject response) {
-
-                        }
-                    }, new Response.ErrorListener() {
-                        @Override
-                        public void onErrorResponse(VolleyError error) {
-                            // TODO: Handle error
-
-                        }
-                    });
-
-            MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
-        }
-        for (int i = 0; i < listOfCircles.size(); i++)
-        {
-            Circle temp = listOfCircles.get(i).getPolygon();
-
-            PolygonOptions ada = new PolygonOptions();
-            ada.addAll(getPolgonFromCircle(temp));
-            ada.strokeColor(temp.getStrokeColor());
-            ada.strokeWidth(5);
-            ada.fillColor(temp.getFillColor());
-
-            Polygon newPoly = mMap.addPolygon(ada);
-            newPoly.setVisible(false);
-
-
-
-            String name = listOfCircles.get(i).getName();
-            int border = listOfCircles.get(i).getBorderColor();
-            int background = listOfCircles.get(i).getFillColor();
-
-            JSONArray points = new JSONArray();
-            JSONArray allPoints = new JSONArray();
-            JSONArray geoJSON = new JSONArray();
-            JSONObject b = new JSONObject();
-            JSONObject a = new JSONObject();
-            JSONObject json = new JSONObject();
-            JSONObject f = new JSONObject();
-            JSONObject zoneObject = new JSONObject();
-
-            for (int x = 0; x < newPoly.getPoints().size(); x++) {
-                JSONArray coord = new JSONArray();
-                double lat = newPoly.getPoints().get(x).latitude;
-                double lon = newPoly.getPoints().get(x).longitude;
-                try {
-                    coord.put(lon);
-                    coord.put(lat);
-                } catch (Exception e) {}
-                points.put(coord);
-            }
-
-            try {
-                allPoints.put(points);
-
-                json.put("type", "Polygon");
-                json.put("coordinates", allPoints);
-
-                a.put("type", "Feature");
-                a.put("properties", new JSONObject());
-                a.put("geometry", json);
-
-                geoJSON.put(a);
-                b.put("type", "FeatureCollection");
-                b.put("features", geoJSON);
-
-                f.put("geoJSON", b.toString());
-
-                zoneObject.put("name",name);
-                zoneObject.put("geoJSON",b);
-                zoneObject.put("RGB-border",border);
-                zoneObject.put("RGB-background",background);
+                zoneObject.put("Rborder",selectedColorR);
+                zoneObject.put("Gborder",selectedColorG);
+                zoneObject.put("Bborder",selectedColorB);
+                zoneObject.put("Abackground",alpha);
+                zoneObject.put("Rbackground",ColorR);
+                zoneObject.put("Gbackground",ColorG);
+                zoneObject.put("Bbackground",ColorB);
 
             } catch (Exception e) {
             }
@@ -657,9 +601,9 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
         getZonesLocations();
         forLocation();
 
-        LatLng sydney = new LatLng(52, -2); // set camera locations
+        LatLng sydney = new LatLng(54.01024, -2.788584); // set camera locations
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.setMinZoomPreference(10.0f);
+        mMap.setMinZoomPreference(15.0f);
 
         mMap.setOnPolygonClickListener(new GoogleMap.OnPolygonClickListener() {
             @Override
@@ -670,7 +614,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
 
                     for (int i = 0; i < listOfPolygons.size(); i++) {
                         if((listOfPolygons.get(i).getPolygon()).equals(polygon)) {
-                            listOfPolygons.remove(i);
+                            listOfPolygons.get(i).setToDelete(1);
                         }
                     }
                 }
@@ -679,30 +623,6 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
                         if ((listOfPolygons.get(i).getPolygon()).equals(polygon))  {
                             PopUpEditName pu = new PopUpEditName();
                             pu.showPopupWindow(rootView,getContext(),listOfPolygons.get(i));
-                        }
-                    }
-                }
-            }
-        });
-
-        mMap.setOnCircleClickListener(new GoogleMap.OnCircleClickListener() {
-            @Override
-            public void onCircleClick(@NonNull Circle circle) {
-                if (delete) {
-                    circle.setVisible(false);
-                    circle.setClickable(false);
-
-                    for (int i = 0; i < listOfCircles.size(); i++) {
-                        if ((listOfCircles.get(i).getPolygon()).equals(circle)) {
-                            listOfCircles.remove(i);
-                        }
-                    }
-                }
-                if (editable) {
-                    for (int i = 0; i < listOfCircles.size(); i++) {
-                        if ((listOfCircles.get(i).getPolygon()).equals(circle)) {
-                            PopUpEditName pu = new PopUpEditName();
-                            pu.showPopupWindow(rootView, getContext(), listOfPolygons.get(i));
                         }
                     }
                 }

@@ -28,9 +28,12 @@ import androidx.transition.TransitionInflater;
 
 
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.textfield.TextInputEditText;
@@ -43,19 +46,23 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 public class AddDevice extends Fragment implements OnItemSelectedListener {
 
         public String objectName = "";
-        public String roadName = "";
-        TextInputLayout speedLimitTextInput;
         TextInputLayout microbitTextInput;
         LatLng gPoint;
 
         String connection = "https://6e66-148-88-245-146.ngrok.io";
+        RequestQueue queue;
+        Spinner spinner;
+        ArrayList<String> a = new ArrayList<>();
 
         @Override
         public void onCreate(Bundle savedInstanceState) {
@@ -69,30 +76,20 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
             Mapbox.getInstance(getContext(), "pk.eyJ1IjoiY2FtZXJvbnB1Z2gyODIiLCJhIjoiY2t6OHdoNG1jMHp3dTJ2bXU4M2kzYmV3bCJ9.RMjNS0Ll5wPTkLt27txUsg");
             // Inflate the layout for this fragment with the ProductGrid theme
             View view = inflater.inflate(R.layout.add_device, container, false);
+            queue = Volley.newRequestQueue(getContext());
             if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
                 TransitionInflater inflaterTwo = TransitionInflater.from(requireContext());
                 setEnterTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
                 setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
             }
             //Menu menu = view.findViewById(R.id.menu);
-
-
             // Set up the toolbar
             setUpToolbar(view);
 
-            Spinner spinner = (Spinner) view.findViewById(R.id.spinner);
+            spinner = (Spinner) view.findViewById(R.id.spinner);
             spinner.setOnItemSelectedListener(this);
-            ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
-                    R.array.planets_array, android.R.layout.simple_spinner_item);
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinner.setAdapter(adapter);
 
-            Spinner spinnerTwo = (Spinner) view.findViewById(R.id.roadType);
-            spinnerTwo.setOnItemSelectedListener(this);
-            ArrayAdapter<CharSequence> adapterTwo = ArrayAdapter.createFromResource(getContext(),
-                    R.array.Road_array, android.R.layout.simple_spinner_item);
-            adapterTwo.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-            spinnerTwo.setAdapter(adapterTwo);
+            getObjects();
 
             MapView mapView = view.findViewById(R.id.mapView);
             mapView.onCreate(savedInstanceState);
@@ -118,9 +115,7 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
             MaterialButton add = view.findViewById(R.id.add);
             microbitTextInput = view.findViewById(R.id.microbitText);
             final TextInputEditText microbitEditText = view.findViewById(R.id.microbitTextInput);
-
-            speedLimitTextInput = view.findViewById(R.id.speedLimit);
-            final TextInputEditText speedLimitEditText = view.findViewById(R.id.speedLimitInput);
+            final TextInputEditText nameInput = view.findViewById(R.id.microbitTextInputName);
 
             // Set an error if the password is less than 8 characters.
             add.setOnClickListener(new View.OnClickListener() {
@@ -135,14 +130,7 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                                 .setMessage(R.string.d_extra)
                                 .setPositiveButton(R.string.d_add, (dialog, which) -> {
                                     JSONObject json = new JSONObject();
-                                    String s;
-                                    if (roadName.equals("Select a Road Type")) {
-                                        roadName = "undefined";
-                                    }
-                                    s = "undefined";
-                                    if (speedLimitEditText.getText() != null) {
-                                        s = speedLimitEditText.getText().toString();
-                                    }
+
                                     Double lat = 0.0;
                                     Double lon = 0.0;
                                     if (gPoint != null) {
@@ -150,12 +138,12 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                                         lon = gPoint.getLongitude();
                                     }
                                     try {
-                                        json.put("roadType", roadName);
                                         json.put("object", objectName);
                                         json.put("microbitID", microbitEditText.getText().toString());
-                                        json.put("speedLimit", s);
+                                        json.put("name", nameInput.getText().toString());
                                         json.put("lat", lat);
                                         json.put("long", lon);
+
                                     } catch (Exception e) {
                                     }
 
@@ -205,24 +193,52 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
                 }
             });
 
-            speedLimitEditText.setOnKeyListener(new View.OnKeyListener() {
-                @Override
-                public boolean onKey(View view, int i, KeyEvent keyEvent) {
-                    if (isSValid(speedLimitEditText.getText())) {
-                        speedLimitTextInput.setError(null);
-                    }
-                    else if(containsLetters(speedLimitEditText.getText())) {
-                        speedLimitTextInput.setError(getString(R.string.m_letters));
-                    }
-                    else if(!containsLetters(speedLimitEditText.getText())) {
-                        speedLimitTextInput.setError(null); //Clear the error
-                    }
-                    return false;
-                }
-            });
-
             return view;
         }
+    private void getObjects(){
+        String url = connection +  "/objects";
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("id",0);
+            json.put(0,j);
+        }
+        catch(Exception e){}
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String names = (String) object1.get("name");
+                                a.add(names);
+                            }
+                            ArrayAdapter<CharSequence> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, a);
+                            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                            spinner.setAdapter(adapter);
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+
+
+    }
         private boolean isMValid(@Nullable Editable text) {
             return text != null && text.length() == 4;
         }
@@ -269,17 +285,8 @@ public class AddDevice extends Fragment implements OnItemSelectedListener {
         if (spinner.getId() == R.id.spinner) {
             microbitTextInput.setError(null);
             objectName = adapterView.getItemAtPosition(i).toString();
-            if(objectName.equals("Road Mark")){
-                speedLimitTextInput.setEnabled(true);
-            }
-            else{
-                speedLimitTextInput.setEnabled(false);
-            }
-        }else if (spinner.getId() == R.id.roadType) {
-            roadName = adapterView.getItemAtPosition(i).toString();
         }
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 

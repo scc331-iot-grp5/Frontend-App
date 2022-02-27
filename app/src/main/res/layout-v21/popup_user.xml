@@ -92,6 +92,14 @@
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
+                <CheckBox
+                    android:id="@+id/access"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/is_administrator">
+
+                </CheckBox>
+
                 <TextView
                     android:id="@+id/titleText_sub_optional"
                     android:layout_width="wrap_content"

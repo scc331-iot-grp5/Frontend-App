@@ -143,34 +143,42 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
 
     private void getData(View view){
         JSONObject json = new JSONObject();
+        JSONArray j = new JSONArray();
 
         try {
             json.put("userID",userid);
+            j.put(json);
         }
         catch(Exception e){}
 
         String url = connection + "/userIndividual";
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
-                (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, j, new Response.Listener<JSONArray>(){
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                                userID = (int) response.get("userID");
-                                name = (String) response.get("name");
-                                urlP = (String) response.get("url");
-                                background = (String) response.get("background");
+                            JSONObject object1 = response.getJSONObject(0);
+                            int userID = (int) object1.get("userID");
+                            name = (String) object1.get("name");
+                            urlP = (String) object1.get("url");
+                            background = (String) object1.get("background");
+                            String email = (String) object1.get("email");
 
-                                TextView nameBox =  view.findViewById(R.id.nameBox);
-                                NetworkImageView x = view.findViewById(R.id.background);
-                                TextView userBox =  view.findViewById(R.id.uid);
-                                nameBox.setText(name);
-                                userBox.setText(Integer.toString(userID));
-                                //nameBox.setTextColor(getResources().getColor(R.color.loginPageBackgroundColor));
+                            TextView nameBox =  view.findViewById(R.id.nameBox);
+                            NetworkImageView x = view.findViewById(R.id.background);
+                            TextView userBox =  view.findViewById(R.id.uid);
+                            TextView emailBox =  view.findViewById(R.id.email);
 
-                                imageRequester.setImageFromUrl(view.findViewById(R.id.profile), urlP);
-                                imageRequester.setImageFromUrl(view.findViewById(R.id.background), background);
-                                x.setScaleType(NetworkImageView.ScaleType.CENTER_CROP);
+                            nameBox.setText(name);
+                            emailBox.setText(email);
+
+                            userBox.setText(Integer.toString(userID));
+                            //nameBox.setTextColor(getResources().getColor(R.color.loginPageBackgroundColor));
+
+                            imageRequester.setImageFromUrl(view.findViewById(R.id.profile), urlP);
+                            imageRequester.setImageFromUrl(view.findViewById(R.id.background), background);
+                            x.setScaleType(NetworkImageView.ScaleType.CENTER_CROP);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -231,6 +239,8 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
 
         queue.add(jsonObjectRequest);
     }
+
+
     private void getMicrobitData(View view){
         String url = connection + "/microbits";
 
@@ -238,7 +248,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
         JSONObject j = new JSONObject();
 
         try {
-            j.put("microbitID", m);
+            j.put("microbitID", 0);
             json.put(0,j);
         }
         catch(Exception e){}
@@ -251,7 +261,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
                             System.out.println("Refresh");
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject object1 = response.getJSONObject(i);
-                                int microID = (int) object1.get("microbitID");
+                                int microID = (int) object1.get("id");
                                 String type = (String) object1.get("name");
 
                                 String str = Integer.toString(microID)+":"+type;

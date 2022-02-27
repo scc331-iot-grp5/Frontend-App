@@ -43,7 +43,7 @@
         <entry key="app/src/main/res/layout/custom_spinner_items.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/display_map.xml" value="0.33" />
         <entry key="app/src/main/res/layout/edit_device.xml" value="0.21614583333333334" />
-        <entry key="app/src/main/res/layout/edit_user.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/edit_user.xml" value="0.1" />
         <entry key="app/src/main/res/layout/google_map.xml" value="0.1" />
         <entry key="app/src/main/res/layout/hmap.xml" value="0.25" />
         <entry key="app/src/main/res/layout/line_grpah.xml" value="0.2625" />
@@ -56,7 +56,7 @@
         <entry key="app/src/main/res/layout/readings_row.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/recyclerview_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/rules_row.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/shr_backdrop.xml" value="0.24375" />
+        <entry key="app/src/main/res/layout/shr_backdrop.xml" value="0.1" />
         <entry key="app/src/main/res/layout/shr_login_fragment.xml" value="0.25" />
         <entry key="app/src/main/res/layout/shr_main_activity.xml" value="0.28055555555555556" />
         <entry key="app/src/main/res/layout/shr_product_card.xml" value="0.24375" />
@@ -69,6 +69,13 @@
         <entry key="app/src/main/res/layout/step_three.xml" value="0.3484375" />
         <entry key="app/src/main/res/layout/step_two.xml" value="0.25" />
         <entry key="app/src/main/res/layout/user.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/user_anal.xml" value="0.30512820512820515" />
+        <entry key="app/src/main/res/layout/user_backdrop.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/user_google_map.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/user_line_graph.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/user_profile.xml" value="0.30512820512820515" />
+        <entry key="app/src/main/res/layout/user_readings.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/user_speed.xml" value="0.30512820512820515" />
         <entry key="app/src/main/res/menu/objects.xml" value="0.30462962962962964" />
         <entry key="app/src/main/res/menu/shr_toolbar_menu.xml" value="0.24375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_blje.xml" value="0.14739583333333334" />
