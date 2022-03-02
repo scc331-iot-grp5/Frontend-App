@@ -76,17 +76,29 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
 
     String zone;
     String object;
-
+    int style;
+    StepTwo(ArrayList<Conditions> X, int style){
+        this.givenCons = X;
+        this.style = style;
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.x = this;
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         setHasOptionsMenu(true);
     }
 
-    StepTwo(ArrayList<Conditions> X){
-        this.givenCons = X;
-    }
     @Override
     public View onCreateView(
             @NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -149,7 +161,7 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
                 X.setMicrobits(l);
                 X.setAsignedDevices(true);
 
-                ((NavigationHost) getActivity()).navigateTo(new StepOne(givenCons), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new StepOne(givenCons,style), false); // Navigate to the next Fragment
             }
         });
 
@@ -208,7 +220,7 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((NavigationHost) getActivity()).navigateTo(new StepOne(givenCons), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new StepOne(givenCons,style), false); // Navigate to the next Fragment
 
             }
         });

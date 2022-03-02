@@ -74,9 +74,24 @@ public class Anal extends Fragment{
     View view;
     String connection = "https://6e66-148-88-245-146.ngrok.io";
 
+    int style;
+    Anal(int style){
+        this.style = style;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
         setHasOptionsMenu(true);
     }
 
@@ -114,7 +129,7 @@ public class Anal extends Fragment{
         speedo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new Speed(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new Speed(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -124,7 +139,7 @@ public class Anal extends Fragment{
         read.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new Readings(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new Readings(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -135,7 +150,7 @@ public class Anal extends Fragment{
         cm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new CrashMap(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new CrashMap(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -145,7 +160,7 @@ public class Anal extends Fragment{
         re.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new LineGraph(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new LineGraph(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -155,7 +170,7 @@ public class Anal extends Fragment{
         hm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new HMap(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new HMap(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -170,31 +185,31 @@ public class Anal extends Fragment{
         addDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(style), false); // Navigate to the next Fragment
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(style), false); // Navigate to the next Fragment
             }
         });
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(style), false); // Navigate to the next Fragment
             }
         });
         anal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new Anal(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
             }
         });
 

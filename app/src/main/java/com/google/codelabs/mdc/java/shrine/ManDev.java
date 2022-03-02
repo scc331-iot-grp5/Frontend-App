@@ -78,9 +78,25 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     RequestQueue queue;
     View view;
 
+    int style;
+    ManDev(int style){
+        this.style = style;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         this.x = this;
         setHasOptionsMenu(true);
     }
@@ -157,31 +173,31 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         addDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(style), false); // Navigate to the next Fragment
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(style), false); // Navigate to the next Fragment
             }
         });
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(style), false); // Navigate to the next Fragment
             }
         });
         anal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new Anal(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -190,7 +206,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
             @Override
             public void onClick(View view) {
                 testTwo();
-                ((NavigationHost) getActivity()).navigateTo(new AddDevice(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AddDevice(style), false); // Navigate to the next Fragment
 
             }
         });
@@ -284,7 +300,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     @Override
     public void onItemClick(View view, int position, View big) {
         test(big);
-        ((NavigationHost) getActivity()).navigateTo(new EditMicrobit(adapter.getItem(position)), false); // Navigate to the next Fragment
+        ((NavigationHost) getActivity()).navigateTo(new EditMicrobit(adapter.getItem(position),style), false); // Navigate to the next Fragment
         //Toast.makeText(getContext(), "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
     }
 

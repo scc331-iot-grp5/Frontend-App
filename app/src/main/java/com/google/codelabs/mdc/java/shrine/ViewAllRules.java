@@ -76,9 +76,25 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
 
     RequestQueue queue;
 
+    int style;
+    ViewAllRules(int style){
+        this.style = style;
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         setHasOptionsMenu(true);
     }
 
@@ -106,21 +122,22 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
 
         String url = connection + "/rules";
 
-        StringRequest jsonObjectRequest = new StringRequest
-                (Request.Method.GET, url, new Response.Listener<String>() {
+        JSONArray x = new JSONArray();
+        try{
+            x.put(0);
+        }catch (Exception e){}
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url,x, new Response.Listener<JSONArray>() {
                     @Override
-                    public void onResponse(String response) {
+                    public void onResponse(JSONArray response) {
                         try {
-                            JSONObject object = new JSONObject(response);
-                            JSONArray array = object.getJSONArray("loc");
                             System.out.println("Refresh");
-                            for (int i = 0; i < array.length(); i++) {
-                                JSONObject object1 = array.getJSONObject(i);
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
                                 int userID = (int) object1.get("ruleID");
                                 String name = (String) object1.get("name");
-                                String url = (String) object1.get("url");
 
-                                Rules a = new Rules(name, userID, url);
+                                Rules a = new Rules(name, userID, "www");
                                 rules.add(a);
                                 adapter.updateList(rules);
 
@@ -184,31 +201,31 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
         addDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(style), false); // Navigate to the next Fragment
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(style), false); // Navigate to the next Fragment
             }
         });
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(style), false); // Navigate to the next Fragment
             }
         });
         anal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new Anal(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -216,7 +233,7 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new StepOne(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new StepOne(style), false); // Navigate to the next Fragment
 
             }
         });

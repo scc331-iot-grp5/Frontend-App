@@ -94,11 +94,15 @@ public class LoginFragment extends Fragment {
                             JSONObject object1 = response.getJSONObject(0);
                             if ((int)(object1.get("is_administrator")) == 1) {
                                 System.out.println("Admin");
-                                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
+                                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(2000016), false); // Navigate to the next Fragment
                             }
-                            else if ((int)(object1.get("is_administrator")) != 1) {
+                            else if ((int)(object1.get("is_super_admin")) == 1) {
+                                System.out.println("Super Admin");
+                                ((NavigationHost) getActivity()).navigateTo(new Dashboard(2000016), false); // Navigate to the next Fragment
+                            }
+                            else if ((int)(object1.get("is_administrator")) == 0) {
                                 System.out.println("User");
-                                ((NavigationHost) getActivity()).navigateTo(new UserMap((int)object1.get("id")), false); // Navigate to the next Fragment
+                                ((NavigationHost) getActivity()).navigateTo(new UserMap((int)object1.get("id"),2000016), false); // Navigate to the next Fragment
                             }
                             else{
                                 p.setError(getString(R.string.shr_incorrect_password));

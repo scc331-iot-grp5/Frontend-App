@@ -69,16 +69,19 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
     ArrayList<Conditions> conWithAll = new ArrayList<>();
 
     boolean anyConditionIsFalse = true;
+    int style;
 
-    StepOne(){
-
+    StepOne(int style){
+        this.style = style;
     }
-    StepOne(ArrayList<Conditions> x){
+    StepOne(ArrayList<Conditions> x,int style){
         this.conWithAll = x;
+        this.style = style;
     }
 
-    StepOne(Rules x){
+    StepOne(Rules x, int style){
         this.newRule = x;
+        this.style = style;
     }
 
 
@@ -159,7 +162,7 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
             @Override
             public void onClick(View view) {
                Rules a = new Rules(temp);
-                ((NavigationHost) getActivity()).navigateTo(new StepThree(a), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new StepThree(a,style), false); // Navigate to the next Fragment
             }
         });
 
@@ -176,7 +179,7 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(style), false); // Navigate to the next Fragment
 
             }
         });
@@ -217,6 +220,6 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
             }
         }
 
-        ((NavigationHost) getActivity()).navigateTo(new StepTwo(conditionsToPass), false); // Navigate to the next Fragment
+        ((NavigationHost) getActivity()).navigateTo(new StepTwo(conditionsToPass,style), false); // Navigate to the next Fragment
     }
 }

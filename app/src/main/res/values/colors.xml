@@ -6,9 +6,25 @@
     <color name="textColorPrimary">#442C2E</color>
     <color name="red">#FF0000</color>
     <color name="green">#00FF00</color>
+
+    <color name="purple">#6750A4</color>
+    <color name="lightPurple">#D0BCFF</color>
+    <color name="purpleAccent">#EADDFF</color>
+    <color name="redTheme">#a93346</color>
+    <color name="redAccent">#ffdadd</color>
+    <color name="redDark">#67001b</color>
+    <color name="orange">#FD9725</color>
+    <color name="yellow">#FFCF44</color>
+    <color name="darkOrange">#bc4f43</color>
+    <color name="ora">#dd8022</color>
+    <color name="g">#3ec175</color>c13e8a
+    <color name="e">#c13e8a</color>c13e8a
+
+
     <color name="toolbarIconColor">#FFFFFF</color>
     <color name="loginPageBackgroundColor">#FFFFFF</color>
     <color name="productGridBackgroundColor">#FFFBFA</color>
     <color name="textInputOutlineColor">#FBB8AC</color>
     <color name="hint_foreground_material_light">#FBB8AC</color>
+
 </resources>

@@ -85,14 +85,26 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
     String urlP;
     String background;
     private ImageRequester imageRequester;
-
-    public EditUser(int userid){
+    int style;
+    public EditUser(int userid, int style){
         this.userid = userid;
+        this.style = style;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         setHasOptionsMenu(true);
 
     }
@@ -292,7 +304,7 @@ public class EditUser extends Fragment implements  MicrobitViewAdapter.ItemClick
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(style), false); // Navigate to the next Fragment
 
             }
         });

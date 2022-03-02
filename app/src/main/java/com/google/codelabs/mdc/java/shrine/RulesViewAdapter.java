@@ -28,7 +28,6 @@ import java.util.List;
 public class RulesViewAdapter extends RecyclerView.Adapter<RulesViewAdapter.ViewHolder> {
 
     private LayoutInflater mInflater;
-    private ImageRequester imageRequester;
     private RulesViewAdapter.ItemClickListener mClickListener;
     private RulesViewAdapter.ItemLongClickListener mLongClickListener;
     private ArrayList<Rules> mData;
@@ -37,7 +36,6 @@ public class RulesViewAdapter extends RecyclerView.Adapter<RulesViewAdapter.View
     RulesViewAdapter(Context context, ArrayList<Rules> data) {
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
-        imageRequester = ImageRequester.getInstance();
     }
 
     // inflates the row layout from xml when needed
@@ -51,12 +49,10 @@ public class RulesViewAdapter extends RecyclerView.Adapter<RulesViewAdapter.View
     @Override
     public void onBindViewHolder(RulesViewAdapter.ViewHolder holder, int position) {
         String nameTwo = mData.get(position).getName();
-        String image = mData.get(position).getObjectName();
         String id = Integer.toString(mData.get(position).getMicrobitID());
 
         holder.objectName.setText(nameTwo);
         holder.microbitID.setText(id);
-        imageRequester.setImageFromUrl(holder.productImage, image);
 
     }
 
@@ -69,7 +65,6 @@ public class RulesViewAdapter extends RecyclerView.Adapter<RulesViewAdapter.View
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, View.OnLongClickListener {
-        NetworkImageView productImage;
         TextView microbitID;
         TextView objectName;
 
@@ -77,7 +72,6 @@ public class RulesViewAdapter extends RecyclerView.Adapter<RulesViewAdapter.View
             super(itemView);
             objectName = itemView.findViewById(R.id.username);
             microbitID = itemView.findViewById(R.id.userID);
-            productImage = itemView.findViewById(R.id.product_image);
             itemView.setOnClickListener(this);
             itemView.setOnLongClickListener(this);
         }

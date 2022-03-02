@@ -66,7 +66,7 @@ public class ProductGridFragment extends Fragment {
         addDevice.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(1), false); // Navigate to the next Fragment
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
@@ -78,13 +78,13 @@ public class ProductGridFragment extends Fragment {
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(1), false); // Navigate to the next Fragment
             }
         });
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(1), false); // Navigate to the next Fragment
             }
         });
 

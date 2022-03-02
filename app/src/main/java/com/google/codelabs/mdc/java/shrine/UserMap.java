@@ -76,13 +76,25 @@ public class UserMap extends Fragment implements OnMapReadyCallback{
     ArrayList<Marker> markers = new ArrayList<>();
 
     ArrayList<Zone> listOfPolygons = new ArrayList<>();
-
-    public UserMap(int userID){
+    int style;
+    public UserMap(int userID,int style){
         this.userID = userID;
+        this.style = style;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         setHasOptionsMenu(true);
     }
 
@@ -116,19 +128,19 @@ public class UserMap extends Fragment implements OnMapReadyCallback{
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new UserMap(userID), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new UserMap(userID,style), false); // Navigate to the next Fragment
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MyProfile(userID), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MyProfile(userID,style), false); // Navigate to the next Fragment
             }
         });
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MyAnalytics(userID), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MyAnalytics(userID,style), false); // Navigate to the next Fragment
             }
         });
 

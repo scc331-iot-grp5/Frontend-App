@@ -1,9 +1,15 @@
 package com.google.codelabs.mdc.java.shrine;
 
+import android.content.Context;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.Point;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,14 +19,21 @@ import android.view.ViewGroup;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
+import android.widget.PopupWindow;
+import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
@@ -34,8 +47,11 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.Projection;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
+import com.google.android.gms.maps.model.GroundOverlay;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -44,7 +60,9 @@ import com.google.android.gms.maps.model.PolygonOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
 import com.google.codelabs.mdc.java.shrine.network.Device;
+import com.google.codelabs.mdc.java.shrine.network.Overlay;
 import com.google.codelabs.mdc.java.shrine.network.Zone;
 import com.google.codelabs.mdc.java.shrine.network.ZoneCircle;
 import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
@@ -57,23 +75,30 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MapViewFragment extends Fragment implements OnMapReadyCallback, AdapterView.OnItemSelectedListener{
+public class MapViewFragment extends Fragment implements AdapterView.OnItemSelectedListener{
 
     private GoogleMap mMap;
     View rootView;
     PolygonOptions rectOptions;
     PolylineOptions polylineOptions;
     PolylineOptions polylineOptionsCircle;
+    GroundOverlay currentlySelected;
     CircleOptions circleOptions;
     FrameLayout fram_map;
     Projection projection;
     public double latitude;
     public double longitude;
+
+    TextView height;
+    TextView width;
+    TextView rotate;
 
     String connection = "https://6e66-148-88-245-146.ngrok.io";
 
@@ -94,6 +119,14 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
     boolean delete = false; // to detect map is movable
     boolean editable = false;
     boolean circle = false;
+    boolean overlay = false;
+    boolean move = false;
+    boolean editOverlay = false;
+
+    boolean filter = true;
+    boolean filterOverlay = false;
+    boolean filterZones = false;
+    boolean filterDevices = false;
 
     ArrayList<LatLng> val = new ArrayList<>();
     ArrayList<LatLng> circleVals = new ArrayList<>();
@@ -104,11 +137,35 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
 
     ArrayList<Zone> listOfPolygons = new ArrayList<>();
 
-    int flags[] = {R.drawable.baseline_gps_not_fixed_24,R.drawable.ic_outline_rectangle_24, R.drawable.ic_outline_circle_24, R.drawable.ic_outline_polyline_24, R.drawable.ic_baseline_edit_24, R.drawable.ic_baseline_delete_24};
+    ArrayList<Overlay> listOfOverlays = new ArrayList<>();
 
+    SeekBar rotationBar;
+
+    SeekBar heightBar;
+
+    SeekBar widthBar;
+
+    int flags[] = {R.drawable.baseline_gps_not_fixed_24,R.drawable.ic_outline_rectangle_24, R.drawable.ic_outline_circle_24, R.drawable.ic_baseline_settings_overscan_24,R.drawable.ic_baseline_image_24,R.drawable.ic_baseline_crop_rotate_24, R.drawable.ic_baseline_edit_24, R.drawable.ic_baseline_delete_24};
+
+    int style;
+    MapViewFragment(int style){
+        this.style = style;
+    }
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        System.out.println(style);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         setHasOptionsMenu(true);
     }
 
@@ -117,9 +174,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
         rootView = inflater.inflate(R.layout.google_map, container, false);
         setUpToolbar(rootView);
 
-        fram_map = (FrameLayout) rootView.findViewById(R.id.fram_map);
-        SupportMapFragment mMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        mMapFragment.getMapAsync(this);
+        refresh();
 
         Spinner spin = (Spinner) rootView.findViewById(R.id.simpleSpinner);
         spin.setOnItemSelectedListener(this);
@@ -195,6 +250,67 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
             rootView.findViewById(R.id.product_grid).setBackgroundResource(R.drawable.shr_product_grid_background_shape);
         }
 
+        height = rootView.findViewById(R.id.heightText);
+        width = rootView.findViewById(R.id.widthText);
+        rotate = rootView.findViewById(R.id.rotation);
+
+         rotationBar = rootView.findViewById(R.id.rotationBar);
+        rotationBar.setOnSeekBarChangeListener(seekBarChangeListener);
+
+         heightBar = rootView.findViewById(R.id.heightBar);
+        heightBar.setOnSeekBarChangeListener(seekBarChangeListenerWidth);
+
+         widthBar = rootView.findViewById(R.id.widthBar);
+        widthBar.setOnSeekBarChangeListener(seekBarChangeListenerHeight);
+
+        AppCompatImageButton filterButton = rootView.findViewById(R.id.toolbar_settings_button);
+        filterButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CardView cv = rootView.findViewById(R.id.filterOptions);
+                if(filter) {
+                    cv.setVisibility(View.VISIBLE);
+                    filter = false;
+                }
+                else{
+                    cv.setVisibility(View.GONE);
+                    filter = true;
+                }
+            }
+        });
+
+        CheckBox fOverlay = rootView.findViewById(R.id.Overlays);
+        CheckBox fZones = rootView.findViewById(R.id.Zones);
+        CheckBox fDevices = rootView.findViewById(R.id.devices);
+
+        fOverlay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                filterOverlay = !filterOverlay;
+                mMap.clear();
+                refresh();
+
+            }
+        });
+
+        fZones.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                filterZones = !filterZones;
+                mMap.clear();
+                refresh();
+            }
+        });
+
+        fDevices.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                filterDevices = !filterDevices;
+                mMap.clear();
+                refresh();
+            }
+        });
+
         MaterialButton nextButton = rootView.findViewById(R.id.logout);
         MaterialButton addDevice = rootView.findViewById(R.id.addDevice);
         MaterialButton map = rootView.findViewById(R.id.map);
@@ -207,6 +323,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
+                sendAllOverlaysToDB();
                 ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false); // Navigate to the next Fragment
             }
         });
@@ -214,35 +331,40 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
-                ((NavigationHost) getActivity()).navigateTo(new ManDev(), false); // Navigate to the next Fragment
+                sendAllOverlaysToDB();
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(style), false); // Navigate to the next Fragment
             }
         });
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(), false); // Navigate to the next Fragment
+                sendAllOverlaysToDB();
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
-                ((NavigationHost) getActivity()).navigateTo(new AssUser(), false); // Navigate to the next Fragment
+                sendAllOverlaysToDB();
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(style), false); // Navigate to the next Fragment
             }
         });
         rules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
-                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(), false); // Navigate to the next Fragment
+                sendAllOverlaysToDB();
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(style), false); // Navigate to the next Fragment
             }
         });
         anal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 sendAllZonesToDB();
-                ((NavigationHost) getActivity()).navigateTo(new Anal(), false); // Navigate to the next Fragment
+                sendAllOverlaysToDB();
+                ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
             }
         });
 
@@ -350,6 +472,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
                                             .title(name));
 
                                     markers.add(mDarwin1);
+                                    mMap.moveCamera(CameraUpdateFactory.newLatLng(newCo));
                                 }
                             }
                         } catch (JSONException e) {
@@ -449,7 +572,93 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
         MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
 
     }
+    public void getOverlays()
+    {
+        String url = connection + "/getOverlays";
+        JSONArray z = new JSONArray();
+        z.put(0);
 
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url,z, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String url  = (String) object1.get("image");
+                                LatLng point = new LatLng((double) object1.get("latitude"),(double) object1.get("longitude"));
+                                int h = (int) object1.get("height");
+                                int w = (int) object1.get("width");
+                                int id = (int) object1.get("id");
+                                int bearing = (int) object1.get("bearing");
+
+                                GetURL asyncTask = (GetURL) new GetURL(bearing,Integer.toString(h),Integer.toString(w), url,point, mMap, new GetURL.AsyncResponse() {
+                                    @Override
+                                    public void processFinish(GroundOverlay response) {
+                                        listOfOverlays.add(new Overlay(response,url,id));
+                                    }
+                                }).execute();
+
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
+
+    }
+    public void sendAllOverlaysToDB()
+    {
+        JSONObject a = new JSONObject();
+        JSONArray overlays = new JSONArray();
+
+        //delete all delete();
+        for (int i = 0; i < listOfOverlays.size(); i++) {
+            try {
+                a.put("id", listOfOverlays.get(i).getId());
+                a.put("isDelete", listOfOverlays.get(i).getIsDelete());
+                a.put("width", listOfOverlays.get(i).getOverlay().getWidth());
+                a.put("height", listOfOverlays.get(i).getOverlay().getHeight());
+                a.put("bearing", listOfOverlays.get(i).getOverlay().getBearing());
+                a.put("lat", listOfOverlays.get(i).getOverlay().getPosition().latitude);
+                a.put("lon", listOfOverlays.get(i).getOverlay().getPosition().longitude);
+                a.put("image", listOfOverlays.get(i).getUrl());
+
+            } catch (Exception e) {
+            }
+
+
+            String url = connection + "/overlays";
+
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                    (Request.Method.POST, url, a, new Response.Listener<JSONObject>() {
+                        @Override
+                        public void onResponse(JSONObject response) {
+
+                        }
+                    }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // TODO: Handle error
+
+                        }
+                    });
+
+            MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
+        }
+    }
     public void sendAllZonesToDB()
     {
         //delete all delete();
@@ -556,36 +765,85 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
     }
     @Override
     public void onItemSelected(AdapterView<?> arg0, View arg1, int position,long id) {
-        Toast.makeText(getContext(), "selected", Toast.LENGTH_LONG).show();
+        CardView ln = rootView.findViewById(R.id.sliders);
         if (flags[position] == R.drawable.ic_outline_rectangle_24){
             Is_MAP_Moveable = true;
             delete = false;
             editable = false;
             circle = false;
+            overlay = false;
+            move = false;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
         }
         if (flags[position] == R.drawable.baseline_gps_not_fixed_24){
             Is_MAP_Moveable = false;
             delete = false;
             editable = false;
             circle = false;
+            overlay = false;
+            move = false;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
         }
         if(flags[position] == R.drawable.ic_baseline_delete_24){
             delete = true;
             Is_MAP_Moveable = false;
             editable = false;
             circle = false;
+            overlay = false;
+            move = false;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
         }
         if(flags[position] == R.drawable.ic_baseline_edit_24){
             Is_MAP_Moveable = false;
             delete = false;
             editable = true;
             circle = false;
+            overlay = false;
+            move = false;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
         }
         if(flags[position] == R.drawable.ic_outline_circle_24){
             Is_MAP_Moveable = false;
             delete = false;
             editable = false;
             circle = true;
+            overlay = false;
+            move = false;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
+        }
+        if(flags[position] == R.drawable.ic_baseline_image_24){
+            Is_MAP_Moveable = false;
+            delete = false;
+            editable = false;
+            circle = false;
+            overlay = true;
+            move = false;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
+        }
+        if(flags[position] == R.drawable.ic_baseline_settings_overscan_24){
+            Is_MAP_Moveable = false;
+            delete = false;
+            editable = false;
+            circle = false;
+            overlay = false;
+            move = true;
+            editOverlay = false;
+            ln.setVisibility(View.GONE);
+        }
+        if(flags[position] == R.drawable.ic_baseline_crop_rotate_24){
+            Is_MAP_Moveable = false;
+            delete = false;
+            editable = false;
+            circle = false;
+            overlay = false;
+            move = false;
+            editOverlay = true;
         }
     }
 
@@ -594,117 +852,223 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
         // TODO Auto-generated method stub
     }
 
-    @Override
-    public void onMapReady(@NonNull GoogleMap googleMap) {
-        mMap = googleMap;
+    public void refresh()
+    {
+        fram_map = (FrameLayout) rootView.findViewById(R.id.fram_map);
+        SupportMapFragment mMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
+        mMapFragment.getMapAsync(new OnMapReadyCallback() {
+        @Override
+        public void onMapReady (@NonNull GoogleMap googleMap){
+            mMap = googleMap;
 
-        getZonesLocations();
-        forLocation();
+            if (filterZones)
+                getZonesLocations();
 
-        LatLng sydney = new LatLng(54.01024, -2.788584); // set camera locations
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
-        mMap.setMinZoomPreference(15.0f);
+            if (filterDevices)
+                forLocation();
 
-        mMap.setOnPolygonClickListener(new GoogleMap.OnPolygonClickListener() {
-            @Override
-            public void onPolygonClick(@NonNull Polygon polygon) {
-                if(delete) {
-                    polygon.setVisible(false);
-                    polygon.setClickable(false);
+            if (filterOverlay)
+                getOverlays();
 
-                    for (int i = 0; i < listOfPolygons.size(); i++) {
-                        if((listOfPolygons.get(i).getPolygon()).equals(polygon)) {
-                            listOfPolygons.get(i).setToDelete(1);
+            LatLng sydney = new LatLng(54.01024, -2.788584); // set camera locations
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+            mMap.setMinZoomPreference(15.0f);
+
+            mMap.setOnPolygonClickListener(new GoogleMap.OnPolygonClickListener() {
+                @Override
+                public void onPolygonClick(@NonNull Polygon polygon) {
+                    if (delete) {
+                        polygon.setVisible(false);
+                        polygon.setClickable(false);
+
+                        for (int i = 0; i < listOfPolygons.size(); i++) {
+                            if ((listOfPolygons.get(i).getPolygon()).equals(polygon)) {
+                                listOfPolygons.get(i).setToDelete(1);
+                            }
+                        }
+                    }
+                    if (editable) {
+                        for (int i = 0; i < listOfPolygons.size(); i++) {
+                            if ((listOfPolygons.get(i).getPolygon()).equals(polygon)) {
+                                PopUpEditName pu = new PopUpEditName();
+                                pu.showPopupWindow(rootView, getContext(), listOfPolygons.get(i));
+                            }
                         }
                     }
                 }
-                if(editable){
-                    for (int i = 0; i < listOfPolygons.size(); i++) {
-                        if ((listOfPolygons.get(i).getPolygon()).equals(polygon))  {
-                            PopUpEditName pu = new PopUpEditName();
-                            pu.showPopupWindow(rootView,getContext(),listOfPolygons.get(i));
+            });
+
+            mMap.setOnGroundOverlayClickListener(new GoogleMap.OnGroundOverlayClickListener() {
+                @Override
+                public void onGroundOverlayClick(@NonNull GroundOverlay groundOverlay) {
+                    if (delete) {
+                        for (int i = 0; i < listOfOverlays.size(); i++) {
+                            if ((listOfOverlays.get(i).getOverlay().equals(groundOverlay))) {
+                                groundOverlay.remove();
+                                listOfOverlays.get(i).setIsDelete(1);
+                            }
+                        }
+                    }
+                    if (editOverlay) {
+                        for (int i = 0; i < listOfOverlays.size(); i++) {
+                            if ((listOfOverlays.get(i).getOverlay().equals(groundOverlay))) {
+                                CardView ln = rootView.findViewById(R.id.sliders);
+                                ln.setVisibility(View.VISIBLE);
+
+                                currentlySelected = groundOverlay;
+
+                                widthBar.setProgress((int) groundOverlay.getWidth());
+                                heightBar.setProgress((int) groundOverlay.getHeight());
+                                rotationBar.setProgress((int) groundOverlay.getBearing());
+                            }
                         }
                     }
                 }
-            }
-        });
+            });
 
-        fram_map.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                if(Is_MAP_Moveable) {
-                    float x = event.getX();
-                    float y = event.getY();
+            fram_map.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    if (Is_MAP_Moveable) {
+                        float x = event.getX();
+                        float y = event.getY();
 
-                    int x_co = Math.round(x);
-                    int y_co = Math.round(y);
+                        int x_co = Math.round(x);
+                        int y_co = Math.round(y);
 
-                    projection = mMap.getProjection();
-                    Point x_y_points = new Point(x_co, y_co);
+                        projection = mMap.getProjection();
+                        Point x_y_points = new Point(x_co, y_co);
 
-                    LatLng latLng = mMap.getProjection().fromScreenLocation(x_y_points);
-                    latitude = latLng.latitude;
-                    longitude = latLng.longitude;
+                        LatLng latLng = mMap.getProjection().fromScreenLocation(x_y_points);
+                        latitude = latLng.latitude;
+                        longitude = latLng.longitude;
 
-                    int eventaction = event.getAction();
-                    switch (eventaction) {
-                        case MotionEvent.ACTION_DOWN:
-                            // finger touches the screen
-                            val.add(new LatLng(latitude, longitude));
-                            break;
+                        int eventaction = event.getAction();
+                        switch (eventaction) {
+                            case MotionEvent.ACTION_DOWN:
+                                // finger touches the screen
+                                val.add(new LatLng(latitude, longitude));
+                                break;
 
-                        case MotionEvent.ACTION_MOVE:
-                            // finger moves on the screen
-                            val.add(new LatLng(latitude, longitude));
-                            DrawLines();
-                            break;
+                            case MotionEvent.ACTION_MOVE:
+                                // finger moves on the screen
+                                val.add(new LatLng(latitude, longitude));
+                                DrawLines();
+                                break;
 
-                        case MotionEvent.ACTION_UP:
-                            // finger leaves the screen
-                            Draw_Map(true);
-                            val.clear();
-                            break;
+                            case MotionEvent.ACTION_UP:
+                                // finger leaves the screen
+                                Draw_Map(true);
+                                val.clear();
+                                break;
+                        }
+                        return Is_MAP_Moveable;
                     }
-                    return Is_MAP_Moveable;
-                }
-                if(circle) {
-                    float x = event.getX();
-                    float y = event.getY();
+                    if (circle) {
+                        float x = event.getX();
+                        float y = event.getY();
 
-                    int x_co = Math.round(x);
-                    int y_co = Math.round(y);
+                        int x_co = Math.round(x);
+                        int y_co = Math.round(y);
 
-                    projection = mMap.getProjection();
-                    Point x_y_points = new Point(x_co, y_co);
+                        projection = mMap.getProjection();
+                        Point x_y_points = new Point(x_co, y_co);
 
-                    LatLng latLng = mMap.getProjection().fromScreenLocation(x_y_points);
-                    latitude = latLng.latitude;
-                    longitude = latLng.longitude;
+                        LatLng latLng = mMap.getProjection().fromScreenLocation(x_y_points);
+                        latitude = latLng.latitude;
+                        longitude = latLng.longitude;
 
-                    int eventaction = event.getAction();
-                    switch (eventaction) {
-                        case MotionEvent.ACTION_DOWN:
-                            // finger touches the screen
-                            circleVals.add(0,new LatLng(latitude, longitude));
-                            break;
+                        int eventaction = event.getAction();
+                        switch (eventaction) {
+                            case MotionEvent.ACTION_DOWN:
+                                // finger touches the screen
+                                circleVals.add(0, new LatLng(latitude, longitude));
+                                break;
 
-                        case MotionEvent.ACTION_MOVE:
-                            // finger moves on the screen
-                            circleVals.add(1,new LatLng(latitude, longitude));
-                            DrawLinesCircle();
-                            break;
+                            case MotionEvent.ACTION_MOVE:
+                                // finger moves on the screen
+                                circleVals.add(1, new LatLng(latitude, longitude));
+                                DrawLinesCircle();
+                                break;
 
-                        case MotionEvent.ACTION_UP:
-                            // finger leaves the screen
-                            Draw_Circle();
-                            circleVals.clear();
-                            break;
+                            case MotionEvent.ACTION_UP:
+                                // finger leaves the screen
+                                Draw_Circle();
+                                circleVals.clear();
+                                break;
+                        }
+                        return circle;
                     }
-                    return circle;
+                    if (overlay) {
+                        float x = event.getX();
+                        float y = event.getY();
+
+                        int x_co = Math.round(x);
+                        int y_co = Math.round(y);
+
+                        projection = mMap.getProjection();
+                        Point x_y_points = new Point(x_co, y_co);
+
+                        LatLng latLng = mMap.getProjection().fromScreenLocation(x_y_points);
+                        latitude = latLng.latitude;
+                        longitude = latLng.longitude;
+
+                        int eventaction = event.getAction();
+                        switch (eventaction) {
+                            case MotionEvent.ACTION_DOWN:
+                                // finger touches the screen
+                                displayPopup(new LatLng(latitude, longitude), mMap);
+                                break;
+                        }
+                        return overlay;
+
+                    }
+                    if (move) {
+                        try {
+                            float x = event.getX();
+                            float y = event.getY();
+
+                            int x_co = Math.round(x);
+                            int y_co = Math.round(y);
+
+                            projection = mMap.getProjection();
+                            Point x_y_points = new Point(x_co, y_co);
+
+                            LatLng latLng = mMap.getProjection().fromScreenLocation(x_y_points);
+                            latitude = latLng.latitude;
+                            longitude = latLng.longitude;
+
+                            for (int i = 0; i < listOfOverlays.size(); i++) {
+                                if ((listOfOverlays.get(i).getOverlay().getBounds().contains(new LatLng(latitude, longitude)))) {
+                                    int eventaction = event.getAction();
+                                    switch (eventaction) {
+                                        case MotionEvent.ACTION_DOWN:
+                                            // finger touches the screen
+                                            //currentlySelected.setPosition(new LatLng(latitude, longitude));
+                                            break;
+
+                                        case MotionEvent.ACTION_MOVE:
+                                            // finger moves on the screen
+                                            listOfOverlays.get(i).getOverlay().setPosition(new LatLng(latitude, longitude));
+                                            break;
+
+                                        case MotionEvent.ACTION_UP:
+                                            break;
+                                    }
+
+                                }
+                            }
+
+                        } catch (Exception e) {
+                            System.out.println(e);
+                        }
+                        return move;
+                    }
+                    return false;
                 }
-                return false;
-            }
-        });
+            });
+        }
+    });
     }
     /**
      * Calculate distance between two points in latitude and longitude taking
@@ -760,4 +1124,105 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback, Ada
 
         return temp;
     }
+
+    private void displayPopup(LatLng point,GoogleMap map)
+    {
+        LayoutInflater inflater = (LayoutInflater) rootView.getContext().getSystemService(getContext().LAYOUT_INFLATER_SERVICE);
+        View popupView = inflater.inflate(R.layout.add_overlay, null);
+
+        int width = LinearLayout.LayoutParams.MATCH_PARENT;
+        int height = LinearLayout.LayoutParams.MATCH_PARENT;
+
+
+        //Make Inactive Items Outside Of PopupWindow
+        boolean focusable = true;
+
+        //Create a window with our parameters
+        PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+        popupWindow.showAtLocation(rootView, Gravity.CENTER, 0, 0);
+
+        TextInputEditText url_ti = popupView.findViewById(R.id.url);
+        TextInputEditText h_ti = popupView.findViewById(R.id.h);
+        TextInputEditText w_ti = popupView.findViewById(R.id.w);
+        popupView.setOnTouchListener(new View.OnTouchListener() {
+                @Override
+                public boolean onTouch(View v, MotionEvent event) {
+                    String URL = url_ti.getText().toString();
+                    String h = h_ti.getText().toString();
+                    String w = w_ti.getText().toString();
+                    GetURL asyncTask = (GetURL) new GetURL(0,h,w,URL,point, map, new GetURL.AsyncResponse() {
+                        @Override
+                        public void processFinish(GroundOverlay response) {
+                            listOfOverlays.add(new Overlay(response,URL,1000));
+                        }
+                    }).execute();
+
+                    popupWindow.dismiss();
+                    return true;
+                }
+            });
+    }
+
+    SeekBar.OnSeekBarChangeListener seekBarChangeListener = new SeekBar.OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            // updated continuously as the user slides the thumb
+            rotate.setText("Bearing: " + progress);
+            currentlySelected.setBearing((float)progress);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            // called when the user first touches the SeekBar
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            // called after the user finishes moving the SeekBar
+        }
+    };
+
+    SeekBar.OnSeekBarChangeListener seekBarChangeListenerHeight = new SeekBar.OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            // updated continuously as the user slides the thumb
+            width.setText("Height: " + progress);
+            currentlySelected.setDimensions(currentlySelected.getWidth(),(float)progress);
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            // called when the user first touches the SeekBar
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            // called after the user finishes moving the SeekBar
+        }
+    };
+
+    SeekBar.OnSeekBarChangeListener seekBarChangeListenerWidth = new SeekBar.OnSeekBarChangeListener() {
+
+        @Override
+        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+            // updated continuously as the user slides the thumb
+            height.setText("Width: " + progress);
+            currentlySelected.setDimensions((float)progress,currentlySelected.getHeight());
+        }
+
+        @Override
+        public void onStartTrackingTouch(SeekBar seekBar) {
+            // called when the user first touches the SeekBar
+
+        }
+
+        @Override
+        public void onStopTrackingTouch(SeekBar seekBar) {
+            // called after the user finishes moving the SeekBar
+        }
+    };
+
 }

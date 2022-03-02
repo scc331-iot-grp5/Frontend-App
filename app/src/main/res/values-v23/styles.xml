@@ -27,7 +27,31 @@
         <item name="colorPrimaryDark">#FD9725</item>
         <item name="colorAccent">#FD9725</item>
         <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorError">#FD9725</item>
+        <item name="colorError">#FD9000</item>
+    </style>
+
+    <style name="Theme.Shrine.Purple" parent="Theme.Shrine">
+        <item name="colorPrimary">#6750A4</item>
+        <item name="colorPrimaryDark">#D0BCFF</item>
+        <item name="colorAccent">#EADDFF</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorError">#B3261E</item>
+    </style>
+
+    <style name="Theme.Shrine.Red" parent="Theme.Shrine">
+        <item name="colorPrimary">#a93346</item>
+        <item name="colorPrimaryDark">#ffb2b9</item>
+        <item name="colorAccent">#ffdadd</item>
+        <item name="colorOnPrimary">#67001b</item>
+        <item name="colorError">#ba1b1b</item>
+    </style>
+
+    <style name="Theme.Shrine.Blue" parent="Theme.Shrine">
+        <item name="colorPrimary">#544dc5</item>
+        <item name="colorPrimaryDark">#c5c0ff</item>
+        <item name="colorAccent">#e4dfff</item>
+        <item name="colorOnPrimary">#ffffff</item>
+        <item name="colorError">#ba1b1b</item>
     </style>
 
     <style name="Widget.Shrine.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">

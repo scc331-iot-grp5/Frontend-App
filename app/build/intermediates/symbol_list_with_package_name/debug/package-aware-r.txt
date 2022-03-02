@@ -836,6 +836,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color darkOrange
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -878,14 +879,17 @@ color dim_foreground_disabled_material_dark
 color dim_foreground_disabled_material_light
 color dim_foreground_material_dark
 color dim_foreground_material_light
+color e
 color error_color_material_dark
 color error_color_material_light
 color foreground_material_dark
 color foreground_material_light
+color g
 color green
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color hint_foreground_material_light
+color lightPurple
 color loginPageBackgroundColor
 color mapbox_blue
 color mapbox_gray
@@ -975,6 +979,8 @@ color mtrl_textinput_hovered_box_stroke_color
 color notification_action_color_filter
 color notification_icon_bg_color
 color notification_material_background_media_default_color
+color ora
+color orange
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -984,7 +990,12 @@ color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
 color productGridBackgroundColor
+color purple
+color purpleAccent
 color red
+color redAccent
+color redDark
+color redTheme
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -1005,6 +1016,7 @@ color textInputOutlineColor
 color toolbarIconColor
 color tooltip_background_dark
 color tooltip_background_light
+color yellow
 dimen abc_action_bar_content_inset_material
 dimen abc_action_bar_content_inset_with_nav
 dimen abc_action_bar_default_height_material
@@ -1434,6 +1446,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable domain
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_spinner
@@ -1443,6 +1456,7 @@ drawable ic_baseline_analytics_24
 drawable ic_baseline_arrow_drop_down_24
 drawable ic_baseline_border_color_24
 drawable ic_baseline_check_24
+drawable ic_baseline_crop_rotate_24
 drawable ic_baseline_delete_24
 drawable ic_baseline_device_thermostat_24
 drawable ic_baseline_directions_24
@@ -1450,12 +1464,14 @@ drawable ic_baseline_directions_car_24
 drawable ic_baseline_drive_file_rename_outline_24
 drawable ic_baseline_edit_24
 drawable ic_baseline_email_24
+drawable ic_baseline_filter_list_24
 drawable ic_baseline_format_color_fill_24
 drawable ic_baseline_image_24
 drawable ic_baseline_lock_clock_24
 drawable ic_baseline_login_24
 drawable ic_baseline_person_24
 drawable ic_baseline_rule_24
+drawable ic_baseline_settings_overscan_24
 drawable ic_baseline_speed_24
 drawable ic_blje_background
 drawable ic_keyboard_arrow_left_black_24dp
@@ -1537,6 +1553,7 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable settings
 drawable shr_branded_menu
 drawable shr_close_menu
 drawable shr_filter
@@ -1561,8 +1578,11 @@ id FUNCTION
 id Full_Name
 id META
 id ObjectGroups
+id Overlays
 id SHIFT
 id SYM
+id SystemConfig
+id Zones
 id a
 id acc
 id access
@@ -1690,8 +1710,10 @@ id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
 id devView
+id devices
 id dialog_button
 id disableHome
+id domain
 id dropdown_menu
 id edit_query
 id email
@@ -1709,6 +1731,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filterOptions
 id filter_chip
 id fitToContents
 id fixed
@@ -1721,7 +1744,10 @@ id getDateBefore
 id ghost_view
 id greenSeekBar
 id group_divider
+id h
 id heatMap
+id heightBar
+id heightText
 id hexCode
 id hideable
 id home
@@ -1835,6 +1861,8 @@ id reportingChart
 id right
 id right_icon
 id right_side
+id rotation
+id rotationBar
 id rounded
 id ruleIcon
 id ruleNameText
@@ -1876,6 +1904,7 @@ id showTitle
 id simpleSpinner
 id skipCollapsed
 id slide
+id sliders
 id smallLabel
 id snackbar_action
 id snackbar_text
@@ -1930,6 +1959,7 @@ id titleText_U
 id titleText_sub
 id titleText_sub_optional
 id title_template
+id toolbar_settings_button
 id top
 id topPanel
 id touch_outside
@@ -1943,6 +1973,7 @@ id unchecked
 id uniform
 id unlabeled
 id up
+id url
 id urlNameText
 id useLogo
 id userID
@@ -1954,8 +1985,11 @@ id valueEditText
 id valueLabel
 id view_offset_helper
 id visible
+id w
 id warningLabel
 id wide
+id widthBar
+id widthText
 id withText
 id wrap_content
 id xax
@@ -2020,6 +2054,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout add_device
+layout add_overlay
 layout add_zone_name
 layout all_dev
 layout all_rules
@@ -2029,6 +2064,7 @@ layout calandar_popup_2
 layout crash_map
 layout custom_dialog
 layout custom_spinner_items
+layout dashboard
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2098,6 +2134,7 @@ layout rules_row
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
+layout settings
 layout shr_backdrop
 layout shr_login_fragment
 layout shr_main_activity
@@ -2110,6 +2147,7 @@ layout speed
 layout step_one
 layout step_three
 layout step_two
+layout super_admin_backdrop
 layout support_simple_spinner_dropdown_item
 layout test_action_chip
 layout test_reflow_chipgroup
@@ -2742,6 +2780,9 @@ style Theme_MaterialComponents_NoActionBar
 style Theme_MaterialComponents_NoActionBar_Bridge
 style Theme_Shrine
 style Theme_Shrine_Autumn
+style Theme_Shrine_Blue
+style Theme_Shrine_Purple
+style Theme_Shrine_Red
 style ThemeOverlay_AppCompat
 style ThemeOverlay_AppCompat_ActionBar
 style ThemeOverlay_AppCompat_Dark

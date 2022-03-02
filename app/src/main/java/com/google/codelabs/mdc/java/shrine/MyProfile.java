@@ -84,14 +84,26 @@ public class MyProfile extends Fragment{
     String urlP;
     String background;
     private ImageRequester imageRequester;
-
-    public MyProfile(int userid){
+    int style;
+    public MyProfile(int userid,int style){
         this.userid = userid;
+        this.style = style;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if(style == 2000016)
+            getContext().setTheme(R.style.Theme_Shrine);
+        else if(style == 2000552)
+            getContext().setTheme(R.style.Theme_Shrine_Autumn);
+        else if(style == 3)
+            getContext().setTheme(R.style.Theme_Shrine_Blue);
+        else if(style == 4)
+            getContext().setTheme(R.style.Theme_Shrine_Purple);
+        else if(style == 5)
+            getContext().setTheme(R.style.Theme_Shrine_Red);
+
         setHasOptionsMenu(true);
 
     }
@@ -145,19 +157,19 @@ public class MyProfile extends Fragment{
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new UserMap(userid), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new UserMap(userid,style), false); // Navigate to the next Fragment
             }
         });
         profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MyProfile(userid), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MyProfile(userid,style), false); // Navigate to the next Fragment
             }
         });
         a.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MyAnalytics(userid), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MyAnalytics(userid,style), false); // Navigate to the next Fragment
             }
         });
 
