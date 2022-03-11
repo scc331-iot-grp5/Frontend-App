@@ -30,6 +30,15 @@
         app:iconTint="?android:attr/textColorPrimary"
         app:icon="@drawable/ic_outline_map_24"
         android:text="@string/my_analytics" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/chat"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/ic_baseline_chat_24"
+        android:text="Chat" />
 
     <View
         android:layout_width="56dp"

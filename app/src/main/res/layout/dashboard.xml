@@ -25,10 +25,15 @@
         android:layout_height="wrap_content"
         tools:ignore="ExtraText"
         app:elevation="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/app_bar"
             style="@style/Widget.Shrine.Toolbar"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="?attr/actionBarSize"
             android:paddingStart="12dp"
             android:paddingLeft="12dp"
@@ -38,10 +43,20 @@
             app:navigationIcon="@drawable/shr_branded_menu"
             app:title="Dashboard" />
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/toolbar_settings_button"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:paddingLeft="160dp"
+            android:src="@drawable/ic_baseline_filter_list_24"
+            android:background="@color/colorAccent"
+            />
+        </LinearLayout>
+
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <LinearLayout
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/product_grid"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -50,9 +65,82 @@
         android:elevation="8dp"
         android:paddingStart="@dimen/shr_product_grid_spacing"
         android:paddingEnd="@dimen/shr_product_grid_spacing"
-        android:orientation="horizontal">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="10dp"
+                android:visibility="gone"
+                android:id="@+id/filterOptions"
+                android:background="@color/colorPrimary"
+                android:layout_gravity="top|right"
+                app:cardCornerRadius="5dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/cardview_dark_background"
+                    android:orientation="vertical">
+
+                    <CheckBox
+                        android:id="@+id/MicrobitSerial"
+                        android:text="Microbit Serial Transfer Rate"
+                        android:textColor="@color/cardview_light_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    </CheckBox>
+
+                    <CheckBox
+                        android:id="@+id/ServerRequest"
+                        android:text="Server Request"
+                        android:checked="true"
+                        android:textColor="@color/cardview_light_background"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    </CheckBox>
 
 
-    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connected Devices:"
+            android:textAppearance="@style/TextAppearance.Shrine.heading"/>
+
+
+        <lecho.lib.hellocharts.view.PieChartView
+            android:layout_marginTop="20dp"
+            android:id="@+id/chart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp" />
+
+        <TextView
+            android:layout_marginTop="280dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Connection Statistics:"
+            android:textAppearance="@style/TextAppearance.Shrine.heading"/>
+
+            <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph"
+                android:layout_marginTop="300dp"
+                android:layout_width="match_parent"
+                android:layout_height="500dp" />
+
+        </FrameLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 </FrameLayout>

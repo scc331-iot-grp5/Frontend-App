@@ -20,6 +20,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -73,6 +74,18 @@ public class Settings extends Fragment{
 
     RequestQueue queue;
 
+    boolean orangeA = false;
+    boolean redA= false;
+    boolean greenA= false;
+    boolean roseA= false;
+    boolean purpleA= false;
+
+    CheckBox orange;
+    CheckBox gold ;
+    CheckBox red ;
+    CheckBox green ;
+    CheckBox purple ;
+
     int style;
     public Settings(int style){
         this.style = style;
@@ -107,12 +120,189 @@ public class Settings extends Fragment{
             setExitTransition(inflaterTwo.inflateTransition(R.transition.slide_right));
         }
         queue = Volley.newRequestQueue(getContext());
-
         setUpToolbar(view);
+
+         orange = view.findViewById(R.id.orange);
+         gold = view.findViewById(R.id.rose);
+         red = view.findViewById(R.id.red);
+         green = view.findViewById(R.id.green);
+         purple = view.findViewById(R.id.purple);
+
+        orange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                orangeA = !orangeA;
+                gold.setChecked(false);
+                red.setChecked(false);
+                green.setChecked(false);
+                purple.setChecked(false);
+                redA= false;
+                greenA= false;
+                roseA= false;
+                purpleA= false;
+
+
+            }
+        });
+
+        gold.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                roseA = !roseA;
+                orange.setChecked(false);
+                red.setChecked(false);
+                green.setChecked(false);
+                purple.setChecked(false);
+                redA= false;
+                greenA= false;
+                orangeA= false;
+                purpleA= false;
+
+            }
+        });
+
+        red.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                redA = !redA;
+                gold.setChecked(false);
+                orange.setChecked(false);
+                green.setChecked(false);
+                purple.setChecked(false);
+                roseA= false;
+                greenA= false;
+                orangeA= false;
+                purpleA= false;
+
+            }
+        });
+        green.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                greenA = !greenA;
+                orange.setChecked(false);
+                red.setChecked(false);
+                purple.setChecked(false);
+                gold.setChecked(false);
+                roseA= false;
+               redA= false;
+                orangeA= false;
+                purpleA= false;
+
+            }
+        });
+        purple.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                purpleA = !purpleA;
+                gold.setChecked(false);
+                red.setChecked(false);
+                green.setChecked(false);
+                orange.setChecked(false);
+                roseA= false;
+                redA= false;
+                orangeA= false;
+                greenA= false;
+            }
+        });
+
+        getSystemStyle();
 
         return view;
     }
+    private void getSystemStyle()
+    {
+        JSONArray j = new JSONArray();
+        JSONObject json = new JSONObject();
 
+        try {
+            json.put("sss","ad");
+            j.put(json);
+        }
+        catch(Exception e){}
+
+        String url = connection + "/colorSettings";
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.GET, url, j, new Response.Listener<JSONArray>(){
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            JSONObject object1 = response.getJSONObject(0);
+                            if ((int)(object1.get("styleID")) == 2000016) {
+                                roseA = true;
+                                gold.setChecked(true);
+                            }
+                            else if ((int)(object1.get("styleID")) == 2000552) {
+                                orangeA = true;
+                                orange.setChecked(true);
+                            }
+                            else if ((int)(object1.get("styleID")) == 3) {
+                                greenA = true;
+                                green.setChecked(true);
+                            }
+                            else if ((int)(object1.get("styleID")) == 4) {
+                                purpleA = true;
+                                purple.setChecked(true);
+                            }
+                            else if ((int)(object1.get("styleID")) == 5) {
+                               redA = true;
+                               red.setChecked(true);
+                            }
+                        }catch(Exception e){}
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
+    }
+    private void sendColorToDB()
+    {
+        JSONArray j = new JSONArray();
+        JSONObject json = new JSONObject();
+        int styleID = 2000016;
+        if(roseA)
+            styleID = 2000016;
+        else if(orangeA)
+            styleID = 2000552;
+        else if(greenA)
+            styleID = 3;
+        else if(purpleA)
+            styleID = 4;
+        else if(redA)
+            styleID = 5;
+
+
+        try {
+            json.put("styleID",styleID);
+            j.put(json);
+        }
+        catch(Exception e){}
+
+        String url = connection + "/setColor";
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, j, new Response.Listener<JSONArray>(){
+                    @Override
+                    public void onResponse(JSONArray response) {
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        MySingleton.getInstance(getContext()).addToRequestQueue(jsonObjectRequest);
+    }
     private void setUpToolbar(View view) {
         Toolbar toolbar = view.findViewById(R.id.app_bar);
         AppCompatActivity activity = (AppCompatActivity) getActivity();
@@ -123,6 +313,7 @@ public class Settings extends Fragment{
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                sendColorToDB();
                 ((NavigationHost) getActivity()).navigateTo(new Dashboard(style), false); // Navigate to the next Fragment
 
             }

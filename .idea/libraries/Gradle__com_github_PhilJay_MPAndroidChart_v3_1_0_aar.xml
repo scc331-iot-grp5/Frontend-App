@@ -3,8 +3,9 @@
     <CLASSES>
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/7394c21562d45f626d37b27f5d5a3099/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/MPAndroidChart-v3.1.0.aar/bac1d6ffdd7ca9ebc9092eb9212d7432/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8ff95990af26ecdd47359506e7ed315a/transformed/jetified-MPAndroidChart-v3.1.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>

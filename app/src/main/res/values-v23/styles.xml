@@ -23,11 +23,11 @@
     </style>
 
     <style name="Theme.Shrine.Autumn" parent="Theme.Shrine">
-        <item name="colorPrimary">#FFCF44</item>
-        <item name="colorPrimaryDark">#FD9725</item>
-        <item name="colorAccent">#FD9725</item>
-        <item name="colorOnPrimary">#FFFFFF</item>
-        <item name="colorError">#FD9000</item>
+        <item name="colorPrimary">#BFA044</item>
+        <item name="colorPrimaryDark">#F39D3E</item>
+        <item name="colorAccent">#F69E3C</item>
+        <item name="colorOnPrimary">#ECB296</item>
+        <item name="colorError">#E4A858</item>
     </style>
 
     <style name="Theme.Shrine.Purple" parent="Theme.Shrine">

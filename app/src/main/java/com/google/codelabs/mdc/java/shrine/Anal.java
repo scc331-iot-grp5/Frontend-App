@@ -122,6 +122,7 @@ public class Anal extends Fragment{
         MaterialButton user = view.findViewById(R.id.users);
         MaterialButton rules = view.findViewById(R.id.rules);
         MaterialButton anal = view.findViewById(R.id.a);
+        MaterialButton chats = view.findViewById(R.id.chats);
 
         MaterialButton speedo = view.findViewById(R.id.speedo);
 
@@ -191,7 +192,7 @@ public class Anal extends Fragment{
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(0,style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
@@ -210,6 +211,12 @@ public class Anal extends Fragment{
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
+            }
+        });
+        chats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AllChats(0,style), false); // Navigate to the next Fragment
             }
         });
 

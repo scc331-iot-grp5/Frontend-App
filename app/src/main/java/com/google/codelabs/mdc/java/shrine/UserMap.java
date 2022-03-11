@@ -1,5 +1,7 @@
 package com.google.codelabs.mdc.java.shrine;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Build;
@@ -102,6 +104,7 @@ public class UserMap extends Fragment implements OnMapReadyCallback{
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.user_google_map, container, false);
         setUpToolbar(rootView);
+        createNotificationChannel();
 
         fram_map = (FrameLayout) rootView.findViewById(R.id.fram_map);
         SupportMapFragment mMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
@@ -117,6 +120,7 @@ public class UserMap extends Fragment implements OnMapReadyCallback{
         MaterialButton map = rootView.findViewById(R.id.map);
         MaterialButton profile = rootView.findViewById(R.id.myProfile);
         MaterialButton a = rootView.findViewById(R.id.myAnalytics);
+        MaterialButton chat = rootView.findViewById(R.id.chat);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -143,10 +147,32 @@ public class UserMap extends Fragment implements OnMapReadyCallback{
                 ((NavigationHost) getActivity()).navigateTo(new MyAnalytics(userID,style), false); // Navigate to the next Fragment
             }
         });
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AllChats(userID,style), false); // Navigate to the next Fragment
+            }
+        });
+
+        ((NotificationHost)getActivity()).createWebSocketClient(userID,style);
 
         return rootView;
     }
-
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "message";
+            String description = "for messages";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("Mes", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = (getActivity()).getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
     /**
      *
      * Change to device by userID

@@ -190,6 +190,7 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
         MaterialButton user = view.findViewById(R.id.users);
         MaterialButton rules = view.findViewById(R.id.rules);
         MaterialButton anal = view.findViewById(R.id.a);
+        MaterialButton chats = view.findViewById(R.id.chats);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -207,7 +208,7 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
         map.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(0,style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
@@ -226,6 +227,12 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
+            }
+        });
+        chats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AllChats(0,style), false); // Navigate to the next Fragment
             }
         });
 

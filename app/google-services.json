@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "811198197887",
+    "project_id": "valiant-surfer-338617",
+    "storage_bucket": "valiant-surfer-338617.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:811198197887:android:64f29da61c13df6cc94f4a",
+        "android_client_info": {
+          "package_name": "com.google.codelabs.mdc.java.shrine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "811198197887-d5mkmtqsumabegjq8nv8i5oum3n0ekcg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC1vjWFP3PjAwjXP7ceeboZzmeW2zEE4oc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "811198197887-d5mkmtqsumabegjq8nv8i5oum3n0ekcg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

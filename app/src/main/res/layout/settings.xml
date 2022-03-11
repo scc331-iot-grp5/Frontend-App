@@ -331,6 +331,7 @@
                 android:orientation="vertical">
 
                 <CheckBox
+                    android:id="@+id/rose"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginTop="18dp"
@@ -339,6 +340,7 @@
                 </CheckBox>
 
                 <CheckBox
+                    android:id="@+id/orange"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginTop="20dp"
@@ -348,6 +350,7 @@
                 </CheckBox>
 
                 <CheckBox
+                    android:id="@+id/purple"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginTop="18dp"
@@ -357,6 +360,7 @@
                 </CheckBox>
 
                 <CheckBox
+                    android:id="@+id/red"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginTop="18dp"
@@ -366,6 +370,7 @@
                 </CheckBox>
 
                 <CheckBox
+                    android:id="@+id/green"
                     android:layout_width="wrap_content"
                     android:layout_height="20dp"
                     android:layout_marginTop="18dp"

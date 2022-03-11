@@ -146,6 +146,7 @@ public class MyProfile extends Fragment{
         MaterialButton map = view.findViewById(R.id.map);
         MaterialButton profile = view.findViewById(R.id.myProfile);
         MaterialButton a = view.findViewById(R.id.myAnalytics);
+        MaterialButton chat = view.findViewById(R.id.chat);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -170,6 +171,12 @@ public class MyProfile extends Fragment{
             @Override
             public void onClick(View view) {
                 ((NavigationHost) getActivity()).navigateTo(new MyAnalytics(userid,style), false); // Navigate to the next Fragment
+            }
+        });
+        chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AllChats(userid,style), false); // Navigate to the next Fragment
             }
         });
 

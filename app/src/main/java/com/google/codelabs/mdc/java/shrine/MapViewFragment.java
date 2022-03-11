@@ -1,5 +1,7 @@
 package com.google.codelabs.mdc.java.shrine;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -128,7 +130,7 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
     boolean filterZones = false;
     boolean filterDevices = false;
 
-    ArrayList<LatLng> val = new ArrayList<>();
+    ArrayList<LatLng> val = new ArrayList<  >();
     ArrayList<LatLng> circleVals = new ArrayList<>();
 
     ArrayList<Polyline> listOfPolyLines = new ArrayList<>();
@@ -148,8 +150,10 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
     int flags[] = {R.drawable.baseline_gps_not_fixed_24,R.drawable.ic_outline_rectangle_24, R.drawable.ic_outline_circle_24, R.drawable.ic_baseline_settings_overscan_24,R.drawable.ic_baseline_image_24,R.drawable.ic_baseline_crop_rotate_24, R.drawable.ic_baseline_edit_24, R.drawable.ic_baseline_delete_24};
 
     int style;
-    MapViewFragment(int style){
+    int userid;
+    MapViewFragment(int userid,int style){
         this.style = style;
+        this.userid = userid;
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -168,13 +172,30 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
 
         setHasOptionsMenu(true);
     }
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "message";
+            String description = "for messages";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("Mes", name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = (getActivity()).getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         rootView = inflater.inflate(R.layout.google_map, container, false);
         setUpToolbar(rootView);
+        createNotificationChannel();
 
         refresh();
+
 
         Spinner spin = (Spinner) rootView.findViewById(R.id.simpleSpinner);
         spin.setOnItemSelectedListener(this);
@@ -317,6 +338,7 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
         MaterialButton user = rootView.findViewById(R.id.users);
         MaterialButton rules = rootView.findViewById(R.id.rules);
         MaterialButton anal = rootView.findViewById(R.id.a);
+        MaterialButton chats = rootView.findViewById(R.id.chats);
 
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
@@ -340,7 +362,7 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
             public void onClick(View view) {
                 sendAllZonesToDB();
                 sendAllOverlaysToDB();
-                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(style), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(userid,style), false); // Navigate to the next Fragment
             }
         });
         user.setOnClickListener(new View.OnClickListener() {
@@ -367,6 +389,16 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
                 ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
             }
         });
+        chats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendAllZonesToDB();
+                sendAllOverlaysToDB();
+                ((NavigationHost) getActivity()).navigateTo(new AllChats(userid,style), false); // Navigate to the next Fragment
+            }
+        });
+
+       // ((NotificationHost)getActivity()).createWebSocketClient(userid,style);
 
         return rootView;
     }

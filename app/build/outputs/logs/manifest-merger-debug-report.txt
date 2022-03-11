@@ -12,8 +12,10 @@ INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/Andr
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-40:12
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:2:1-40:12
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-3/101ff0b58494dd0679990e39b99e836d/transformed/material-1.1.0-alpha06/AndroidManifest.xml:17:1-24:12
+MERGED from [com.jjoe64:graphview:4.2.2] /Users/cameronpugh/.gradle/caches/transforms-3/5702c44b23857d21e60b0f5d33009ff6/transformed/jetified-graphview-4.2.2/AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/f1bd9ffbb1485b7551d1a7544beeb580/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/cameronpugh/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:2:1-20:12
+MERGED from [com.github.lecho:hellocharts-library:1.5.8] /Users/cameronpugh/.gradle/caches/transforms-3/dbf5d961a812ee5217f4340cfc79e525/transformed/jetified-hellocharts-library-1.5.8/AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:17:1-44:12
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:2:1-20:12
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/cameronpugh/.gradle/caches/transforms-3/d23ccc0fc3936798789c12a3b3188ec6/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:2:1-11:12
@@ -112,6 +114,8 @@ application
 ADDED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml:12:5-39:19
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-3/101ff0b58494dd0679990e39b99e836d/transformed/material-1.1.0-alpha06/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-3/101ff0b58494dd0679990e39b99e836d/transformed/material-1.1.0-alpha06/AndroidManifest.xml:22:5-20
+MERGED from [com.jjoe64:graphview:4.2.2] /Users/cameronpugh/.gradle/caches/transforms-3/5702c44b23857d21e60b0f5d33009ff6/transformed/jetified-graphview-4.2.2/AndroidManifest.xml:11:5-12:19
+MERGED from [com.jjoe64:graphview:4.2.2] /Users/cameronpugh/.gradle/caches/transforms-3/5702c44b23857d21e60b0f5d33009ff6/transformed/jetified-graphview-4.2.2/AndroidManifest.xml:11:5-12:19
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:36:5-42:19
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:36:5-42:19
 MERGED from [de.hdodenhof:circleimageview:3.1.0] /Users/cameronpugh/.gradle/caches/transforms-3/d23ccc0fc3936798789c12a3b3188ec6/transformed/jetified-circleimageview-3.1.0/AndroidManifest.xml:9:5-20
@@ -188,10 +192,14 @@ INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/Andr
 INJECTED from /Users/cameronpugh/Documents/GitHub/Frontend-App/app/src/main/AndroidManifest.xml
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-3/101ff0b58494dd0679990e39b99e836d/transformed/material-1.1.0-alpha06/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.material:material:1.1.0-alpha06] /Users/cameronpugh/.gradle/caches/transforms-3/101ff0b58494dd0679990e39b99e836d/transformed/material-1.1.0-alpha06/AndroidManifest.xml:20:5-44
+MERGED from [com.jjoe64:graphview:4.2.2] /Users/cameronpugh/.gradle/caches/transforms-3/5702c44b23857d21e60b0f5d33009ff6/transformed/jetified-graphview-4.2.2/AndroidManifest.xml:7:5-9:41
+MERGED from [com.jjoe64:graphview:4.2.2] /Users/cameronpugh/.gradle/caches/transforms-3/5702c44b23857d21e60b0f5d33009ff6/transformed/jetified-graphview-4.2.2/AndroidManifest.xml:7:5-9:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/f1bd9ffbb1485b7551d1a7544beeb580/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /Users/cameronpugh/.gradle/caches/transforms-3/f1bd9ffbb1485b7551d1a7544beeb580/transformed/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/cameronpugh/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
 MERGED from [com.github.PhilJay:MPAndroidChart:v3.1.0] /Users/cameronpugh/.gradle/caches/transforms-3/4a081d726b9ebb3ba5414ac2d2508d0b/transformed/jetified-MPAndroidChart-v3.1.0/AndroidManifest.xml:16:5-18:41
+MERGED from [com.github.lecho:hellocharts-library:1.5.8] /Users/cameronpugh/.gradle/caches/transforms-3/dbf5d961a812ee5217f4340cfc79e525/transformed/jetified-hellocharts-library-1.5.8/AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.lecho:hellocharts-library:1.5.8] /Users/cameronpugh/.gradle/caches/transforms-3/dbf5d961a812ee5217f4340cfc79e525/transformed/jetified-hellocharts-library-1.5.8/AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:18.0.2] /Users/cameronpugh/.gradle/caches/transforms-3/151907348aa5fd7ec6a5414918bf4d4d/transformed/jetified-play-services-maps-18.0.2/AndroidManifest.xml:20:5-44
 MERGED from [com.mapbox.mapboxsdk:mapbox-android-sdk:6.8.0] /Users/cameronpugh/.gradle/caches/transforms-3/825318458754d0da871b7a17e23ec857/transformed/jetified-mapbox-android-sdk-6.8.0/AndroidManifest.xml:5:5-7:41

@@ -35,14 +35,17 @@
         <entry key="app/src/main/res/layout/add_device.xml" value="0.24375" />
         <entry key="app/src/main/res/layout/add_overlay.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/add_zone_name.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/all_chats.xml" value="0.25" />
         <entry key="app/src/main/res/layout/all_dev.xml" value="0.22" />
         <entry key="app/src/main/res/layout/all_rules.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/anal.xml" value="0.310807868064051" />
         <entry key="app/src/main/res/layout/calandar_popup.xml" value="0.2125" />
         <entry key="app/src/main/res/layout/calandar_popup_2.xml" value="0.37604166666666666" />
+        <entry key="app/src/main/res/layout/chat_lists.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/contact.xml" value="0.268018018018018" />
         <entry key="app/src/main/res/layout/crash_map.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/custom_spinner_items.xml" value="0.3098958333333333" />
-        <entry key="app/src/main/res/layout/dashboard.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/dashboard.xml" value="0.25" />
         <entry key="app/src/main/res/layout/display_map.xml" value="0.33" />
         <entry key="app/src/main/res/layout/edit_device.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/layout/edit_user.xml" value="0.25" />
@@ -50,6 +53,7 @@
         <entry key="app/src/main/res/layout/hmap.xml" value="0.25" />
         <entry key="app/src/main/res/layout/line_grpah.xml" value="0.2625" />
         <entry key="app/src/main/res/layout/m_row.xml" value="0.24114583333333334" />
+        <entry key="app/src/main/res/layout/message.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/microbit_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/new_rule_row.xml" value="0.37604166666666666" />
         <entry key="app/src/main/res/layout/popup.xml" value="0.4036458333333333" />
