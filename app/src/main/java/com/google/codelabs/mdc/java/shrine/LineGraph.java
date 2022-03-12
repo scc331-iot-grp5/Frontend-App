@@ -98,7 +98,8 @@ public class LineGraph extends Fragment implements OnItemSelectedListener{
     String before = " ";
     String after = " ";
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     int style;
     LineGraph(int style){

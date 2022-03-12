@@ -61,7 +61,7 @@
             android:paddingTop="15dp">
 
             <RelativeLayout
-                android:layout_marginTop="80dp"
+                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_gravity="center|center_horizontal"
                 android:layout_height="wrap_content">
@@ -149,6 +149,44 @@
                     android:layout_marginEnd="79dp"
                     android:layout_marginRight="79dp"
                     android:text="HeatMap" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginTop="50dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/acc"
+                    style="@style/Widget.Shrine.Button"
+                    android:layout_width="192dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="79dp"
+                    android:layout_marginRight="79dp"
+                    android:text="Acceleration Over time" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginTop="50dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/temp"
+                    style="@style/Widget.Shrine.Button"
+                    android:layout_width="192dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="79dp"
+                    android:layout_marginRight="79dp"
+                    android:text="Temperature Over time" />
 
             </RelativeLayout>
 

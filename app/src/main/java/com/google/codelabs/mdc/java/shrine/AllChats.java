@@ -69,7 +69,8 @@ import static java.util.Collections.singletonList;
 
 public class AllChats extends Fragment implements MessagesView.ItemClickListener, MessagesView.ItemLongClickListener{
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     MessagesView adapter;
     ArrayList<Contact> contacts = new ArrayList<>();

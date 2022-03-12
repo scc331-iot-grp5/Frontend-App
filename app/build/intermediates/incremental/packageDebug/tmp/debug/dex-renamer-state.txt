@@ -1,4 +1,7 @@
-#Thu Mar 10 21:09:38 GMT 2022
+#Sat Mar 12 22:44:27 GMT 2022
+base.1=/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/dex/debug/mergeDexDebug/classes2.dex
+path.1=classes2.dex
 base.0=/Users/cameronpugh/Documents/GitHub/Frontend-App/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+renamed.1=classes2.dex
 renamed.0=classes.dex
 path.0=classes.dex

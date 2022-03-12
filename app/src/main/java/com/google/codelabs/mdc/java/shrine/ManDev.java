@@ -73,7 +73,8 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
     MicrobitViewAdapter.ItemClickListener x;
     MicrobitViewAdapter.ItemLongClickListener y;
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     RequestQueue queue;
     View view;
@@ -204,7 +205,7 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
         chats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AllChats(0,style), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AllChats_Admins(0,style), false); // Navigate to the next Fragment
             }
         });
 
@@ -215,6 +216,30 @@ public class ManDev extends Fragment implements MicrobitViewAdapter.ItemClickLis
                 testTwo();
                 ((NavigationHost) getActivity()).navigateTo(new AddDevice(style), false); // Navigate to the next Fragment
 
+            }
+        });
+
+        MaterialButton systemCOnfig = view.findViewById(R.id.SystemConfig);
+        MaterialButton dashboard = view.findViewById(R.id.domain);
+        MaterialButton object = view.findViewById(R.id.object);
+
+        // Set an error if the password is less than 8 characters.
+        systemCOnfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Settings(style), false); // Navigate to the next Fragment
+            }
+        });
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Dashboard(style), false); // Navigate to the next Fragment
+            }
+        });
+        object.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Objects(style), false); // Navigate to the next Fragment
             }
         });
 

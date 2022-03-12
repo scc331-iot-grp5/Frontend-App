@@ -41,7 +41,8 @@ import java.util.TimerTask;
 public class MainActivity extends AppCompatActivity implements NavigationHost,NotificationHost {
 
     private final int x = 5;
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
     String CHANNEL_ID = "Mes";
 
     @Override

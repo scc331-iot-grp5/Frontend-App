@@ -77,7 +77,8 @@ public class Readings extends Fragment  implements ReadingsAdapter.ItemClickList
     ReadingsAdapter.ItemClickListener x;
     ReadingsAdapter.ItemLongClickListener y;
     String mID;
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     int style;
     Readings(int style){

@@ -76,7 +76,8 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
 
     ArrayList<String> a = new ArrayList<>();
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     int style;
     public EditMicrobit(int userid, int style){
@@ -177,10 +178,7 @@ public class EditMicrobit extends Fragment implements OnItemSelectedListener {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!isMValid(microbitEditText.getText())) {
-                    microbitTextInput.setError(getString(R.string.m_length));
-                }
-                else if(!objectName.equals("Select an Object")) {
+                if(!objectName.equals("Select an Object")) {
                     new MaterialAlertDialogBuilder(getContext())
                             .setTitle(R.string.d_tittle)
                             .setMessage("Are you sure you want to update this device?")

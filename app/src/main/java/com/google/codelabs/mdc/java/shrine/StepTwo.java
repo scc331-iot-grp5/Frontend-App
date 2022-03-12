@@ -70,7 +70,8 @@ public class StepTwo extends Fragment implements OnItemSelectedListener, Microbi
     ArrayList<Integer> l = new ArrayList<>();
     MicrobitViewAdapter.ItemClickListener x;
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     RequestQueue queue;
 

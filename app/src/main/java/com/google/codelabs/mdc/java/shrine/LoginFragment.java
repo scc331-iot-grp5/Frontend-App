@@ -39,7 +39,8 @@ public class LoginFragment extends Fragment {
 
     boolean login = false;
     int style;
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     WebSocketClient mWebSocketClient;
 

@@ -102,7 +102,8 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
     TextView width;
     TextView rotate;
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     int selectedColorR;
     int selectedColorG;
@@ -340,6 +341,30 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
         MaterialButton anal = rootView.findViewById(R.id.a);
         MaterialButton chats = rootView.findViewById(R.id.chats);
 
+        MaterialButton systemCOnfig = rootView.findViewById(R.id.SystemConfig);
+        MaterialButton dashboard = rootView.findViewById(R.id.domain);
+        MaterialButton object = rootView.findViewById(R.id.object);
+
+        // Set an error if the password is less than 8 characters.
+        systemCOnfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Settings(style), false); // Navigate to the next Fragment
+            }
+        });
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Dashboard(style), false); // Navigate to the next Fragment
+            }
+        });
+        object.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Objects(style), false); // Navigate to the next Fragment
+            }
+        });
+
         // Set an error if the password is less than 8 characters.
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -394,7 +419,7 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
             public void onClick(View view) {
                 sendAllZonesToDB();
                 sendAllOverlaysToDB();
-                ((NavigationHost) getActivity()).navigateTo(new AllChats(userid,style), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AllChats_Admins(userid,style), false); // Navigate to the next Fragment
             }
         });
 

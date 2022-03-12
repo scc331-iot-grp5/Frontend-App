@@ -37,7 +37,8 @@ public class PopUpClassUser implements AdapterView.OnItemSelectedListener {
     TextInputEditText email;
     TextInputEditText profile;
     CheckBox access;
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
     TextInputEditText banner;
     boolean admin = false;
 

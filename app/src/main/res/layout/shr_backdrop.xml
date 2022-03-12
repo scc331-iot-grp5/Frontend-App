@@ -33,6 +33,16 @@
         android:text="@string/manage_users" />
 
     <com.google.android.material.button.MaterialButton
+        android:id="@+id/object"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/domain"
+        android:text="Manage Objects" />
+
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/rules"
         style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
         android:layout_width="wrap_content"
@@ -61,6 +71,26 @@
         app:iconTint="?android:attr/textColorPrimary"
         app:icon="@drawable/ic_baseline_analytics_24"
         android:text="@string/analytics" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/SystemConfig"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/settings"
+        android:text="App Configuration" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/domain"
+        style="@style/Widget.MaterialComponents.Button.TextButton.Icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="?android:attr/textColorPrimary"
+        app:iconTint="?android:attr/textColorPrimary"
+        app:icon="@drawable/domain"
+        android:text="Dashboard" />
 
     <View
         android:layout_width="56dp"

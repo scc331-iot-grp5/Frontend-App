@@ -75,7 +75,8 @@ public class CrashMap extends Fragment{
     View view;
     RequestQueue queue;
     CalendarPopUp calenderPopUp;
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
     String filterDate;
 
     int style;

@@ -1413,6 +1413,8 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable amu_bubble_mask
+drawable amu_bubble_shadow
 drawable avd_hide_password
 drawable avd_show_password
 drawable baseline_gps_not_fixed_24
@@ -1656,6 +1658,7 @@ id alertTitle
 id all
 id alphaSeekBar
 id always
+id amu_text
 id app_bar
 id assignMicrobit
 id async
@@ -1681,7 +1684,6 @@ id cardRight
 id center
 id center_horizontal
 id center_vertical
-id change_async_status
 id chart
 id chat
 id chatList
@@ -1697,6 +1699,7 @@ id clip_vertical
 id cm
 id collapseActionView
 id colorView
+id colour
 id compass
 id compassView
 id condition
@@ -1740,7 +1743,6 @@ id end
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
-id example_map
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -1849,6 +1851,8 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id object
+id objectList
 id off
 id okColorButton
 id on
@@ -2015,9 +2019,11 @@ id view_offset_helper
 id visible
 id w
 id warningLabel
+id webview
 id wide
 id widthBar
 id widthText
+id window
 id withText
 id wrap_content
 id xax
@@ -2081,12 +2087,17 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout acc
 layout add_device
 layout add_overlay
 layout add_zone_name
 layout all_chats
+layout all_chats_admin
 layout all_dev
 layout all_rules
+layout amu_info_window
+layout amu_text_bubble
+layout amu_webview
 layout anal
 layout calandar_popup
 layout calandar_popup_2
@@ -2157,6 +2168,9 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout object_popup
+layout objects
+layout objects_row
 layout popup
 layout popup_user
 layout readings
@@ -2181,6 +2195,7 @@ layout step_three
 layout step_two
 layout super_admin_backdrop
 layout support_simple_spinner_dropdown_item
+layout temp
 layout test_action_chip
 layout test_reflow_chipgroup
 layout test_toolbar
@@ -3025,6 +3040,9 @@ style Widget_Shrine_TextInputLayout_ExposedDropdownMenu
 style Widget_Shrine_TextInputLayout_Popup
 style Widget_Shrine_Toolbar
 style Widget_Support_CoordinatorLayout
+style amu_Bubble_TextAppearance_Dark
+style amu_Bubble_TextAppearance_Light
+style amu_ClusterIcon_TextAppearance
 style mapbox_LocationComponent
 style materialcolorpicker__AppTheme
 style spinner_style

@@ -60,7 +60,8 @@ public class StepOne extends Fragment implements OnItemSelectedListener, RuleAda
     Rules newRule = new Rules();
     ArrayList<Conditions> conditions = new ArrayList<>();
     ArrayList<Conditions> conditionsToPass = new ArrayList<>();
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
     ArrayList<Conditions> temp ;
 
     RuleAdapter.ItemClickListener x;

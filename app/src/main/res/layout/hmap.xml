@@ -40,24 +40,14 @@
         android:orientation="vertical"
         android:fitsSystemWindows="true">
 
-            <com.google.codelabs.mdc.java.shrine.heatmaplib.HeatMap
-                android:id="@+id/example_map"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                app:minOpacity="0"
-                app:maxOpacity="255"
-                app:blur="0.001"
-                app:maxDrawingHeight="200dp"
-                app:maxDrawingWidth="200dp"
-                app:transparentBackground="false"/>
-
-            <CheckBox
-                android:id="@+id/change_async_status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Render the heatmap asynchronously"/>
+        <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:map="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MapsActivity" />
 
         </LinearLayout>
 

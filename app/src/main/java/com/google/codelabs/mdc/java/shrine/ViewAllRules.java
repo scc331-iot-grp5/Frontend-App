@@ -72,7 +72,8 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
     RulesViewAdapter.ItemClickListener x;
     RulesViewAdapter.ItemLongClickListener y;
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     RequestQueue queue;
 
@@ -232,7 +233,31 @@ public class ViewAllRules extends Fragment implements RulesViewAdapter.ItemClick
         chats.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ((NavigationHost) getActivity()).navigateTo(new AllChats(0,style), false); // Navigate to the next Fragment
+                ((NavigationHost) getActivity()).navigateTo(new AllChats_Admins(0,style), false); // Navigate to the next Fragment
+            }
+        });
+
+        MaterialButton systemCOnfig = view.findViewById(R.id.SystemConfig);
+        MaterialButton dashboard = view.findViewById(R.id.domain);
+        MaterialButton object = view.findViewById(R.id.object);
+
+        // Set an error if the password is less than 8 characters.
+        systemCOnfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Settings(style), false); // Navigate to the next Fragment
+            }
+        });
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Dashboard(style), false); // Navigate to the next Fragment
+            }
+        });
+        object.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Objects(style), false); // Navigate to the next Fragment
             }
         });
 

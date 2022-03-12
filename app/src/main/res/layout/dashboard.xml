@@ -16,7 +16,7 @@
         android:orientation="vertical"
         android:paddingTop="100dp"
         android:paddingBottom="100dp">
-        <include layout="@layout/super_admin_backdrop" />
+        <include layout="@layout/shr_backdrop" />
 
     </LinearLayout>
 

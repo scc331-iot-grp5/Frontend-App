@@ -76,7 +76,8 @@ public class UserReadings extends Fragment  implements ReadingsAdapter.ItemClick
     ArrayList<Reading> read = new ArrayList<>();
     ReadingsAdapter.ItemClickListener x;
     ReadingsAdapter.ItemLongClickListener y;
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     int userID;
     String microbitID;

@@ -1412,6 +1412,8 @@ int drawable abc_textfield_search_activated_mtrl_alpha 0x7f080059
 int drawable abc_textfield_search_default_mtrl_alpha 0x7f08005a
 int drawable abc_textfield_search_material 0x7f08005b
 int drawable abc_vector_test 0x7f08005c
+int drawable amu_bubble_mask 0x7f0800fe
+int drawable amu_bubble_shadow 0x7f0800ff
 int drawable avd_hide_password 0x7f08005d
 int drawable avd_show_password 0x7f08005e
 int drawable baseline_gps_not_fixed_24 0x7f08005f
@@ -1655,6 +1657,7 @@ int id alertTitle 0x7f09004e
 int id all 0x7f09004f
 int id alphaSeekBar 0x7f090050
 int id always 0x7f090051
+int id amu_text 0x7f0901c1
 int id app_bar 0x7f090052
 int id assignMicrobit 0x7f090053
 int id async 0x7f090054
@@ -1680,7 +1683,6 @@ int id cardRight 0x7f090067
 int id center 0x7f090068
 int id center_horizontal 0x7f090069
 int id center_vertical 0x7f09006a
-int id change_async_status 0x7f09006b
 int id chart 0x7f09006c
 int id chat 0x7f09006d
 int id chatList 0x7f09006e
@@ -1696,6 +1698,7 @@ int id clip_vertical 0x7f090077
 int id cm 0x7f090078
 int id collapseActionView 0x7f090079
 int id colorView 0x7f09007a
+int id colour 0x7f0901c5
 int id compass 0x7f09007b
 int id compassView 0x7f09007c
 int id condition 0x7f09007d
@@ -1739,7 +1742,6 @@ int id end 0x7f0900a2
 int id end_padder 0x7f0900a3
 int id enterAlways 0x7f0900a4
 int id enterAlwaysCollapsed 0x7f0900a5
-int id example_map 0x7f0900a6
 int id exitUntilCollapsed 0x7f0900a7
 int id expand_activities_button 0x7f0900a8
 int id expanded_menu 0x7f0900a9
@@ -1848,6 +1850,8 @@ int id normal 0x7f09010f
 int id notification_background 0x7f090110
 int id notification_main_column 0x7f090111
 int id notification_main_column_container 0x7f090112
+int id object 0x7f0901c4
+int id objectList 0x7f0901c6
 int id off 0x7f090113
 int id okColorButton 0x7f090114
 int id on 0x7f090115
@@ -2014,9 +2018,11 @@ int id view_offset_helper 0x7f0901b5
 int id visible 0x7f0901b6
 int id w 0x7f0901b7
 int id warningLabel 0x7f0901b8
+int id webview 0x7f0901c2
 int id wide 0x7f0901b9
 int id widthBar 0x7f0901ba
 int id widthText 0x7f0901bb
+int id window 0x7f0901c3
 int id withText 0x7f0901bc
 int id wrap_content 0x7f0901bd
 int id xax 0x7f0901be
@@ -2080,12 +2086,17 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0c0018
 int layout abc_search_view 0x7f0c0019
 int layout abc_select_dialog_material 0x7f0c001a
 int layout abc_tooltip 0x7f0c001b
+int layout acc 0x7f0c008f
 int layout add_device 0x7f0c001c
 int layout add_overlay 0x7f0c001d
 int layout add_zone_name 0x7f0c001e
 int layout all_chats 0x7f0c001f
+int layout all_chats_admin 0x7f0c008e
 int layout all_dev 0x7f0c0020
 int layout all_rules 0x7f0c0021
+int layout amu_info_window 0x7f0c0091
+int layout amu_text_bubble 0x7f0c0092
+int layout amu_webview 0x7f0c0093
 int layout anal 0x7f0c0022
 int layout calandar_popup 0x7f0c0023
 int layout calandar_popup_2 0x7f0c0024
@@ -2156,6 +2167,9 @@ int layout notification_template_media 0x7f0c0064
 int layout notification_template_media_custom 0x7f0c0065
 int layout notification_template_part_chronometer 0x7f0c0066
 int layout notification_template_part_time 0x7f0c0067
+int layout object_popup 0x7f0c0094
+int layout objects 0x7f0c0095
+int layout objects_row 0x7f0c0096
 int layout popup 0x7f0c0068
 int layout popup_user 0x7f0c0069
 int layout readings 0x7f0c006a
@@ -2180,6 +2194,7 @@ int layout step_three 0x7f0c007c
 int layout step_two 0x7f0c007d
 int layout super_admin_backdrop 0x7f0c007e
 int layout support_simple_spinner_dropdown_item 0x7f0c007f
+int layout temp 0x7f0c0090
 int layout test_action_chip 0x7f0c0080
 int layout test_reflow_chipgroup 0x7f0c0081
 int layout test_toolbar 0x7f0c0082
@@ -3024,6 +3039,9 @@ int style Widget_Shrine_TextInputLayout_ExposedDropdownMenu 0x7f120280
 int style Widget_Shrine_TextInputLayout_Popup 0x7f120281
 int style Widget_Shrine_Toolbar 0x7f120282
 int style Widget_Support_CoordinatorLayout 0x7f120283
+int style amu_Bubble_TextAppearance_Dark 0x7f120287
+int style amu_Bubble_TextAppearance_Light 0x7f120288
+int style amu_ClusterIcon_TextAppearance 0x7f120289
 int style mapbox_LocationComponent 0x7f120284
 int style materialcolorpicker__AppTheme 0x7f120285
 int style spinner_style 0x7f120286

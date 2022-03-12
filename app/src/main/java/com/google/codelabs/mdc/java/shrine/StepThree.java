@@ -60,7 +60,8 @@ public class StepThree extends Fragment implements OnItemSelectedListener{
     public Rules newRule;
     String event;
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
     int style;
     StepThree(Rules x,int style){
         this.newRule = x;

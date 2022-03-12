@@ -70,7 +70,8 @@ import java.util.regex.Pattern;
 
 public class Settings extends Fragment{
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
     RequestQueue queue;
 
@@ -121,6 +122,82 @@ public class Settings extends Fragment{
         }
         queue = Volley.newRequestQueue(getContext());
         setUpToolbar(view);
+
+        MaterialButton nextButton = view.findViewById(R.id.logout);
+        MaterialButton addDevice = view.findViewById(R.id.addDevice);
+        MaterialButton map = view.findViewById(R.id.map);
+        MaterialButton user = view.findViewById(R.id.users);
+        MaterialButton rules = view.findViewById(R.id.rules);
+        MaterialButton anal = view.findViewById(R.id.a);
+        MaterialButton chats = view.findViewById(R.id.chats);
+
+        MaterialButton systemCOnfig = view.findViewById(R.id.SystemConfig);
+        MaterialButton dashboard = view.findViewById(R.id.domain);
+        MaterialButton object = view.findViewById(R.id.object);
+
+        // Set an error if the password is less than 8 characters.
+        systemCOnfig.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Settings(style), false); // Navigate to the next Fragment
+            }
+        });
+        dashboard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Dashboard(style), false); // Navigate to the next Fragment
+            }
+        });
+        object.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Objects(style), false); // Navigate to the next Fragment
+            }
+        });
+
+        // Set an error if the password is less than 8 characters.
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new LoginFragment(), false); // Navigate to the next Fragment
+            }
+        });
+        addDevice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new ManDev(style), false); // Navigate to the next Fragment
+            }
+        });
+        map.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment(0,style), false); // Navigate to the next Fragment
+            }
+        });
+        user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AssUser(style), false); // Navigate to the next Fragment
+            }
+        });
+        rules.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new ViewAllRules(style), false); // Navigate to the next Fragment
+            }
+        });
+        anal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
+            }
+        });
+        chats.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new AllChats_Admins(0,style), false); // Navigate to the next Fragment
+            }
+        });
 
          orange = view.findViewById(R.id.orange);
          gold = view.findViewById(R.id.rose);
@@ -310,13 +387,11 @@ public class Settings extends Fragment{
             activity.setSupportActionBar(toolbar);
         }
 
-        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendColorToDB();
-                ((NavigationHost) getActivity()).navigateTo(new Dashboard(style), false); // Navigate to the next Fragment
-
-            }
-        });
+        toolbar.setNavigationOnClickListener(new NavigationIconClickListener(
+                getContext(),
+                view.findViewById(R.id.product_grid),
+                new AccelerateDecelerateInterpolator(),
+                getContext().getResources().getDrawable(R.drawable.shr_branded_menu), // Menu open icon
+                getContext().getResources().getDrawable(R.drawable.shr_close_menu))); // Menu close icon
     }
 }

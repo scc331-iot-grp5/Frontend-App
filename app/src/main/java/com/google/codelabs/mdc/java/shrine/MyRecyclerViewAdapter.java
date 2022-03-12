@@ -39,7 +39,8 @@ public class MyRecyclerViewAdapter extends RecyclerView.Adapter<MyRecyclerViewAd
     private MyRecyclerViewAdapter.ItemClickListener mClickListener;
     private MyRecyclerViewAdapter.ItemLongClickListener mLongClickListener;
 
-    String connection = "https://6e66-148-88-245-146.ngrok.io";
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
 
 
     // data is passed into the constructor
