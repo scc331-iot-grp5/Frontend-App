@@ -141,7 +141,7 @@ public class LoginFragment extends Fragment {
                             JSONObject object1 = response.getJSONObject(0);
                             if ((int)(object1.get("is_administrator")) == 1) {
                                 System.out.println("Admin");
-                                ((NavigationHost) getActivity()).navigateTo(new MapViewFragment((int)object1.get("id"),style), false); // Navigate to the next Fragment
+                                ((NavigationHost) getActivity()).navigateTo(new Anal(style), false); // Navigate to the next Fragment
                             }
                             else if ((int)(object1.get("is_super_admin")) == 1) {
                                 System.out.println("Super Admin");

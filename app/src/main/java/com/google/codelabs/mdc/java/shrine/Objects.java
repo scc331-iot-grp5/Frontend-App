@@ -30,6 +30,7 @@ import com.google.android.material.button.MaterialButton;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.codelabs.mdc.java.shrine.network.ProductEntry;
+import com.google.codelabs.mdc.java.shrine.network.Type;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,7 +42,7 @@ public class Objects extends Fragment implements ObjectAdapter.ItemClickListener
 
     ObjectAdapter adapter;
     RequestQueue queue;
-    ArrayList<String> objects = new ArrayList<>();
+    ArrayList<Type> objects = new ArrayList<>();
 
     ObjectAdapter.ItemClickListener x;
     ObjectAdapter.ItemLongClickListener y;
@@ -122,8 +123,10 @@ public class Objects extends Fragment implements ObjectAdapter.ItemClickListener
                             for (int i = 0; i < response.length(); i++) {
                                 JSONObject object1 = response.getJSONObject(i);
                                 String name = object1.getString("name");
+                                int id = object1.getInt("id");
 
-                                objects.add(name);
+                                Type t = new Type(id, name);
+                                objects.add(t);
                                 adapter.updateList(objects);
 
                             }
@@ -258,11 +261,11 @@ public class Objects extends Fragment implements ObjectAdapter.ItemClickListener
     }
 
     void filter(String text){
-        ArrayList<String> temp = new ArrayList();
-        for(String d: objects){
+        ArrayList<Type> temp = new ArrayList();
+        for(Type d: objects){
             //or use .equal(text) with you want equal match
             //use .toLowerCase() for better matches
-            if(d.toLowerCase().contains(text.toLowerCase())){
+            if(d.getName().toLowerCase().contains(text.toLowerCase())){
                 temp.add(d);
             }
         }
@@ -301,6 +304,8 @@ public class Objects extends Fragment implements ObjectAdapter.ItemClickListener
     @Override
     public void onItemClick(View view, int position) {
 
+        AddObjectPopUpEdit popUpClass = new AddObjectPopUpEdit();
+        popUpClass.showPopupWindow(view,getContext(), adapter.getId(position));
 
     }
 

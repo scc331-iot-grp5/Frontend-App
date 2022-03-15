@@ -17,6 +17,7 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.codelabs.mdc.java.shrine.network.Device;
+import com.google.codelabs.mdc.java.shrine.network.Type;
 import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 
 import org.json.JSONObject;
@@ -25,14 +26,16 @@ import java.util.List;
 
 public class ObjectAdapter extends RecyclerView.Adapter<ObjectAdapter.ViewHolder> {
 
-    private List<String> mData;
+    private List<Type> mData;
     private LayoutInflater mInflater;
 
     private ObjectAdapter.ItemClickListener mClickListener;
     private ObjectAdapter.ItemLongClickListener mLongClickListener;
 
+    String connection = "https://5f6b-148-88-245-64.ngrok.io";
+
     // data is passed into the constructor
-    ObjectAdapter(Context context, List<String> data){
+    ObjectAdapter(Context context, List<Type> data){
         this.mInflater = LayoutInflater.from(context);
         this.mData = data;
     }
@@ -47,7 +50,7 @@ public class ObjectAdapter extends RecyclerView.Adapter<ObjectAdapter.ViewHolder
     // binds the data to the TextView in each row
     @Override
     public void onBindViewHolder(ObjectAdapter.ViewHolder holder, int position) {
-        String name = mData.get(position);
+        String name = mData.get(position).getName();
         holder.name.setText(name);
     }
 
@@ -77,17 +80,53 @@ public class ObjectAdapter extends RecyclerView.Adapter<ObjectAdapter.ViewHolder
 
         @Override
         public boolean onLongClick(View view) {
-            if (mLongClickListener != null) {
+            System.out.println("Im bot here");
+            if (mLongClickListener != null)
                 mLongClickListener.onItemLongClick(view, getAdapterPosition());
-                return true;
-            }
-            return false;
+            Toast.makeText(view.getContext(), "Position is " + getAdapterPosition(), Toast.LENGTH_SHORT).show();
+            new MaterialAlertDialogBuilder(view.getContext())
+                    .setTitle(R.string.d_tittle)
+                    .setMessage(R.string.objectMessage)
+                    .setPositiveButton(R.string.d_remove, (dialog, which) -> {
+                        JSONObject json = new JSONObject();
+
+                        try {
+                            json.put("id", getId(getAdapterPosition()));
+                        } catch (Exception e) {
+                        }
+
+                        String url = connection + "/deleteObject";
+
+                        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+                                (Request.Method.POST, url, json, new Response.Listener<JSONObject>() {
+                                    @Override
+                                    public void onResponse(JSONObject response) {
+                                        // TODO: Handle error
+                                    }
+                                }, new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        // TODO: Handle error
+
+                                    }
+                                });
+
+                        MySingleton.getInstance(view.getContext()).addToRequestQueue(jsonObjectRequest);
+                    })
+                    .setNegativeButton(R.string.d_cancel, (dialog, which) -> {
+
+                    })
+                    .show();
+            return true;
         }
     }
 
     // convenience method for getting data at click position
     String getItem(int id) {
-        return mData.get(id);
+        return mData.get(id).getName();
+    }
+    int getId(int id) {
+        return mData.get(id).getId();
     }
 
     // allows clicks events to be caught
@@ -109,7 +148,7 @@ public class ObjectAdapter extends RecyclerView.Adapter<ObjectAdapter.ViewHolder
         void onItemLongClick(View view, int position);
     }
 
-    public void updateList(List<String> list){
+    public void updateList(List<Type> list){
         mData = list;
         notifyDataSetChanged();
     }

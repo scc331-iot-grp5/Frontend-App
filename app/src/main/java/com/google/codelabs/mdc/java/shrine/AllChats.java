@@ -67,16 +67,21 @@ import java.util.regex.Pattern;
 
 import static java.util.Collections.singletonList;
 
-public class AllChats extends Fragment implements MessagesView.ItemClickListener, MessagesView.ItemLongClickListener{
+public class AllChats extends Fragment implements MessagesView.ItemClickListener, MessagesView.ItemLongClickListener, OnItemSelectedListener{
 
     String connection = "https://5f6b-148-88-245-64.ngrok.io";
 
 
     MessagesView adapter;
     ArrayList<Contact> contacts = new ArrayList<>();
+    Spinner spinner;
+    int selectedID;
 
     MessagesView.ItemClickListener x;
     MessagesView.ItemLongClickListener y;
+
+    ArrayList<String> names = new ArrayList<>();
+    ArrayList<Integer> ids = new ArrayList<>();
 
     public int userid;
 
@@ -189,6 +194,65 @@ public class AllChats extends Fragment implements MessagesView.ItemClickListener
 
         getAllContacts();
 
+        spinner = (Spinner) view.findViewById(R.id.spinner);
+        spinner.setOnItemSelectedListener(this);
+
+        String url = connection + "/getAllNonContacts";
+
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
+        try {
+            j.put("userID", userid);
+            json.put(0,j);
+        }
+        catch(Exception e){
+            e.printStackTrace();
+        }
+
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String name = object1.getString("name");
+                                int id = object1.getInt("id");
+
+                                names.add(name);
+                                ids.add(id);
+                            }
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+
+
+                        ArrayAdapter<CharSequence> adapter = new ArrayAdapter(getContext(), android.R.layout.simple_spinner_item, names);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        spinner.setAdapter(adapter);
+
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        queue.add(jsonObjectRequest);
+
+        MaterialButton add = view.findViewById(R.id.add);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((NavigationHost) getActivity()).navigateTo(new User_chat_list(userid, style, selectedID), false); // Navigate to the next Fragment
+            }
+        });
+
 
 
 
@@ -243,6 +307,8 @@ public class AllChats extends Fragment implements MessagesView.ItemClickListener
                 });
 
         queue.add(jsonObjectRequest);
+
+
     }
 
 
@@ -272,6 +338,19 @@ public class AllChats extends Fragment implements MessagesView.ItemClickListener
 
     @Override
     public void onItemLongClick(View view, int position) {
+
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+        Spinner spinner = (Spinner) adapterView;
+        if (spinner.getId() == R.id.spinner) {
+            selectedID = ids.get(adapterView.getSelectedItemPosition());
+        }
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
 }

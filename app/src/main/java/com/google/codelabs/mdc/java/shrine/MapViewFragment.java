@@ -127,9 +127,9 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
     boolean editOverlay = false;
 
     boolean filter = true;
-    boolean filterOverlay = false;
-    boolean filterZones = false;
-    boolean filterDevices = false;
+    boolean filterOverlay = true;
+    boolean filterZones = true;
+    boolean filterDevices = true;
 
     ArrayList<LatLng> val = new ArrayList<  >();
     ArrayList<LatLng> circleVals = new ArrayList<>();
@@ -304,6 +304,9 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
         CheckBox fOverlay = rootView.findViewById(R.id.Overlays);
         CheckBox fZones = rootView.findViewById(R.id.Zones);
         CheckBox fDevices = rootView.findViewById(R.id.devices);
+        fOverlay.setChecked(true);
+        fZones.setChecked(true);
+        fDevices.setChecked(true);
 
         fOverlay.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -529,7 +532,7 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
                                             .title(name));
 
                                     markers.add(mDarwin1);
-                                    mMap.moveCamera(CameraUpdateFactory.newLatLng(newCo));
+                                    //mMap.moveCamera(CameraUpdateFactory.newLatLng(newCo));
                                 }
                             }
                         } catch (JSONException e) {
@@ -607,6 +610,8 @@ public class MapViewFragment extends Fragment implements AdapterView.OnItemSelec
 
                                     Polygon newPoly = mMap.addPolygon(options);
                                     newPoly.setClickable(true);
+
+                                    mMap.moveCamera(CameraUpdateFactory.newLatLng(tempListOfVal.get(0)));
 
                                     listOfPolygons.add( new Zone(newPoly,name,color,backgroundColor,id));
                                     tempListOfVal.clear();

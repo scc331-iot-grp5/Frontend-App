@@ -66,6 +66,7 @@ public class MessagesView extends RecyclerView.Adapter<MessagesView.ViewHolder> 
         holder.name.setText(name);
         holder.recentMessage.setText(recentMessage);
         holder.date.setText(date);
+
         imageRequester.setImageFromUrl(holder.userImage, url);
 
     }

@@ -182,7 +182,7 @@ public class AccGraph extends Fragment {
         seriesRenderer.setAxesColor(0xFF5a360c);
         seriesRenderer.setXLabelsColor(0xFF5a360c);
         seriesRenderer.setYAxisMin(0);//Set the starting value of the y axis
-        seriesRenderer.setYAxisMax(100);//Set the maximum value of the y axis
+        seriesRenderer.setYAxisMax(400);//Set the maximum value of the y axis
         //seriesRenderer.setXAxisMin(0);//Set the x-axis starting value
         //seriesRenderer.setXAxisMax(2400);//Set the maximum value of the x-axis
         seriesRenderer.setXTitle("Time(Hours:Minute)");//Set x axis title
@@ -216,16 +216,16 @@ public class AccGraph extends Fragment {
         seriesRenderer.addXTextLabel(2300, "22:00");
         seriesRenderer.addXTextLabel(2400, "24:00");
 
-        seriesRenderer.addYTextLabel(10, "10");
-        seriesRenderer.addYTextLabel(20, "20");
-        seriesRenderer.addYTextLabel(30, "30");
         seriesRenderer.addYTextLabel(40, "40");
-        seriesRenderer.addYTextLabel(50, "50");
-        seriesRenderer.addYTextLabel(60, "60");
-        seriesRenderer.addYTextLabel(70, "70");
         seriesRenderer.addYTextLabel(80, "80");
-        seriesRenderer.addYTextLabel(90, "90");
-        seriesRenderer.addYTextLabel(100, "100");
+        seriesRenderer.addYTextLabel(120, "120");
+        seriesRenderer.addYTextLabel(160, "160");
+        seriesRenderer.addYTextLabel(200, "200");
+        seriesRenderer.addYTextLabel(240, "240");
+        seriesRenderer.addYTextLabel(280, "280");
+        seriesRenderer.addYTextLabel(320, "320");
+        seriesRenderer.addYTextLabel(360, "360");
+        seriesRenderer.addYTextLabel(400, "400");
 
         seriesRenderer.setPointSize(3);//Set the coordinate point size
 

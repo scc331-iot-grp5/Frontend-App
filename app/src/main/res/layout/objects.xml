@@ -36,7 +36,7 @@
             android:paddingRight="12dp"
             app:contentInsetStart="0dp"
             app:navigationIcon="@drawable/shr_branded_menu"
-            app:title="Users" />
+            app:title="Types" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

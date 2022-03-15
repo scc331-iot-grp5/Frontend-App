@@ -1,5 +1,6 @@
 package com.google.codelabs.mdc.java.shrine;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -20,11 +21,14 @@ import androidx.annotation.Nullable;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.codelabs.mdc.java.shrine.staggeredgridlayout.MySingleton;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -33,9 +37,10 @@ import java.util.List;
 public class AddObjectPopUpEdit{
 
     //PopupWindow display method
-    ArrayList<String> objectNames = new ArrayList();
-    TextInputEditText name;
-    TextInputEditText color;
+
+    TextInputEditText nameT;
+    TextInputEditText colorT;
+    int id;
 
     String connection = "https://5f6b-148-88-245-64.ngrok.io";
 
@@ -53,10 +58,10 @@ public class AddObjectPopUpEdit{
         LayoutInflater inflater = (LayoutInflater) view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
         View popupView = inflater.inflate(R.layout.object_popup, null);
 
-
         //Specify the length and width through constants
         int width = LinearLayout.LayoutParams.MATCH_PARENT;
         int height = LinearLayout.LayoutParams.MATCH_PARENT;
+        this.id = id;
 
 
 
@@ -71,8 +76,10 @@ public class AddObjectPopUpEdit{
 
         //Initialize the elements of our window, install the handler
 
-        name = popupView.findViewById(R.id.name_text);
-        color = popupView.findViewById(R.id.colour);
+        nameT = popupView.findViewById(R.id.name_text);
+        colorT = popupView.findViewById(R.id.colour);
+
+        getObjectData(popupView);
 
         Button buttonEdit = popupView.findViewById(R.id.add);
         buttonEdit.setOnClickListener(new View.OnClickListener() {
@@ -97,18 +104,65 @@ public class AddObjectPopUpEdit{
             }
         });
     }
+    private void getObjectData(View view)
+    {
+        String url = connection +  "/getObjectData";
 
-    private void sendToDb(View view) {
-        JSONObject json = new JSONObject();
-        String n = name.getText().toString();
-        String a = color.getText().toString();
+        JSONArray json = new JSONArray();
+        JSONObject j = new JSONObject();
+
         try {
-            json.put("name",n);
-            json.put("colour",a);
+            j.put("id",id);
+            json.put(0,j);
         }
         catch(Exception e){}
 
-        String url = connection + "/addObject";
+        JsonArrayRequest jsonObjectRequest = new JsonArrayRequest
+                (Request.Method.POST, url, json, new Response.Listener<JSONArray>() {
+                    @SuppressLint("SetTextI18n")
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        try {
+                            System.out.println("Refresh");
+                            for (int i = 0; i < response.length(); i++) {
+                                JSONObject object1 = response.getJSONObject(i);
+
+                                String name = object1.getString("name");
+                                String color = object1.getString("ARGB_Value");
+
+                                nameT.setText(name);
+                                colorT.setText(color);
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        // TODO: Handle error
+
+                    }
+                });
+
+        MySingleton.getInstance(view.getContext()).addToRequestQueue(jsonObjectRequest);
+
+
+    }
+
+    private void sendToDb(View view) {
+        JSONObject json = new JSONObject();
+        String n = nameT.getText().toString();
+        String a = colorT.getText().toString();
+        try {
+            json.put("name",n);
+            json.put("colour",a);
+            json.put("id",id);
+        }
+        catch(Exception e){}
+
+        String url = connection + "/updateObject";
 
         JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
                 (Request.Method.POST, url, json, new Response.Listener<JSONObject>(){
